@@ -124,39 +124,7 @@
             margin-right: auto;
         }
 
-        /* Formulario de registro */
-        .register-form {
-            max-width: 500px;
-            margin: 0 auto 2rem;
-            background: rgba(255, 255, 255, 0.08);
-            padding: 2rem;
-            border-radius: 10px;
-        }
-        .form-group {
-            margin-bottom: 1.5rem;
-            text-align: left;
-        }
-        .form-group label {
-            display: block;
-            margin-bottom: 0.5rem;
-            color: #afeeee;
-        }
-        .form-group input {
-            width: 100%;
-            padding: 0.9rem;
-            border: 1px solid #2c5364;
-            background: rgba(15, 32, 39, 0.8);
-            border-radius: 8px;
-            color: white;
-            font-size: 1rem;
-        }
-        .form-group input:focus {
-            outline: none;
-            border-color: #40e0d0;
-            box-shadow: 0 0 0 2px rgba(64, 224, 208, 0.3);
-        }
-
-        /* Botón de Registro */
+        /* Botón de Registro Principal */
         .register-button {
             display: inline-block;
             background: linear-gradient(90deg, #00c9ff, #92fe9d);
@@ -184,7 +152,96 @@
             font-size: 1.1rem;
         }
 
-        /* Pie de página y recordatorio del chatbot */
+        /* Sección: Tu Matriz 3x8 - Explicación de Ingresos */
+        .income-section {
+            background: rgba(15, 32, 39, 0.85);
+            border-left: 6px solid #FFA500; /* Naranja para destacar números */
+        }
+        .income-intro, .payouts, .breakdown {
+            margin-bottom: 2.5rem;
+        }
+        .income-intro p, .payouts p {
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+            color: #e0ffff;
+        }
+        .highlight-box {
+            background: rgba(255, 165, 0, 0.1);
+            border: 1px solid #FFA500;
+            border-radius: 10px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+        }
+        .highlight-box h3 {
+            color: #FFD700; /* Dorado */
+            margin-bottom: 0.8rem;
+        }
+        .payout-list {
+            list-style: none;
+            padding-left: 1rem;
+        }
+        .payout-list li {
+            margin-bottom: 0.8rem;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+        .payout-list li:before {
+            content: '💰';
+            position: absolute;
+            left: 0;
+        }
+        .earnings-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 1rem;
+            background: rgba(255, 255, 255, 0.05);
+        }
+        .earnings-table th, .earnings-table td {
+            border: 1px solid #2c5364;
+            padding: 0.9rem;
+            text-align: center;
+        }
+        .earnings-table th {
+            background-color: #1d4350;
+            color: #7fffd4;
+        }
+        .earnings-table .total-row {
+            font-weight: bold;
+            background-color: rgba(255, 215, 0, 0.15);
+            color: #FFD700;
+        }
+        .matrix-total {
+            font-size: 1.8rem;
+            color: #92fe9d;
+            text-align: center;
+            margin-top: 1.5rem;
+            font-weight: bold;
+        }
+
+        /* Sección de Preguntas Frecuentes (FAQ) */
+        .faq-section {
+            background: rgba(147, 112, 219, 0.1); /* Fondo púrpura claro */
+            border-left: 6px solid #9370DB;
+        }
+        .faq-link-button {
+            display: inline-block;
+            background: linear-gradient(90deg, #9370DB, #BA55D3);
+            color: white;
+            font-weight: bold;
+            font-size: 1.2rem;
+            padding: 1rem 2.5rem;
+            border-radius: 10px;
+            text-decoration: none;
+            margin-top: 1.5rem;
+            transition: all 0.3s ease;
+        }
+        .faq-link-button:hover {
+            transform: scale(1.05);
+            box-shadow: 0 5px 15px rgba(147, 112, 219, 0.5);
+            background: linear-gradient(90deg, #BA55D3, #9370DB);
+        }
+
+        /* Pie de página */
         footer {
             text-align: center;
             margin-top: 3rem;
@@ -192,14 +249,6 @@
             border-top: 1px solid rgba(64, 224, 208, 0.2);
             color: #87ceeb;
             font-size: 0.9rem;
-        }
-        .chatbot-reminder {
-            background: rgba(255, 215, 0, 0.1);
-            border: 1px solid gold;
-            border-radius: 10px;
-            padding: 1.5rem;
-            margin-top: 2rem;
-            color: #ffd700;
         }
 
         /* Responsive para móviles */
@@ -209,8 +258,11 @@
             .tagline, .cta-subtitle { font-size: 1.1rem; }
             .section { padding: 1.5rem; }
             .cta-title { font-size: 1.8rem; }
-            .register-button { padding: 1rem 2.5rem; font-size: 1.1rem; }
+            .register-button, .faq-link-button { padding: 1rem 2rem; font-size: 1.1rem; width: 90%; display: block; margin-left: auto; margin-right: auto; }
             .features-grid { grid-template-columns: 1fr; }
+            .earnings-table { font-size: 0.9rem; }
+            .earnings-table th, .earnings-table td { padding: 0.6rem; }
+            .matrix-total { font-size: 1.5rem; }
         }
     </style>
 </head>
@@ -270,26 +322,91 @@
             </div>
         </section>
 
-        <!-- Sección de Llamado a la Acción (CTA) con Formulario y Botón -->
-        <section class="cta-section">
-            <h2 class="cta-title">Ingresa Tu Información para Desbloquear a Emily y Tu Prueba Gratuita de 7 Días</h2>
-            <p class="cta-subtitle">Comienza a escalar tu negocio con el poder de la inteligencia artificial. Proporciona tus datos para acceder inmediatamente.</p>
+        <!-- NUEVA SECCIÓN: Tu Matriz 3x8 - Ingresos Residuales -->
+        <section class="section income-section">
+            <h2 class="section-title">Tu Matriz 3x8 — Ingresos Residuales a partir del Mes 2</h2>
 
-            <!-- Formulario de Registro Simulado -->
-            <div class="register-form">
-                <div class="form-group">
-                    <label for="name">Nombre Completo *</label>
-                    <input type="text" id="name" name="name" placeholder="Ej: Juan Pérez" required>
-                </div>
-                <div class="form-group">
-                    <label for="email">Correo Electrónico *</label>
-                    <input type="email" id="email" name="email" placeholder="tucorreo@ejemplo.com" required>
-                </div>
-                <div class="form-group">
-                    <label for="phone">Teléfono (Opcional)</label>
-                    <input type="tel" id="phone" name="phone" placeholder="+1 (123) 456-7890">
+            <div class="income-intro">
+                <p>Como miembro <strong>GRATUITO</strong>, ya ocupas una posición en la matriz. Una vez que te actualices, desbloqueas toda la estructura de ingresos, <strong>incluyendo la capacidad de ganar durante tu prueba de 7 días</strong>.</p>
+            </div>
+
+            <div class="payouts">
+                <h3>💰 Pagos Mensuales de la Matriz</h3>
+                <ul class="payout-list">
+                    <li><strong>Nivel 1</strong> — $10 por miembro (3 miembros = $30/mes - ¡No importa cómo lleguen a ti!)</li>
+                    <li><strong>Niveles 2–7</strong> — $2 por miembro mensual (Ganas Comisiones de Matriz del Nivel 1 al 7 con <strong>cero</strong> referidos personales)</li>
+                    <li><strong>Nivel 8</strong> — $3 por miembro (Requiere solo 3 referidos personales)</li>
+                </ul>
+                <div class="highlight-box">
+                    <h3>🚨 Beneficio Clave</h3>
+                    <p>Con solo 3 miembros en el Nivel 1, tu membresía se paga sola — ya sea que vengan de tus referidos o del "spillover" (derrame) del sistema.</p>
                 </div>
             </div>
+
+            <div class="breakdown">
+                <h3>📈 Desglose de Ganancias — Tu Potencial de Ingresos</h3>
+                <p>Los niveles 1–7 pueden pagar hasta <strong>$6,582/mes sin necesidad de patrocinar a nadie</strong>. Si añades el Nivel 8, la matriz completa suma <strong>$26,265 mensuales</strong>.</p>
+
+                <h4>Niveles 1–7 (Ganancias sin patrocinio)</h4>
+                <table class="earnings-table">
+                    <thead>
+                        <tr>
+                            <th>Nivel</th>
+                            <th>Miembros</th>
+                            <th>Comisión por Miembro</th>
+                            <th>Ingreso Mensual</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>Nivel 1</td><td>3</td><td>$10</td><td>$30</td></tr>
+                        <tr><td>Nivel 2</td><td>9</td><td>$2</td><td>$18</td></tr>
+                        <tr><td>Nivel 3</td><td>27</td><td>$2</td><td>$54</td></tr>
+                        <tr><td>Nivel 4</td><td>81</td><td>$2</td><td>$162</td></tr>
+                        <tr><td>Nivel 5</td><td>243</td><td>$2</td><td>$486</td></tr>
+                        <tr><td>Nivel 6</td><td>729</td><td>$2</td><td>$1,458</td></tr>
+                        <tr><td>Nivel 7</td><td>2,187</td><td>$2</td><td>$4,374</td></tr>
+                        <tr class="total-row">
+                            <td colspan="3"><strong>TOTAL (Niveles 1-7)</strong></td>
+                            <td><strong>$6,582/mes</strong></td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h4>Nivel 8 (Con solo 3 referidos personales)</h4>
+                <table class="earnings-table">
+                    <thead>
+                        <tr>
+                            <th>Nivel</th>
+                            <th>Miembros</th>
+                            <th>Comisión por Miembro</th>
+                            <th>Ingreso Mensual</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>Nivel 8</td><td>6,561</td><td>$3</td><td>$19,683</td></tr>
+                    </tbody>
+                </table>
+
+                <p class="matrix-total">🔥 Total de Matriz Completa: $26,265/mes</p>
+            </div>
+        </section>
+
+        <!-- NUEVA SECCIÓN: Preguntas y Respuestas Comunes (FAQ) -->
+        <section class="section faq-section">
+            <h2 class="section-title">¿Tienes más preguntas? Te tenemos cubierto</h2>
+            <p>Consulta nuestra sección completa de Preguntas Frecuentes (FAQ) para aclarar cualquier duda sobre el programa, pagos, el rol de Emily o cómo comenzar.</p>
+            <p>Encontrarás respuestas detalladas y claras a las preguntas más comunes que tienen nuestros miembros.</p>
+
+            <a href="https://qnaviraldownline.vercel.app/" class="faq-link-button" target="_blank">
+                📚 Ir a Preguntas Frecuentes (FAQ)
+            </a>
+            <p style="margin-top: 1rem; font-size: 0.9rem;"><em>Serás dirigido a nuestra página oficial de FAQ.</em></p>
+        </section>
+
+        <!-- Sección de Llamado a la Acción (CTA) - SOLO BOTÓN AHORA -->
+        <section class="cta-section">
+            <h2 class="cta-title">¡Desbloquea a Emily y Tu Prueba Gratuita de 7 Días!</h2>
+            <p class="cta-subtitle">Da el primer paso para automatizar tu negocio y activar tu potencial de ingresos residuales. El registro es rápido, sencillo y sin compromiso.</p>
 
             <!-- Botón de Registro Principal -->
             <a href="https://aiviraldownline.com/lc.php?id=Jobshndez" class="register-button" target="_blank">
@@ -298,11 +415,6 @@
             <p class="risk-free">¡No tienes absolutamente nada que perder!</p>
             <p><small>Al hacer clic, serás dirigido a la página oficial de registro de AI Viral Downline.</small></p>
         </section>
-
-        <!-- Recordatorio para el área del chatbot -->
-        <div class="chatbot-reminder">
-            <p><strong>💬 Recuerda integrar tu Chatbot:</strong> El asistente virtual que responde preguntas frecuentes debe ser configurado e integrado en esta área. Usa el código de inserción de la plataforma que elijas (como Zapier) para activarlo.</p>
-        </div>
 
         <footer>
             <p>© <span id="currentYear"></span> aijobsviraljoin. Este sitio está asociado al programa AI Viral Downline.</p>
@@ -313,11 +425,6 @@
     <script>
         // Año actual en el pie de página
         document.getElementById('currentYear').textContent = new Date().getFullYear();
-        // Validación básica del formulario (simulada, ya que la acción real está en el botón)
-        document.querySelector('.register-form').addEventListener('submit', function(e) {
-            e.preventDefault();
-            alert('Formulario simulado. Para el registro real, usa el botón verde de arriba.');
-        });
     </script>
 </body>
 </html>
