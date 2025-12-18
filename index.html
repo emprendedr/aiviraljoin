@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>aijobsviraljoin</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+        body {
+            background-color: #f4f7fa;
+            color: #333;
+            line-height: 1.6;
+        }
+        header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            text-align: center;
+            padding: 2rem 1rem;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        .video-wrapper {
+            margin: 2rem 0;
+            background: white;
+            border-radius: 10px;
+            padding: 1.5rem;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+        .video-title {
+            font-size: 1.4rem;
+            margin-bottom: 1rem;
+            color: #2d3748;
+        }
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+            height: 0;
+            overflow: hidden;
+            border-radius: 8px;
+        }
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+        .chatbot-section {
+            background: white;
+            border-radius: 10px;
+            padding: 2rem;
+            margin-top: 3rem;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+        .chatbot-title {
+            font-size: 1.8rem;
+            color: #2d3748;
+            margin-bottom: 1rem;
+        }
+        .chatbot-placeholder {
+            background: #f8f9fa;
+            border: 2px dashed #cbd5e0;
+            border-radius: 8px;
+            padding: 3rem 1rem;
+            text-align: center;
+            color: #718096;
+        }
+        footer {
+            text-align: center;
+            padding: 2rem;
+            margin-top: 3rem;
+            color: #718096;
+            font-size: 0.9rem;
+            border-top: 1px solid #e2e8f0;
+        }
+        @media (max-width: 768px) {
+            .container {
+                padding: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>aijobsviraljoin</h1>
+        <p>Your Gateway to the AI Viral Program</p>
+    </header>
+
+    <main class="container">
+        <!-- Intro Video Section -->
+        <section class="video-wrapper">
+            <h2 class="video-title">Program Introduction</h2>
+            <div class="video-container">
+                <!-- Intro Video: IBhOkKNunkc -->
+                <iframe src="https://www.youtube.com/embed/IBhOkKNunkc"
+                        title="Program Introduction Video"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen>
+                </iframe>
+            </div>
+        </section>
+
+        <!-- Presentation Video Section -->
+        <section class="video-wrapper">
+            <h2 class="video-title">Full Presentation & Details</h2>
+            <div class="video-container">
+                <!-- Presentation Video: A8bGvBjWgkw -->
+                <iframe src="https://www.youtube.com/embed/A8bGvBjWgkw"
+                        title="Full Program Presentation Video"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen>
+                </iframe>
+            </div>
+        </section>
+
+        <!-- Chatbot Section -->
+        <section class="chatbot-section">
+            <h2 class="chatbot-title">Program Assistant</h2>
+            <p>Got questions about the program, compensation, or how to get started? Ask our AI assistant below. It's trained on all the details from the AIViralDownline program.</p>
+
+            <div class="chatbot-placeholder" id="chatbot-interface">
+                <!-- Chatbot interface will be inserted here -->
+                <p><strong>🤖 Chatbot Integration Area</strong></p>
+                <p>This is where your FAQ chatbot will be installed. The chatbot should be configured to answer questions about the program and redirect unresolved inquiries.</p>
+                <p><em>To set this up, you will need to use a chatbot platform (like Zapier or GPTBots) and paste its embed code here.</em></p>
+            </div>
+
+            <!-- Important instructions for the chatbot's behavior -->
+            <div style="background: #fff8e1; padding: 1rem; border-radius: 8px; margin-top: 1.5rem; border-left: 4px solid #ffb300;">
+                <p><strong>Important Chatbot Instructions (for setup):</strong></p>
+                <p>The chatbot must be trained to answer all questions about the <strong>www.aiviraldownline.com</strong> program. For questions it cannot answer, it must provide one of these two responses:</p>
+                <ul style="margin-top: 0.5rem; padding-left: 1.2rem;">
+                    <li>Please contact support at: <strong>jobshendez@gmail.com</strong></li>
+                    <li>Please return to the person who shared this website with you for assistance.</li>
+                </ul>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>© <span id="currentYear"></span> aijobsviraljoin. All rights reserved.</p>
+        <p>This site is for informational purposes regarding the AI Viral Program.</p>
+    </footer>
+
+    <script>
+        // Set current year in footer
+        document.getElementById('currentYear').textContent = new Date().getFullYear();
+    </script>
+</body>
+</html>
