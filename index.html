@@ -101,6 +101,83 @@
             font-size: 1.2rem;
         }
 
+        /* ===== SECCIÓN PERSUASIVA NUEVA ===== */
+        .persuasion-section {
+            background: linear-gradient(135deg, rgba(106, 17, 203, 0.15) 0%, rgba(37, 117, 252, 0.15) 100%);
+            border-left: 6px solid #8A2BE2;
+            padding: 2.5rem;
+            margin: 3rem 0;
+        }
+        .persuasion-title {
+            color: #FFD700;
+            font-size: 2rem;
+            text-align: center;
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+        .persuasion-content {
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+        .persuasion-highlight {
+            background: rgba(255, 215, 0, 0.1);
+            border-left: 4px solid #FFD700;
+            padding: 1.2rem;
+            margin: 1.5rem 0;
+            border-radius: 8px;
+        }
+        .persuasion-numbers {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+            margin: 1.5rem 0;
+        }
+        .number-card {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 1.2rem;
+            border-radius: 10px;
+            text-align: center;
+            border: 1px solid rgba(64, 224, 208, 0.3);
+        }
+        .number-card .number {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: #92fe9d;
+            margin-bottom: 0.5rem;
+        }
+        .persuasion-benefits {
+            list-style: none;
+            padding-left: 0;
+            margin: 1.5rem 0;
+        }
+        .persuasion-benefits li {
+            padding: 0.8rem 0;
+            padding-left: 2.5rem;
+            position: relative;
+            font-size: 1.1rem;
+        }
+        .persuasion-benefits li:before {
+            content: '✨';
+            position: absolute;
+            left: 0;
+            font-size: 1.2rem;
+        }
+        .persuasion-cta {
+            text-align: center;
+            margin-top: 2rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .persuasion-cta .highlight {
+            color: #FFD700;
+            font-weight: bold;
+            font-size: 1.2rem;
+            margin: 1rem 0;
+        }
+
         /* ===== SECCIÓN DE LLAMADO A LA ACCIÓN (CTA) ===== */
         .cta-section {
             text-align: center;
@@ -402,8 +479,10 @@
             .container { padding: 1rem; }
             h1 { font-size: 2.2rem; }
             .tagline, .cta-subtitle { font-size: 1.1rem; }
-            .section { padding: 1.5rem; }
+            .section, .persuasion-section { padding: 1.5rem; }
             .cta-title { font-size: 1.8rem; }
+            .persuasion-title { font-size: 1.6rem; flex-direction: column; }
+            .persuasion-content { font-size: 1rem; }
             .register-button, .faq-link-button {
                 padding: 1rem 2rem;
                 font-size: 1.1rem;
@@ -412,7 +491,7 @@
                 margin-left: auto;
                 margin-right: auto;
             }
-            .features-grid { grid-template-columns: 1fr; }
+            .features-grid, .persuasion-numbers { grid-template-columns: 1fr; }
             .earnings-table { font-size: 0.9rem; }
             .earnings-table th, .earnings-table td { padding: 0.6rem; }
             .matrix-total { font-size: 1.5rem; }
@@ -494,6 +573,69 @@
                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                         allowfullscreen>
                 </iframe>
+            </div>
+        </section>
+
+        <!-- NUEVA SECCIÓN PERSUASIVA -->
+        <section class="persuasion-section">
+            <h2 class="persuasion-title">🚀 ¿Sabías que hoy puedes generar ingresos automáticos con inteligencia artificial?</h2>
+            
+            <div class="persuasion-content">
+                <p>Imagina esto por un momento…</p>
+                
+                <div class="persuasion-highlight">
+                    <p>Un sistema inteligente trabaja por ti 24/7,<br>
+                    publicando tu enlace de forma automática y constante,<br>
+                    mientras tú sigues con tu vida.</p>
+                </div>
+
+                <div class="persuasion-numbers">
+                    <div class="number-card">
+                        <div class="number">1,000</div>
+                        <p>personas ven tu publicidad automatizada</p>
+                    </div>
+                    <div class="number-card">
+                        <div class="number">10</div>
+                        <p>deciden ingresar (solo el 1%)</p>
+                    </div>
+                    <div class="number-card">
+                        <div class="number">$250</div>
+                        <p>el sistema puede generarte, sin que estés presente</p>
+                    </div>
+                </div>
+
+                <p><strong>Ahora llévalo un paso más allá…</strong></p>
+
+                <div class="persuasion-highlight">
+                    <p><strong>📢 El sistema puede publicar hasta 4 veces al día.<br>
+                    Eso significa 112 publicaciones al mes,<br>
+                    sin que tú hagas absolutamente nada.</strong></p>
+                </div>
+
+                <div class="number-card" style="max-width: 300px; margin: 1.5rem auto;">
+                    <div class="number">$2,500</div>
+                    <p>al mes en automático<br>(si ingresan solo 100 personas)</p>
+                </div>
+
+                <ul class="persuasion-benefits">
+                    <li>No se trata de suerte.</li>
+                    <li>No se trata de perseguir personas.</li>
+                    <li>Se trata de apalancarte en la automatización y la inteligencia artificial.</li>
+                </ul>
+
+                <p>Y lo mejor de todo…<br>
+                <strong>Puedes empezar por menos de $30 al mes.</strong></p>
+
+                <div class="persuasion-highlight">
+                    <p>Además, para ayudarte a posicionarte desde hoy,<br>
+                    el sistema te ofrece una prueba <strong>GRATIS de 7 días</strong>,<br>
+                    <strong>sin necesidad de ingresar tu tarjeta.</strong></p>
+                </div>
+
+                <div class="persuasion-cta">
+                    <p class="highlight">👉 Sin riesgo. Sin presión. Sin excusas.</p>
+                    <p><strong>Activa tu acceso ahora y deja que el sistema trabaje por ti.</strong></p>
+                </div>
             </div>
         </section>
 
