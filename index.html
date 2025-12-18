@@ -1,13 +1,66 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Website</title>
-</head>
-<body>
-    <footer>
-        <!-- Footer without the specified text -->
-    </footer>
-</body>
-</html>
+/* ===== ESTILOS PARA EL FOOTER SIMPLIFICADO ===== */
+footer {
+    text-align: center;
+    margin-top: 3rem;
+    padding-top: 2rem;
+    border-top: 1px solid rgba(64, 224, 208, 0.2);
+    color: #87ceeb;
+    font-size: 0.9rem;
+}
+.footer-social {
+    text-align: center;
+    padding: 2rem;
+    margin-bottom: 2rem;
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: 15px;
+}
+.footer-social h3 {
+    color: #40e0d0;
+    margin-bottom: 0.8rem;
+    font-size: 1.4rem;
+}
+.footer-social > p {
+    color: #b0e0e6;
+    margin-bottom: 1.5rem;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+}
+.social-icon {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(255, 255, 255, 0.08);
+    color: #e0ffff;
+    padding: 0.8rem 1.5rem;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(64, 224, 208, 0.3);
+}
+.social-icon:hover {
+    background: rgba(64, 224, 208, 0.2);
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(64, 224, 208, 0.2);
+    color: white;
+    border-color: #40e0d0;
+}
+.social-icon svg {
+    flex-shrink: 0;
+}
+.footer-bottom {
+    text-align: center;
+    font-size: 0.85rem;
+    color: #87ceeb;
+    padding-top: 1.5rem;
+}
+.footer-bottom p {
+    margin-bottom: 0.5rem;
+}
