@@ -17,7 +17,6 @@
             color: #f0f8ff;
             line-height: 1.7;
             min-height: 100vh;
-            padding-bottom: 2rem;
         }
         .container {
             max-width: 1000px;
@@ -241,71 +240,135 @@
             background: linear-gradient(90deg, #BA55D3, #9370DB);
         }
 
-        /* ===== ESTILOS PARA EL FOOTER SIMPLIFICADO ===== */
+        /* ===== FOOTER PROFESIONAL 2025 ===== */
         footer {
-            text-align: center;
-            margin-top: 3rem;
-            padding-top: 2rem;
+            background: linear-gradient(180deg, #0a1929 0%, #0f2027 100%);
+            color: #e3f2fd;
+            margin-top: 4rem;
+            padding: 3rem 0 1.5rem;
             border-top: 1px solid rgba(64, 224, 208, 0.2);
-            color: #87ceeb;
             font-size: 0.9rem;
         }
-        .footer-social {
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        /* Brand Section */
+        .footer-brand {
             text-align: center;
-            padding: 2rem;
-            margin-bottom: 2rem;
-            background: rgba(255, 255, 255, 0.03);
-            border-radius: 15px;
+            margin-bottom: 2.5rem;
+            padding-bottom: 1.5rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
         }
-        .footer-social h3 {
+
+        .footer-brand h3 {
+            font-size: 2rem;
             color: #40e0d0;
+            margin-bottom: 0.5rem;
+            letter-spacing: 1px;
+        }
+
+        .footer-tagline {
+            color: #90caf9;
+            font-size: 0.95rem;
+            opacity: 0.9;
+        }
+
+        /* Links Section */
+        .footer-links {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2.5rem;
+            margin-bottom: 2.5rem;
+        }
+
+        .link-group h4 {
+            color: #64ffda;
+            font-size: 1rem;
+            margin-bottom: 1.2rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .footer-link {
+            display: block;
+            color: #bbdefb;
+            text-decoration: none;
             margin-bottom: 0.8rem;
-            font-size: 1.4rem;
+            transition: all 0.3s ease;
+            padding: 0.3rem 0;
+            border-bottom: 1px solid transparent;
         }
-        .footer-social > p {
-            color: #b0e0e6;
-            margin-bottom: 1.5rem;
-            max-width: 600px;
-            margin-left: auto;
-            margin-right: auto;
+
+        .footer-link:hover {
+            color: #40e0d0;
+            border-bottom-color: #40e0d0;
+            padding-left: 0.5rem;
         }
-        .social-icons {
+
+        .social-links {
             display: flex;
-            justify-content: center;
-            gap: 1.5rem;
-            flex-wrap: wrap;
+            gap: 1rem;
+            margin-top: 1rem;
         }
-        .social-icon {
+
+        .social-btn {
             display: inline-flex;
             align-items: center;
-            gap: 8px;
+            justify-content: center;
+            width: 36px;
+            height: 36px;
             background: rgba(255, 255, 255, 0.08);
-            color: #e0ffff;
-            padding: 0.8rem 1.5rem;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: 600;
+            border-radius: 50%;
+            color: #bbdefb;
             transition: all 0.3s ease;
-            border: 1px solid rgba(64, 224, 208, 0.3);
+            border: 1px solid rgba(64, 224, 208, 0.2);
         }
-        .social-icon:hover {
+
+        .social-btn:hover {
             background: rgba(64, 224, 208, 0.2);
+            color: #fff;
             transform: translateY(-3px);
-            box-shadow: 0 5px 15px rgba(64, 224, 208, 0.2);
-            color: white;
             border-color: #40e0d0;
+            box-shadow: 0 5px 15px rgba(64, 224, 208, 0.2);
         }
-        .social-icon svg {
-            flex-shrink: 0;
+
+        /* Legal Notice */
+        .legal-notice {
+            background: rgba(10, 25, 47, 0.7);
+            border-left: 3px solid #ff6b6b;
+            padding: 1.2rem 1.5rem;
+            margin: 2rem 0;
+            border-radius: 8px;
+            font-size: 0.85rem;
+            line-height: 1.5;
         }
+
+        .legal-notice strong {
+            color: #ffcc80;
+        }
+
+        /* Bottom Section */
         .footer-bottom {
             text-align: center;
-            font-size: 0.85rem;
-            color: #87ceeb;
             padding-top: 1.5rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            color: #90a4ae;
+            font-size: 0.85rem;
         }
-        .footer-bottom p {
-            margin-bottom: 0.5rem;
+
+        .footer-bottom p:first-child {
+            color: #e3f2fd;
+            font-weight: 500;
+            margin-bottom: 0.3rem;
+        }
+
+        .footer-version {
+            font-size: 0.8rem;
+            opacity: 0.7;
         }
 
         /* ===== DISEÑO RESPONSIVE PARA MÓVILES ===== */
@@ -327,8 +390,24 @@
             .earnings-table { font-size: 0.9rem; }
             .earnings-table th, .earnings-table td { padding: 0.6rem; }
             .matrix-total { font-size: 1.5rem; }
-            .social-icons { gap: 1rem; }
-            .social-icon { padding: 0.7rem 1.2rem; font-size: 0.95rem; }
+            
+            .footer-content {
+                padding: 0 1.5rem;
+            }
+            
+            .footer-links {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            
+            .link-group {
+                text-align: center;
+            }
+            
+            .legal-notice {
+                font-size: 0.8rem;
+                padding: 1rem;
+            }
         }
     </style>
 </head>
@@ -481,46 +560,64 @@
             <p class="risk-free">¡No tienes absolutamente nada que perder!</p>
             <p><small>Al hacer clic, serás dirigido a la página oficial de registro de AI Viral Downline.</small></p>
         </section>
+    </div>
 
-        <!-- FOOTER SIMPLIFICADO -->
-        <footer>
-            <!-- Redes Sociales -->
-            <div class="footer-social">
-                <h3>Sígueme en Redes Sociales</h3>
-                <p>Más tips, contenido y novedades sobre marketing digital y automatización.</p>
-                <div class="social-icons">
-                    <a href="https://www.tiktok.com/@jobsproducts?_r=1&_t=ZT-92KACw4Evlt" target="_blank" class="social-icon" title="TikTok de Jobshndez">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 16 16">
-                            <path d="M9 0h1.98c.144.715.54 1.617 1.235 2.512C12.895 3.389 13.797 4 15 4v2c-1.753 0-3.07-.814-4-1.829V11a5 5 0 1 1-5-5v2a3 3 0 1 0 3 3V0Z"/>
-                        </svg>
-                        TikTok
-                    </a>
-                    <a href="https://www.facebook.com/Exploremypage?mibextid=wwXIfr&mibextid=wwXIfr" target="_blank" class="social-icon" title="Facebook de Jobshndez">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 16 16">
-                            <path d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951z"/>
-                        </svg>
-                        Facebook
-                    </a>
-                    <a href="https://www.instagram.com/jobshndez?igsh=NTc4MTIwNjQ2YQ%3D%3D&utm_source=qr" target="_blank" class="social-icon" title="Instagram de Jobshndez">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 16 16">
-                            <path d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.917 3.917 0 0 0-1.417.923A3.927 3.927 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.916 3.916 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.926 3.926 0 0 0-.923-1.417A3.911 3.911 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0h.003zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599.28.28.453.546.598.92.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.47 2.47 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.478 2.478 0 0 1-.92-.598 2.48 2.48 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233 0-2.136.008-2.388.046-3.231.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92.28-.28.546-.453.92-.598.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045v.002zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 1 0 0-1.92zm-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217zm0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334z"/>
-                        </svg>
-                        Instagram
-                    </a>
+    <!-- FOOTER PROFESIONAL 2025 -->
+    <footer>
+        <div class="footer-content">
+            <!-- Logo/Identidad -->
+            <div class="footer-brand">
+                <h3>aiviraljoin</h3>
+                <p class="footer-tagline">Automatiza tu crecimiento con IA</p>
+            </div>
+
+            <!-- Enlaces Importantes -->
+            <div class="footer-links">
+                <div class="link-group">
+                    <h4>Legal</h4>
+                    <a href="#privacy" class="footer-link">Política de Privacidad</a>
+                    <a href="#terms" class="footer-link">Términos de Servicio</a>
+                    <a href="#earnings" class="footer-link">Descargo de Ingresos</a>
+                </div>
+                <div class="link-group">
+                    <h4>Contacto</h4>
+                    <a href="mailto:jobshendez@gmail.com" class="footer-link">Soporte</a>
+                    <div class="social-links">
+                        <a href="https://www.tiktok.com/@jobsproducts?_r=1&_t=ZT-92KACw4Evlt" target="_blank" class="social-btn" title="TikTok">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                                <path d="M9 0h1.98c.144.715.54 1.617 1.235 2.512C12.895 3.389 13.797 4 15 4v2c-1.753 0-3.07-.814-4-1.829V11a5 5 0 1 1-5-5v2a3 3 0 1 0 3 3V0Z"/>
+                            </svg>
+                        </a>
+                        <a href="https://www.facebook.com/Exploremypage?mibextid=wwXIfr&mibextid=wwXIfr" target="_blank" class="social-btn" title="Facebook">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                                <path d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951z"/>
+                            </svg>
+                        </a>
+                        <a href="https://www.instagram.com/jobshndez?igsh=NTc4MTIwNjQ2YQ%3D%3D&utm_source=qr" target="_blank" class="social-btn" title="Instagram">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                                <path d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.917 3.917 0 0 0-1.417.923A3.927 3.927 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.916 3.916 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.926 3.926 0 0 0-.923-1.417A3.911 3.911 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0h.003zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599.28.28.453.546.598.92.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.47 2.47 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.478 2.478 0 0 1-.92-.598 2.48 2.48 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233 0-2.136.008-2.388.046-3.231.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92.28-.28.546-.453.92-.598.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045v.002zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 1 0 0-1.92zm-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217zm0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334z"/>
+                            </svg>
+                        </a>
+                    </div>
                 </div>
             </div>
 
-            <!-- Línea de derechos de autor y contacto -->
-            <div class="footer-bottom">
-                <p>© <span id="currentYear"></span> aijobsviraljoin. Herramienta automatizada para uso personal.</p>
-                <p>Para asistencia, contacta a la persona que te compartió este enlace o escribe a: <strong>jobshendez@gmail.com</strong></p>
+            <!-- Aviso Legal -->
+            <div class="legal-notice">
+                <p><strong>Aviso Legal:</strong> Al ingresar y hacer uso de los productos y servicios recomendados en este sitio, puedo recibir una comisión por referencia sin costo adicional para ti. Los resultados individuales pueden variar.</p>
             </div>
-        </footer>
-    </div>
+
+            <!-- Línea Final -->
+            <div class="footer-bottom">
+                <p>© 2025 aiviraljoin. Todos los derechos reservados.</p>
+                <p class="footer-version">v1.0 • Herramienta de automatización con IA</p>
+            </div>
+        </div>
+    </footer>
 
     <script>
         // Año actual en el pie de página
-        document.getElementById('currentYear').textContent = new Date().getFullYear();
+        document.getElementById('currentYear')?.textContent = new Date().getFullYear();
     </script>
 </body>
 </html>
