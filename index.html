@@ -105,6 +105,303 @@
             font-style: italic;
         }
 
+        /* ===== BOTONES PRINCIPALES MEJORADOS ===== */
+        .primary-cta-section {
+            text-align: center;
+            margin: 3rem 0;
+            padding: 2rem;
+            background: linear-gradient(135deg, rgba(255, 107, 107, 0.1), rgba(255, 193, 7, 0.1));
+            border-radius: 20px;
+            border-left: 6px solid #FFD700;
+        }
+        
+        .primary-cta-title {
+            font-size: 2.8rem;
+            color: #FFD700;
+            margin-bottom: 1rem;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 700;
+            text-shadow: 0 0 20px rgba(255, 215, 0, 0.5);
+            background: linear-gradient(45deg, #FFD700, #FF8E53, #FFD700);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-size: 200% 200%;
+            animation: gradientText 3s ease infinite;
+        }
+        
+        @keyframes gradientText {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        
+        .primary-cta-subtitle {
+            font-size: 1.2rem;
+            color: #b0e0e6;
+            margin-bottom: 2.5rem;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .cta-buttons-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+        
+        .main-cta-button {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+            background: linear-gradient(135deg, #FF6B6B, #FF8E53, #FFD700);
+            color: white;
+            font-weight: 700;
+            font-size: 1.8rem;
+            padding: 1.8rem 4rem;
+            border-radius: 20px;
+            text-decoration: none;
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 10px 0 #CC5555, 0 20px 40px rgba(255, 107, 107, 0.6);
+            transition: all 0.3s ease;
+            position: relative;
+            top: 0;
+            min-width: 350px;
+            text-align: center;
+            font-family: 'Poppins', sans-serif;
+            letter-spacing: 0.5px;
+            overflow: hidden;
+        }
+        
+        .main-cta-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: left 0.7s;
+        }
+        
+        .main-cta-button:hover::before {
+            left: 100%;
+        }
+        
+        .main-cta-button:hover {
+            top: -5px;
+            box-shadow: 0 15px 0 #CC5555, 0 25px 50px rgba(255, 107, 107, 0.8);
+            background: linear-gradient(135deg, #FF8E53, #FFD700, #FF6B6B);
+            transform: scale(1.05);
+            letter-spacing: 1px;
+        }
+        
+        .main-cta-button:active {
+            top: 0;
+            box-shadow: 0 8px 0 #CC5555, 0 15px 30px rgba(255, 107, 107, 0.5);
+        }
+        
+        .main-cta-button .button-main-text {
+            font-size: 2.2rem;
+            font-weight: 800;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+        }
+        
+        .main-cta-button .button-sub-text {
+            font-size: 1.2rem;
+            font-weight: 600;
+            opacity: 0.9;
+            background: rgba(255, 255, 255, 0.2);
+            padding: 0.5rem 1.5rem;
+            border-radius: 30px;
+            backdrop-filter: blur(5px);
+        }
+        
+        .cta-icon {
+            font-size: 2.5rem;
+            transition: transform 0.3s ease;
+            filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
+        }
+        
+        .main-cta-button:hover .cta-icon {
+            transform: scale(1.3) rotate(10deg);
+        }
+        
+        .secondary-cta-button {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+            background: linear-gradient(135deg, #0088cc, #006699);
+            color: white;
+            font-weight: 600;
+            font-size: 1.3rem;
+            padding: 1.5rem 3.5rem;
+            border-radius: 15px;
+            text-decoration: none;
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 6px 0 #005580, 0 12px 25px rgba(0, 136, 204, 0.4);
+            transition: all 0.3s ease;
+            position: relative;
+            top: 0;
+            min-width: 300px;
+            font-family: 'Montserrat', sans-serif;
+        }
+        
+        .secondary-cta-button:hover {
+            top: -3px;
+            box-shadow: 0 8px 0 #005580, 0 15px 30px rgba(0, 136, 204, 0.6);
+            background: linear-gradient(135deg, #006699, #0088cc);
+            transform: scale(1.05);
+        }
+
+        /* ===== SECCIÓN COMPARTIR (más profesional y al final) ===== */
+        .professional-share-section {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 15px;
+            padding: 2rem;
+            margin: 3rem 0;
+            text-align: center;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .share-section-title {
+            color: #40e0d0;
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+            font-family: 'Poppins', sans-serif;
+        }
+        
+        .share-section-subtitle {
+            color: #b0e0e6;
+            font-size: 1rem;
+            margin-bottom: 2rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .professional-share-buttons {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin: 1.5rem 0;
+        }
+        
+        .professional-share-button {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            padding: 0.8rem 1.8rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: all 0.3s ease;
+            min-width: 180px;
+            font-family: 'Montserrat', sans-serif;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(10px);
+        }
+        
+        .professional-share-button.whatsapp {
+            background: rgba(37, 211, 102, 0.1);
+            color: #25D366;
+            border-color: rgba(37, 211, 102, 0.3);
+        }
+        
+        .professional-share-button.direct {
+            background: rgba(0, 136, 204, 0.1);
+            color: #0088cc;
+            border-color: rgba(0, 136, 204, 0.3);
+        }
+        
+        .professional-share-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+        }
+        
+        .professional-share-button.whatsapp:hover {
+            background: rgba(37, 211, 102, 0.2);
+            border-color: #25D366;
+        }
+        
+        .professional-share-button.direct:hover {
+            background: rgba(0, 136, 204, 0.2);
+            border-color: #0088cc;
+        }
+        
+        .professional-share-icon {
+            font-size: 1.2rem;
+        }
+
+        /* ===== BOTONES FINALES ===== */
+        .final-actions {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+            margin: 4rem 0 3rem 0;
+            align-items: center;
+        }
+        
+        .whatsapp-help-button {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+            background: linear-gradient(135deg, #25D366, #128C7E);
+            color: white;
+            font-weight: 600;
+            font-size: 1.3rem;
+            padding: 1.3rem 3.5rem;
+            border-radius: 12px;
+            text-decoration: none;
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 6px 0 #1DA851, 0 12px 25px rgba(37, 211, 102, 0.4);
+            transition: all 0.3s ease;
+            position: relative;
+            top: 0;
+            min-width: 350px;
+            font-family: 'Montserrat', sans-serif;
+        }
+        
+        .whatsapp-help-button:hover {
+            top: -3px;
+            box-shadow: 0 8px 0 #1DA851, 0 15px 30px rgba(37, 211, 102, 0.6);
+            background: linear-gradient(135deg, #128C7E, #25D366);
+            transform: scale(1.05);
+        }
+        
+        .whatsapp-help-button:active {
+            top: 0;
+            box-shadow: 0 4px 0 #1DA851, 0 8px 20px rgba(37, 211, 102, 0.4);
+        }
+        
+        .whatsapp-icon {
+            font-size: 1.8rem;
+            transition: transform 0.3s ease;
+        }
+        
+        .whatsapp-help-button:hover .whatsapp-icon {
+            transform: scale(1.2) rotate(5deg);
+        }
+        
+        .button-subtitle {
+            font-size: 0.9rem;
+            opacity: 0.9;
+            margin-top: 5px;
+            font-weight: 400;
+        }
+
         /* ===== SECCIONES GENERALES ===== */
         .section {
             background: rgba(255, 255, 255, 0.05);
@@ -192,12 +489,6 @@
             -webkit-text-fill-color: transparent;
             background-size: 200% 200%;
             animation: gradientText 3s ease infinite;
-        }
-        
-        @keyframes gradientText {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
         }
         
         @keyframes glow {
@@ -359,7 +650,7 @@
             color: #FFD700;
             margin: 1.5rem 0;
             text-shadow: 0 0 30px rgba(255, 215, 0, 0.8);
-            animation: countPulse 1.5s ease-in-out infinite, float 3s ease-in-out infinite, moneyGlow 2s ease-in-out infinite;
+            animation: countPulse 1.5s ease-in-out infinite, float 3s ease-in-out infinite;
             font-family: 'Poppins', sans-serif;
             background: linear-gradient(45deg, #FFD700, #FF8E53, #FFD700);
             -webkit-background-clip: text;
@@ -371,18 +662,6 @@
         @keyframes countPulse {
             0%, 100% { transform: scale(1); }
             50% { transform: scale(1.25); }
-        }
-        
-        @keyframes moneyGlow {
-            0%, 100% { 
-                text-shadow: 0 0 20px rgba(255, 215, 0, 0.7),
-                            0 0 40px rgba(255, 215, 0, 0.5);
-            }
-            50% { 
-                text-shadow: 0 0 30px rgba(255, 215, 0, 1),
-                            0 0 60px rgba(255, 215, 0, 0.7),
-                            0 0 80px rgba(255, 215, 0, 0.3);
-            }
         }
         
         @keyframes float {
@@ -409,176 +688,6 @@
             to {
                 opacity: 1;
             }
-        }
-
-        /* ===== SECCIÓN COMPARTIR ===== */
-        .share-section {
-            background: linear-gradient(135deg, rgba(255, 215, 0, 0.1), rgba(64, 224, 208, 0.1));
-            border-left: 6px solid #25D366;
-            text-align: center;
-            margin: 3rem 0;
-            padding: 3rem 2rem;
-            border-radius: 20px;
-        }
-        
-        .share-title {
-            color: #FFD700;
-            font-size: 2rem;
-            margin-bottom: 1.5rem;
-            font-family: 'Poppins', sans-serif;
-            text-shadow: 0 0 15px rgba(255, 215, 0, 0.3);
-        }
-        
-        .share-subtitle {
-            font-size: 1.2rem;
-            color: #b0e0e6;
-            margin-bottom: 2.5rem;
-            max-width: 800px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-        
-        .share-buttons {
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 2rem;
-            margin: 2rem 0;
-        }
-        
-        .share-button {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            gap: 15px;
-            padding: 1.2rem 3rem;
-            border-radius: 12px;
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 1.1rem;
-            transition: all 0.3s ease;
-            min-width: 250px;
-            box-shadow: 0 6px 0 rgba(0, 0, 0, 0.2);
-            position: relative;
-            top: 0;
-            font-family: 'Montserrat', sans-serif;
-        }
-        
-        .share-button.whatsapp {
-            background: linear-gradient(135deg, #25D366, #128C7E);
-            color: white;
-        }
-        
-        .share-button.direct {
-            background: linear-gradient(135deg, #0088cc, #006699);
-            color: white;
-        }
-        
-        .share-button:hover {
-            top: -5px;
-            box-shadow: 0 12px 0 rgba(0, 0, 0, 0.2);
-            transform: scale(1.05);
-        }
-        
-        .share-button:active {
-            top: 0;
-            box-shadow: 0 4px 0 rgba(0, 0, 0, 0.2);
-        }
-        
-        .share-icon {
-            font-size: 1.8rem;
-        }
-
-        /* ===== BOTONES FINALES ===== */
-        .final-actions {
-            display: flex;
-            flex-direction: column;
-            gap: 2.5rem;
-            margin: 4rem 0 3rem 0;
-            align-items: center;
-        }
-        
-        .main-action-button {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            gap: 15px;
-            background: linear-gradient(135deg, #FF6B6B, #FF8E53, #FFD700);
-            color: white;
-            font-weight: 700;
-            font-size: 1.4rem;
-            padding: 1.5rem 4rem;
-            border-radius: 15px;
-            text-decoration: none;
-            border: none;
-            cursor: pointer;
-            box-shadow: 0 8px 0 #CC5555, 0 15px 35px rgba(255, 107, 107, 0.5);
-            transition: all 0.3s ease;
-            position: relative;
-            top: 0;
-            min-width: 350px;
-            text-align: center;
-            font-family: 'Poppins', sans-serif;
-            letter-spacing: 0.5px;
-        }
-        
-        .main-action-button:hover {
-            top: -5px;
-            box-shadow: 0 12px 0 #CC5555, 0 20px 40px rgba(255, 107, 107, 0.7);
-            background: linear-gradient(135deg, #FF8E53, #FFD700, #FF6B6B);
-            transform: scale(1.05);
-            letter-spacing: 1px;
-        }
-        
-        .main-action-button:active {
-            top: 0;
-            box-shadow: 0 6px 0 #CC5555, 0 10px 25px rgba(255, 107, 107, 0.4);
-        }
-        
-        .whatsapp-button {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            gap: 15px;
-            background: linear-gradient(135deg, #25D366, #128C7E);
-            color: white;
-            font-weight: 600;
-            font-size: 1.3rem;
-            padding: 1.3rem 3.5rem;
-            border-radius: 12px;
-            text-decoration: none;
-            border: none;
-            cursor: pointer;
-            box-shadow: 0 6px 0 #1DA851, 0 12px 25px rgba(37, 211, 102, 0.4);
-            transition: all 0.3s ease;
-            position: relative;
-            top: 0;
-            min-width: 350px;
-            font-family: 'Montserrat', sans-serif;
-        }
-        
-        .whatsapp-button:hover {
-            top: -3px;
-            box-shadow: 0 8px 0 #1DA851, 0 15px 30px rgba(37, 211, 102, 0.6);
-            background: linear-gradient(135deg, #128C7E, #25D366);
-            transform: scale(1.05);
-        }
-        
-        .button-icon {
-            font-size: 1.8rem;
-            transition: transform 0.3s ease;
-        }
-        
-        .main-action-button:hover .button-icon,
-        .whatsapp-button:hover .button-icon {
-            transform: scale(1.2) rotate(5deg);
-        }
-        
-        .button-subtitle {
-            font-size: 0.9rem;
-            opacity: 0.9;
-            margin-top: 5px;
-            font-weight: 400;
         }
 
         /* ===== CONTENEDORES DE VIDEO ===== */
@@ -1253,34 +1362,44 @@
                 font-size: 1.5rem;
                 padding: 0 5px;
             }
-            .cta-title { 
-                font-size: 1.7rem; 
-                padding: 0 10px;
+            
+            .primary-cta-title {
+                font-size: 2.2rem;
             }
-            .cta-subtitle {
+            
+            .primary-cta-subtitle {
                 font-size: 1.1rem;
                 padding: 0 5px;
             }
             
-            .final-actions {
-                gap: 2rem;
+            .cta-buttons-container {
+                flex-direction: column;
+                align-items: center;
             }
             
-            .main-action-button, .whatsapp-button {
+            .main-cta-button, .secondary-cta-button, .whatsapp-help-button {
                 padding: 1.2rem 2rem;
                 font-size: 1.1rem;
                 min-width: 100%;
                 max-width: 100%;
             }
             
-            .share-buttons {
+            .main-cta-button .button-main-text {
+                font-size: 1.8rem;
+            }
+            
+            .main-cta-button .button-sub-text {
+                font-size: 1rem;
+            }
+            
+            .professional-share-buttons {
                 flex-direction: column;
                 align-items: center;
             }
             
-            .share-button {
+            .professional-share-button {
                 width: 100%;
-                max-width: 300px;
+                max-width: 250px;
             }
             
             .features-grid { 
@@ -1375,13 +1494,18 @@
                 font-size: 2.2rem;
             }
             
-            .main-action-button, .whatsapp-button {
-                font-size: 1.1rem;
-                padding: 1.1rem 1.8rem;
+            .primary-cta-title {
+                font-size: 1.8rem;
             }
             
-            .share-title {
-                font-size: 1.6rem;
+            .main-cta-button, .secondary-cta-button, .whatsapp-help-button {
+                font-size: 1rem;
+                padding: 1rem 1.5rem;
+            }
+            
+            .professional-share-button {
+                font-size: 0.9rem;
+                padding: 0.7rem 1.5rem;
             }
         }
     </style>
@@ -1399,6 +1523,26 @@
                 </p>
             </div>
         </header>
+
+        <!-- NUEVA SECCIÓN PRINCIPAL DE LLAMADO A LA ACCIÓN -->
+        <section class="primary-cta-section">
+            <h2 class="primary-cta-title">Comenzar Ahora</h2>
+            <p class="primary-cta-subtitle">Prueba totalmente GRATIS durante 7 días. Sin tarjeta de crédito, sin riesgo, sin compromiso.</p>
+            
+            <div class="cta-buttons-container">
+                <a href="https://aiviraldownline.com/lc.php?id=Jobshndez" 
+                   class="main-cta-button" 
+                   target="_blank">
+                    <span class="cta-icon">🚀</span>
+                    <div class="button-main-text">¡Gratis por 7 Días!</div>
+                    <div class="button-sub-text">Clic para activar prueba gratuita</div>
+                </a>
+            </div>
+            
+            <p style="color: #98fb98; margin-top: 1.5rem; font-size: 1rem;">
+                ⚡ Acceso inmediato • 🔒 Sin tarjeta de crédito • 📱 Compatible con todos los dispositivos
+            </p>
+        </section>
 
         <!-- Primer video (Intro de Emily) -->
         <section class="section">
@@ -1631,7 +1775,7 @@
                     
                     <div class="important-note">
                         <h4>📋 Procedimiento correcto:</h4>
-                        <p>1. <strong>Haz clic en "Posicionarme Ahora"</strong> para comenzar tu prueba gratuita<br>
+                        <p>1. <strong>Haz clic en "¡Gratis por 7 Días!"</strong> para comenzar tu prueba gratuita<br>
                            2. <strong>Completa el formulario de registro</strong> con tus datos<br>
                            3. <strong>Sigue las instrucciones</strong> para activar tu cuenta correctamente<br>
                            4. <strong>Únete a nuestra comunidad</strong> para soporte adicional</p>
@@ -1650,7 +1794,17 @@
                 </div>
             </section>
             
-            <!-- Botón de Telegram después de la nueva información -->
+            <!-- Botón NUEVO antes del botón de Telegram -->
+            <div class="cta-buttons-container" style="margin: 2rem 0;">
+                <a href="https://t.me/+EnM9LTD6JlgzMjcx" 
+                   class="secondary-cta-button" 
+                   target="_blank">
+                    <span class="cta-icon">📱</span>
+                    Únete a nuestro equipo de Telegram
+                </a>
+            </div>
+            
+            <!-- Botón de Telegram original (mantenido) -->
             <a href="https://t.me/+EnM9LTD6JlgzMjcx" 
                class="telegram-button" target="_blank">
                 📱 Únete a nuestro Grupo de Telegram
@@ -1660,44 +1814,42 @@
             <p><small>Consulta en nuestro grupo de Telegram para detalles adicionales</small></p>
         </section>
 
-        <!-- SECCIÓN COMPARTIR -->
-        <section class="share-section">
-            <h2 class="share-title">Gana $25 por cada suscripción al compartir esta herramienta</h2>
-            <p class="share-subtitle">Comparte AI Viral Downline con amigos y familiares. Por cada persona que se registre usando tu enlace, puedes ganar $25 de comisión.</p>
+        <!-- SECCIÓN COMPARTIR (más profesional y al final) -->
+        <section class="professional-share-section">
+            <h3 class="share-section-title">Gana $25 por cada suscripción al compartir esta herramienta</h3>
+            <p class="share-section-subtitle">Comparte AI Viral Downline con amigos y familiares. Por cada persona que se registre usando tu enlace, puedes ganar $25 de comisión.</p>
             
-            <div class="share-buttons">
+            <div class="professional-share-buttons">
                 <a href="https://wa.me/?text=¡Descubre AI Viral Downline! Gana $25 por cada suscripción. Regístrate en https://www.aiviraljobs.com" 
-                   class="share-button whatsapp" 
+                   class="professional-share-button whatsapp" 
                    target="_blank">
-                    <span class="share-icon">📱</span> Compartir por WhatsApp
+                    <span class="professional-share-icon">📱</span> Compartir por WhatsApp
                 </a>
                 
                 <a href="sms:?body=¡Descubre AI Viral Downline! Gana $25 por cada suscripción. Regístrate en https://www.aiviraljobs.com" 
-                   class="share-button direct" 
+                   class="professional-share-button direct" 
                    target="_blank">
-                    <span class="share-icon">💬</span> Compartir por Mensaje
+                    <span class="professional-share-icon">💬</span> Compartir por Mensaje
                 </a>
             </div>
         </section>
 
         <!-- BOTONES FINALES (al final de la página) -->
         <div class="final-actions">
-            <!-- Botón Principal "Posicionarme Ahora" -->
+            <!-- Botón "¡Gratis por 7 Días!" (repetido para énfasis) -->
             <a href="https://aiviraldownline.com/lc.php?id=Jobshndez" 
-               class="main-action-button" 
+               class="main-cta-button" 
                target="_blank">
-                <span class="button-icon">🚀</span>
-                <div>
-                    <div>Posicionarme Ahora</div>
-                    <div class="button-subtitle">Prueba GRATIS por 7 días sin riesgo, sin poner la tarjeta</div>
-                </div>
+                <span class="cta-icon">🚀</span>
+                <div class="button-main-text">¡Gratis por 7 Días!</div>
+                <div class="button-sub-text">Clic para activar prueba gratuita</div>
             </a>
             
             <!-- Botón de WhatsApp -->
             <a href="https://wa.me/+13232850508?text=Hola Jobshndez, necesito ayuda con AI Viral Downline para comenzar ahora mismo" 
-               class="whatsapp-button" 
+               class="whatsapp-help-button" 
                target="_blank">
-                <span class="button-icon">💬</span>
+                <span class="whatsapp-icon">💬</span>
                 <div>
                     <div>Contactar por WhatsApp</div>
                     <div class="button-subtitle">Soporte personalizado con Jobshndez</div>
@@ -1754,7 +1906,7 @@
             </button>
         </div>
         <div class="cta-buttons" id="ctaButtons" style="display: none;">
-            <a href="https://aiviraldownline.com/lc.php?id=Jobshndez" class="cta-button" target="_blank">Posicionarme Ahora</a>
+            <a href="https://aiviraldownline.com/lc.php?id=Jobshndez" class="cta-button" target="_blank">¡Gratis por 7 Días!</a>
             <a href="https://t.me/+EnM9LTD6JlgzMjcx" class="cta-button" style="background: linear-gradient(90deg, #0088cc, #006699);" target="_blank">Únete a Telegram</a>
         </div>
     </div>
@@ -1773,53 +1925,53 @@
         // Base de conocimiento COMPLETA del chatbot con FAQ
         const knowledgeBase = {
             // Información General
-            "qué es ai viral downline": "🤖 **AI Viral Downline** es una plataforma de automatización con inteligencia artificial diseñada para ayudar a personas a promocionar oportunidades digitales, atraer prospectos y generar ingresos residuales en línea, incluso sin experiencia previa.\n\n**Para comenzar:** Haz clic en **'Posicionarme Ahora'** para tu prueba gratuita de 7 días.",
+            "qué es ai viral downline": "🤖 **AI Viral Downline** es una plataforma de automatización con inteligencia artificial diseñada para ayudar a personas a promocionar oportunidades digitales, atraer prospectos y generar ingresos residuales en línea, incluso sin experiencia previa.\n\n**Para comenzar:** Haz clic en **'¡Gratis por 7 Días!'** para tu prueba gratuita.",
             
-            "quienes son los creadores": "👥 **Los creadores de AI Viral Downline son:**\n• **Jeremy Duncan**\n• **Kenneth Wasiewicz**\n\nAmbos tienen amplia experiencia en marketing digital y automatización.\n\n**Para comenzar:** Haz clic en **'Posicionarme Ahora'**.",
+            "quienes son los creadores": "👥 **Los creadores de AI Viral Downline son:**\n• **Jeremy Duncan**\n• **Kenneth Wasiewicz**\n\nAmbos tienen amplia experiencia en marketing digital y automatización.\n\n**Para comenzar:** Haz clic en **'¡Gratis por 7 Días!'**.",
             
-            "dónde está registrada la empresa": "📍 **La empresa está registrada en:**\nAI Viral Downline LLC\n7261 Tamarack RD\nPlymouth IN 46563\nEstados Unidos\n\n**Para comenzar:** Haz clic en **'Posicionarme Ahora'** para tu prueba gratuita.",
+            "dónde está registrada la empresa": "📍 **La empresa está registrada en:**\nAI Viral Downline LLC\n7261 Tamarack RD\nPlymouth IN 46563\nEstados Unidos\n\n**Para comenzar:** Haz clic en **'¡Gratis por 7 Días!'** para tu prueba gratuita.",
             
             // Bono y Referidos
-            "cuánto gano por cada referencia directa": "💰 **Por cada referencia directa ganas:**\n• **$25** como Bono de Inicio Rápido por persona\n• Ejemplo: 10 personas = **$250**\n• En 5 días podrías generar más de **$1,000** a la semana\n\n**Para comenzar a ganar:** Haz clic en **'Posicionarme Ahora'**.",
+            "cuánto gano por cada referencia directa": "💰 **Por cada referencia directa ganas:**\n• **$25** como Bono de Inicio Rápido por persona\n• Ejemplo: 10 personas = **$250**\n• En 5 días podrías generar más de **$1,000** a la semana\n\n**Para comenzar a ganar:** Haz clic en **'¡Gratis por 7 Días!'**.",
             
-            "puedo ganar dinero con la cuenta gratuita": "✅ **Sí, puedes ganar con la cuenta gratuita**, pero las mayores ganancias y bonos se obtienen al activar los planes de pago y participar completamente en el sistema.\n\n**Para maximizar ganancias:** Haz clic en **'Posicionarme Ahora'** para tu prueba gratuita.",
+            "puedo ganar dinero con la cuenta gratuita": "✅ **Sí, puedes ganar con la cuenta gratuita**, pero las mayores ganancias y bonos se obtienen al activar los planes de pago y participar completamente en el sistema.\n\n**Para maximizar ganancias:** Haz clic en **'¡Gratis por 7 Días!'** para tu prueba gratuita.",
             
             // Pagos y Retiro
-            "cómo recibo mis pagos": "💳 **Métodos de pago disponibles:**\nDentro de tu oficina virtual podrás configurar:\n• Tarjeta de crédito/débito\n• Cuenta bancaria\n• Criptomonedas\n\n**Para comenzar:** Haz clic en **'Posicionarme Ahora'**.",
+            "cómo recibo mis pagos": "💳 **Métodos de pago disponibles:**\nDentro de tu oficina virtual podrás configurar:\n• Tarjeta de crédito/débito\n• Cuenta bancaria\n• Criptomonedas\n\n**Para comenzar:** Haz clic en **'¡Gratis por 7 Días!'**.",
             
-            "cuál es el monto mínimo de retiro": "💰 **Mínimo de retiro:** **$50**\nUna vez alcanzado ese monto, podrás solicitar tu pago sin problema.\n\n**Para comenzar a generar:** Haz clic en **'Posicionarme Ahora'**.",
+            "cuál es el monto mínimo de retiro": "💰 **Mínimo de retiro:** **$50**\nUna vez alcanzado ese monto, podrás solicitar tu pago sin problema.\n\n**Para comenzar a generar:** Haz clic en **'¡Gratis por 7 Días!'**.",
             
-            "el pago mensual es automático": "🔄 **Sí, el pago mensual es automático:**\n• Sistema realiza cargo automático de **$28** desde tus ganancias\n• Si no hay fondos suficientes, puedes pagar manualmente\n• Evita suspensión de cuenta manteniendo pago activo\n\n**Para comenzar:** Haz clic en **'Posicionarme Ahora'**.",
+            "el pago mensual es automático": "🔄 **Sí, el pago mensual es automático:**\n• Sistema realiza cargo automático de **$28** desde tus ganancias\n• Si no hay fondos suficientes, puedes pagar manualmente\n• Evita suspensión de cuenta manteniendo pago activo\n\n**Para comenzar:** Haz clic en **'¡Gratis por 7 Días!'**.",
             
             // Plan de Compensación
-            "cómo funciona el plan de compensación": "📊 **Matriz 3x8 - Plan de Compensación:**\n• **Nivel 1:** $10 por miembro (3 miembros = $30/mes)\n• **Niveles 2-7:** $2 por miembro/mes (sin referidos propios)\n• **Nivel 8:** $3 por miembro (requiere 3 referencias directas)\n• **Total posible:** Hasta $26,265/mes\n\n**Para comenzar:** Haz clic en **'Posicionarme Ahora'**.",
+            "cómo funciona el plan de compensación": "📊 **Matriz 3x8 - Plan de Compensación:**\n• **Nivel 1:** $10 por miembro (3 miembros = $30/mes)\n• **Niveles 2-7:** $2 por miembro/mes (sin referidos propios)\n• **Nivel 8:** $3 por miembro (requiere 3 referencias directas)\n• **Total posible:** Hasta $26,265/mes\n\n**Para comenzar:** Haz clic en **'¡Gratis por 7 Días!'**.",
             
-            "matriz 3x8": "📈 **Matriz 3x8 explicada:**\nComo miembro gratuito ya tienes posición, pero al actualizar desbloqueas toda la estructura e ingresos durante tu prueba de 7 días.\n\nCon solo 3 miembros en Nivel 1, tu membresía queda cubierta.\n\n**Para activar matriz:** Haz clic en **'Posicionarme Ahora'**.",
+            "matriz 3x8": "📈 **Matriz 3x8 explicada:**\nComo miembro gratuito ya tienes posición, pero al actualizar desbloqueas toda la estructura e ingresos durante tu prueba de 7 días.\n\nCon solo 3 miembros en Nivel 1, tu membresía queda cubierta.\n\n**Para activar matriz:** Haz clic en **'¡Gratis por 7 Días!'**.",
             
             // Información General del FAQ
-            "cuánto cuesta": "🎯 **Prueba GRATIS por 7 días** sin riesgo y sin tarjeta de crédito.\n\nDespués del período de prueba, la suscripción es de **$28 al mes**.\n\n**Para comenzar:** Haz clic en **'Posicionarme Ahora'** para tu prueba gratuita.",
+            "cuánto cuesta": "🎯 **Prueba GRATIS por 7 días** sin riesgo y sin tarjeta de crédito.\n\nDespués del período de prueba, la suscripción es de **$28 al mes**.\n\n**Para comenzar:** Haz clic en **'¡Gratis por 7 Días!'** para tu prueba gratuita.",
             
-            "28": "✅ **$28 al mes** después de tu prueba gratuita de 7 días.\n\n**Para comenzar:**\n1. **Haz clic en 'Posicionarme Ahora'** para tu prueba gratuita\n2. **Completa el formulario de registro**\n3. **Disfruta de 7 días gratuitos** sin compromiso",
+            "28": "✅ **$28 al mes** después de tu prueba gratuita de 7 días.\n\n**Para comenzar:**\n1. **Haz clic en '¡Gratis por 7 Días!'** para tu prueba gratuita\n2. **Completa el formulario de registro**\n3. **Disfruta de 7 días gratuitos** sin compromiso",
             
-            "cómo empiezo": "🚀 **Para comenzar tu prueba gratuita:**\n1. **Haz clic en 'Posicionarme Ahora'**\n2. **Completa el formulario de registro**\n3. **Disfruta de 7 días gratuitos**\n4. **Explora todas las funcionalidades**\n\n**📺 Tutorial disponible:** Mira el video tutorial en la página.",
+            "cómo empiezo": "🚀 **Para comenzar tu prueba gratuita:**\n1. **Haz clic en '¡Gratis por 7 Días!'**\n2. **Completa el formulario de registro**\n3. **Disfruta de 7 días gratuitos**\n4. **Explora todas las funcionalidades**\n\n**📺 Tutorial disponible:** Mira el video tutorial en la página.",
             
-            "registro": "🎯 **Proceso de registro para prueba gratuita:**\n1. **Haz clic en 'Posicionarme Ahora'**\n2. **Completa el formulario** con tus datos\n3. **Confirma tu correo electrónico**\n4. **Accede a tu cuenta** y comienza\n\n**⚠️ Importante:** No necesitas tarjeta de crédito para la prueba gratuita.",
+            "registro": "🎯 **Proceso de registro para prueba gratuita:**\n1. **Haz clic en '¡Gratis por 7 Días!'**\n2. **Completa el formulario** con tus datos\n3. **Confirma tu correo electrónico**\n4. **Accede a tu cuenta** y comienza\n\n**⚠️ Importante:** No necesitas tarjeta de crédito para la prueba gratuita.",
             
-            "tutorial": "📽️ **Tutorial disponible en esta página:**\nEncuentras un **tutorial completo paso a paso** que explica:\n• Cómo funciona el sistema\n• Proceso de registro correcto\n• Activación de cuenta\n• Primeros pasos\n\n**Para comenzar:** Haz clic en **'Posicionarme Ahora'**.",
+            "tutorial": "📽️ **Tutorial disponible en esta página:**\nEncuentras un **tutorial completo paso a paso** que explica:\n• Cómo funciona el sistema\n• Proceso de registro correcto\n• Activación de cuenta\n• Primeros pasos\n\n**Para comenzar:** Haz clic en **'¡Gratis por 7 Días!'**.",
             
-            "automatizar": "🔄 **Sistema de automatización:**\nAI Viral Downline se encarga de:\n• Atender prospectos 24/7\n• Explicar el sistema automáticamente\n• Guiar el proceso de registro\n• Generar ingresos residuales\n\n**Para activar:** Haz clic en **'Posicionarme Ahora'**.",
+            "automatizar": "🔄 **Sistema de automatización:**\nAI Viral Downline se encarga de:\n• Atender prospectos 24/7\n• Explicar el sistema automáticamente\n• Guiar el proceso de registro\n• Generar ingresos residuales\n\n**Para activar:** Haz clic en **'¡Gratis por 7 Días!'**.",
             
-            "ganar": "💰 **Potencial de ingresos:**\n• **$25 por referencia directa**\n• Comisiones de matriz 3x8 ($6,582/mes niveles 1-7)\n• Hasta $26,265/mes con matriz completa\n• Spillover automático (ingresos pasivos)\n\n**💡 Para activar:** Haz clic en **'Posicionarme Ahora'**.",
+            "ganar": "💰 **Potencial de ingresos:**\n• **$25 por referencia directa**\n• Comisiones de matriz 3x8 ($6,582/mes niveles 1-7)\n• Hasta $26,265/mes con matriz completa\n• Spillover automático (ingresos pasivos)\n\n**💡 Para activar:** Haz clic en **'¡Gratis por 7 Días!'**.",
             
-            "contacto": "📞 **Para información y soporte:**\n• **WhatsApp:** +13232850508 (Jobshndez)\n• **Email:** jobshndez@gmail.com\n• **Telegram:** https://t.me/+EnM9LTD6JlgzMjcx\n\n**Para comenzar:** Haz clic en **'Posicionarme Ahora'**.",
+            "contacto": "📞 **Para información y soporte:**\n• **WhatsApp:** +13232850508 (Jobshndez)\n• **Email:** jobshndez@gmail.com\n• **Telegram:** https://t.me/+EnM9LTD6JlgzMjcx\n\n**Para comenzar:** Haz clic en **'¡Gratis por 7 Días!'**.",
             
-            "hola": "¡Hola! 👋 Soy **Emily**, tu asistente de IA para aiviraljobs. Puedo responder tus preguntas sobre AI Viral Downline.\n\n**Preguntas frecuentes:**\n• ¿Qué es AI Viral Downline?\n• ¿Cuánto gano por referencia?\n• ¿Cómo funciona la matriz 3x8?\n• ¿Cuánto cuesta?\n\n**Para comenzar:** Haz clic en **'Posicionarme Ahora'** para tu prueba gratuita de 7 días.",
+            "hola": "¡Hola! 👋 Soy **Emily**, tu asistente de IA para aiviraljobs. Puedo responder tus preguntas sobre AI Viral Downline.\n\n**Preguntas frecuentes:**\n• ¿Qué es AI Viral Downline?\n• ¿Cuánto gano por referencia?\n• ¿Cómo funciona la matriz 3x8?\n• ¿Cuánto cuesta?\n\n**Para comenzar:** Haz clic en **'¡Gratis por 7 Días!'** para tu prueba gratuita de 7 días.",
             
-            "gracias": "¡De nada! 😊 Estoy aquí para ayudarte. **Recuerda:** Haz clic en **'Posicionarme Ahora'** para comenzar tu prueba gratuita de 7 días.",
+            "gracias": "¡De nada! 😊 Estoy aquí para ayudarte. **Recuerda:** Haz clic en **'¡Gratis por 7 Días!'** para comenzar tu prueba gratuita de 7 días.",
             
-            "adiós": "¡Hasta luego! 👋 Recuerda hacer clic en **'Posicionarme Ahora'** para tu prueba gratuita.",
+            "adiós": "¡Hasta luego! 👋 Recuerda hacer clic en **'¡Gratis por 7 Días!'** para tu prueba gratuita.",
             
-            "default": "🤔 No tengo información específica sobre esa pregunta.\n\n**💡 Te recomiendo:**\n1. **Únete a nuestro grupo de Telegram** para preguntas específicas\n2. **Mira el tutorial completo** en esta página\n3. **Contacta a Jobshndez por WhatsApp** para soporte personalizado\n\n**Para comenzar:** Haz clic en **'Posicionarme Ahora'** para tu prueba gratuita."
+            "default": "🤔 No tengo información específica sobre esa pregunta.\n\n**💡 Te recomiendo:**\n1. **Únete a nuestro grupo de Telegram** para preguntas específicas\n2. **Mira el tutorial completo** en esta página\n3. **Contacta a Jobshndez por WhatsApp** para soporte personalizado\n\n**Para comenzar:** Haz clic en **'¡Gratis por 7 Días!'** para tu prueba gratuita."
         };
 
         // Estado inicial
@@ -1937,7 +2089,7 @@
                         ctaButtons.innerHTML = '<a href="https://t.me/+EnM9LTD6JlgzMjcx" class="cta-button" style="background: linear-gradient(90deg, #0088cc, #006699);" target="_blank">Únete a Telegram para más ayuda</a>';
                         ctaButtons.style.display = 'flex';
                     } else if (showCTAButtons && found) {
-                        ctaButtons.innerHTML = '<a href="https://aiviraldownline.com/lc.php?id=Jobshndez" class="cta-button" target="_blank">Posicionarme Ahora</a>';
+                        ctaButtons.innerHTML = '<a href="https://aiviraldownline.com/lc.php?id=Jobshndez" class="cta-button" target="_blank">¡Gratis por 7 Días!</a>';
                         ctaButtons.style.display = 'flex';
                     } else {
                         ctaButtons.style.display = 'none';
