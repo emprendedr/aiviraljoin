@@ -128,13 +128,14 @@
             font-weight: 600;
         }
 
-        /* ===== NUEVA SECCIÓN: IMAGINA GENERAR INGRESOS ===== */
+        /* ===== NUEVA SECCIÓN: IMAGINA GENERAR INGRESOS ACTUALIZADA ===== */
         .imagine-section {
-            background: linear-gradient(135deg, rgba(255, 107, 107, 0.1), rgba(255, 193, 7, 0.1));
-            border-left: 6px solid #FF6B6B;
+            background: linear-gradient(135deg, rgba(255, 107, 107, 0.2), rgba(255, 193, 7, 0.2), rgba(64, 224, 208, 0.15));
+            border-left: 6px solid #FFD700;
             text-align: center;
             position: relative;
             overflow: hidden;
+            border-radius: 20px;
         }
         
         .imagine-section::before {
@@ -144,36 +145,91 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: radial-gradient(circle at 30% 50%, rgba(255, 107, 107, 0.1) 0%, transparent 70%),
-                        radial-gradient(circle at 70% 20%, rgba(255, 193, 7, 0.1) 0%, transparent 70%);
+            background: 
+                radial-gradient(circle at 20% 30%, rgba(255, 215, 0, 0.25) 0%, transparent 50%),
+                radial-gradient(circle at 80% 70%, rgba(255, 107, 107, 0.2) 0%, transparent 50%),
+                radial-gradient(circle at 40% 80%, rgba(64, 224, 208, 0.15) 0%, transparent 50%);
             z-index: 0;
+            animation: gradientShift 8s ease-in-out infinite alternate;
+        }
+        
+        @keyframes gradientShift {
+            0% { 
+                background: 
+                    radial-gradient(circle at 20% 30%, rgba(255, 215, 0, 0.25) 0%, transparent 50%),
+                    radial-gradient(circle at 80% 70%, rgba(255, 107, 107, 0.2) 0%, transparent 50%),
+                    radial-gradient(circle at 40% 80%, rgba(64, 224, 208, 0.15) 0%, transparent 50%);
+            }
+            50% { 
+                background: 
+                    radial-gradient(circle at 80% 30%, rgba(255, 107, 107, 0.25) 0%, transparent 50%),
+                    radial-gradient(circle at 20% 70%, rgba(255, 215, 0, 0.2) 0%, transparent 50%),
+                    radial-gradient(circle at 60% 20%, rgba(64, 224, 208, 0.15) 0%, transparent 50%);
+            }
+            100% { 
+                background: 
+                    radial-gradient(circle at 40% 50%, rgba(64, 224, 208, 0.25) 0%, transparent 50%),
+                    radial-gradient(circle at 60% 40%, rgba(255, 215, 0, 0.2) 0%, transparent 50%),
+                    radial-gradient(circle at 30% 90%, rgba(255, 107, 107, 0.15) 0%, transparent 50%);
+            }
         }
         
         .imagine-content {
             position: relative;
             z-index: 1;
+            padding: 2rem;
         }
         
         .imagine-title {
             color: #FFD700;
-            font-size: 2rem;
+            font-size: 2.2rem;
             margin-bottom: 2rem;
-            text-shadow: 0 0 15px rgba(255, 215, 0, 0.3);
-            animation: glow 2s ease-in-out infinite alternate;
+            text-shadow: 0 0 20px rgba(255, 215, 0, 0.5), 0 0 40px rgba(255, 215, 0, 0.3);
+            animation: glow 2s ease-in-out infinite alternate, floatTitle 6s ease-in-out infinite;
             font-family: 'Poppins', sans-serif;
+            background: linear-gradient(45deg, #FFD700, #FF8E53, #FFD700);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-size: 200% 200%;
+            animation: gradientText 3s ease infinite;
+        }
+        
+        @keyframes gradientText {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
         }
         
         @keyframes glow {
-            from { text-shadow: 0 0 10px rgba(255, 215, 0, 0.3); }
-            to { text-shadow: 0 0 20px rgba(255, 215, 0, 0.6), 0 0 30px rgba(255, 215, 0, 0.4); }
+            from { 
+                text-shadow: 0 0 10px rgba(255, 215, 0, 0.5), 
+                           0 0 20px rgba(255, 215, 0, 0.3),
+                           0 0 30px rgba(255, 215, 0, 0.2);
+            }
+            to { 
+                text-shadow: 0 0 20px rgba(255, 215, 0, 0.7), 
+                           0 0 30px rgba(255, 215, 0, 0.5),
+                           0 0 40px rgba(255, 215, 0, 0.3);
+            }
+        }
+        
+        @keyframes floatTitle {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
         }
         
         .imagine-question {
-            font-size: 1.4rem;
-            color: #FF8E53;
+            font-size: 1.5rem;
+            color: #FFD700;
             margin-bottom: 3rem;
             font-style: italic;
             animation: fadeInUp 1s ease-out;
+            text-shadow: 0 0 10px rgba(255, 215, 0, 0.3);
+            background: rgba(255, 255, 255, 0.1);
+            padding: 1rem 2rem;
+            border-radius: 15px;
+            display: inline-block;
+            border: 2px solid rgba(255, 215, 0, 0.3);
         }
         
         .images-container {
@@ -191,29 +247,42 @@
             border-radius: 15px;
             overflow: hidden;
             position: relative;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
             opacity: 0;
             transform: translateY(50px) scale(0.9) rotateX(10deg);
             transition: all 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
             cursor: pointer;
             border: 3px solid transparent;
-            background: linear-gradient(45deg, #FF6B6B, #FF8E53, #FFD700);
+            background: linear-gradient(45deg, #FF6B6B, #FF8E53, #FFD700, #40e0d0);
             background-size: 300% 300%;
-            animation: borderGlow 3s ease-in-out infinite alternate;
+            animation: borderGlow 4s ease-in-out infinite alternate;
         }
         
         @keyframes borderGlow {
             0% { 
                 border-color: #FF6B6B;
                 background-position: 0% 50%;
+                box-shadow: 0 15px 35px rgba(255, 107, 107, 0.4);
+            }
+            25% { 
+                border-color: #FF8E53;
+                background-position: 25% 50%;
+                box-shadow: 0 15px 35px rgba(255, 142, 83, 0.4);
             }
             50% { 
-                border-color: #FF8E53;
-                background-position: 100% 50%;
+                border-color: #FFD700;
+                background-position: 50% 50%;
+                box-shadow: 0 15px 35px rgba(255, 215, 0, 0.4);
+            }
+            75% { 
+                border-color: #40e0d0;
+                background-position: 75% 50%;
+                box-shadow: 0 15px 35px rgba(64, 224, 208, 0.4);
             }
             100% { 
-                border-color: #FFD700;
-                background-position: 0% 50%;
+                border-color: #FF6B6B;
+                background-position: 100% 50%;
+                box-shadow: 0 15px 35px rgba(255, 107, 107, 0.4);
             }
         }
         
@@ -227,17 +296,18 @@
             height: 100%;
             object-fit: cover;
             transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            filter: brightness(0.95);
+            filter: brightness(0.9) contrast(1.1);
         }
         
         .money-image:hover img {
             transform: scale(1.15);
-            filter: brightness(1.1) contrast(1.1);
+            filter: brightness(1.2) contrast(1.2) saturate(1.3);
         }
         
         .money-image:hover {
-            transform: translateY(-15px) scale(1.05) rotateY(5deg);
-            box-shadow: 0 20px 50px rgba(255, 107, 107, 0.7);
+            transform: translateY(-15px) scale(1.08) rotateY(5deg);
+            box-shadow: 0 25px 50px rgba(255, 107, 107, 0.7);
+            animation-play-state: paused;
         }
         
         .image-caption {
@@ -253,6 +323,7 @@
             text-align: center;
             font-size: 1.1rem;
             text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+            font-weight: bold;
         }
         
         .money-image:hover .image-caption {
@@ -260,43 +331,64 @@
         }
         
         .imagine-description {
-            color: #b0e0e6;
-            font-size: 1.1rem;
+            color: #ffffff;
+            font-size: 1.2rem;
             line-height: 1.6;
             max-width: 800px;
             margin: 2rem auto;
             padding: 1.5rem;
-            background: rgba(255, 255, 255, 0.05);
-            border-radius: 10px;
-            border-left: 4px solid #40e0d0;
+            background: rgba(255, 255, 255, 0.15);
+            border-radius: 15px;
+            border-left: 4px solid #FFD700;
             animation: fadeInUp 1s ease-out 0.5s both;
+            backdrop-filter: blur(5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
         }
         
         .imagine-highlight {
             color: #FFD700;
             font-weight: bold;
-            font-size: 1.2rem;
+            font-size: 1.3rem;
+            text-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
         }
         
-        /* Animación de conteo */
+        /* Animación de conteo mejorada */
         .count-animation {
-            font-size: 3.5rem;
+            font-size: 4rem;
             font-weight: bold;
             color: #FFD700;
-            margin: 1rem 0;
-            text-shadow: 0 0 20px rgba(255, 215, 0, 0.7);
-            animation: countPulse 1.5s ease-in-out infinite, float 3s ease-in-out infinite;
+            margin: 1.5rem 0;
+            text-shadow: 0 0 30px rgba(255, 215, 0, 0.8);
+            animation: countPulse 1.5s ease-in-out infinite, float 3s ease-in-out infinite, moneyGlow 2s ease-in-out infinite;
             font-family: 'Poppins', sans-serif;
+            background: linear-gradient(45deg, #FFD700, #FF8E53, #FFD700);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-size: 200% 200%;
+            animation: countPulse 1.5s ease-in-out infinite, float 3s ease-in-out infinite, gradientText 2s ease infinite;
         }
         
         @keyframes countPulse {
             0%, 100% { transform: scale(1); }
-            50% { transform: scale(1.15); }
+            50% { transform: scale(1.25); }
+        }
+        
+        @keyframes moneyGlow {
+            0%, 100% { 
+                text-shadow: 0 0 20px rgba(255, 215, 0, 0.7),
+                            0 0 40px rgba(255, 215, 0, 0.5);
+            }
+            50% { 
+                text-shadow: 0 0 30px rgba(255, 215, 0, 1),
+                            0 0 60px rgba(255, 215, 0, 0.7),
+                            0 0 80px rgba(255, 215, 0, 0.3);
+            }
         }
         
         @keyframes float {
-            0%, 100% { transform: translateY(0px); }
-            50% { transform: translateY(-10px); }
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            33% { transform: translateY(-15px) rotate(2deg); }
+            66% { transform: translateY(-8px) rotate(-2deg); }
         }
         
         @keyframes fadeInUp {
@@ -319,12 +411,90 @@
             }
         }
 
-        /* ===== BOTONES PRINCIPALES ===== */
-        .action-buttons-container {
+        /* ===== SECCIÓN COMPARTIR ===== */
+        .share-section {
+            background: linear-gradient(135deg, rgba(255, 215, 0, 0.1), rgba(64, 224, 208, 0.1));
+            border-left: 6px solid #25D366;
+            text-align: center;
+            margin: 3rem 0;
+            padding: 3rem 2rem;
+            border-radius: 20px;
+        }
+        
+        .share-title {
+            color: #FFD700;
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            font-family: 'Poppins', sans-serif;
+            text-shadow: 0 0 15px rgba(255, 215, 0, 0.3);
+        }
+        
+        .share-subtitle {
+            font-size: 1.2rem;
+            color: #b0e0e6;
+            margin-bottom: 2.5rem;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .share-buttons {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+        
+        .share-button {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+            padding: 1.2rem 3rem;
+            border-radius: 12px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            min-width: 250px;
+            box-shadow: 0 6px 0 rgba(0, 0, 0, 0.2);
+            position: relative;
+            top: 0;
+            font-family: 'Montserrat', sans-serif;
+        }
+        
+        .share-button.whatsapp {
+            background: linear-gradient(135deg, #25D366, #128C7E);
+            color: white;
+        }
+        
+        .share-button.direct {
+            background: linear-gradient(135deg, #0088cc, #006699);
+            color: white;
+        }
+        
+        .share-button:hover {
+            top: -5px;
+            box-shadow: 0 12px 0 rgba(0, 0, 0, 0.2);
+            transform: scale(1.05);
+        }
+        
+        .share-button:active {
+            top: 0;
+            box-shadow: 0 4px 0 rgba(0, 0, 0, 0.2);
+        }
+        
+        .share-icon {
+            font-size: 1.8rem;
+        }
+
+        /* ===== BOTONES FINALES ===== */
+        .final-actions {
             display: flex;
             flex-direction: column;
-            gap: 2rem;
-            margin: 3rem 0;
+            gap: 2.5rem;
+            margin: 4rem 0 3rem 0;
             align-items: center;
         }
         
@@ -336,18 +506,17 @@
             background: linear-gradient(135deg, #FF6B6B, #FF8E53, #FFD700);
             color: white;
             font-weight: 700;
-            font-size: 1.3rem;
+            font-size: 1.4rem;
             padding: 1.5rem 4rem;
             border-radius: 15px;
             text-decoration: none;
-            margin: 1.5rem 0;
             border: none;
             cursor: pointer;
             box-shadow: 0 8px 0 #CC5555, 0 15px 35px rgba(255, 107, 107, 0.5);
             transition: all 0.3s ease;
             position: relative;
             top: 0;
-            min-width: 300px;
+            min-width: 350px;
             text-align: center;
             font-family: 'Poppins', sans-serif;
             letter-spacing: 0.5px;
@@ -374,18 +543,17 @@
             background: linear-gradient(135deg, #25D366, #128C7E);
             color: white;
             font-weight: 600;
-            font-size: 1.2rem;
-            padding: 1.2rem 3rem;
+            font-size: 1.3rem;
+            padding: 1.3rem 3.5rem;
             border-radius: 12px;
             text-decoration: none;
-            margin: 1rem 0;
             border: none;
             cursor: pointer;
             box-shadow: 0 6px 0 #1DA851, 0 12px 25px rgba(37, 211, 102, 0.4);
             transition: all 0.3s ease;
             position: relative;
             top: 0;
-            min-width: 300px;
+            min-width: 350px;
             font-family: 'Montserrat', sans-serif;
         }
         
@@ -1031,11 +1199,12 @@
             gap: 10px;
             padding: 15px;
             background: #f1f8e9;
+            border-top: 1px solid #e0e0e0;
         }
         
         .cta-button {
-            background: linear-gradient(90deg, #00c9ff, #92fe9d);
-            color: #0f2027;
+            background: linear-gradient(90deg, #FF6B6B, #FF8E53);
+            color: white;
             border: none;
             padding: 12px;
             border-radius: 10px;
@@ -1048,7 +1217,7 @@
         
         .cta-button:hover {
             transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(0, 201, 255, 0.3);
+            box-shadow: 0 5px 15px rgba(255, 107, 107, 0.3);
         }
 
         /* ===== RESPONSIVE ===== */
@@ -1093,17 +1262,25 @@
                 padding: 0 5px;
             }
             
-            .action-buttons-container {
-                gap: 1.5rem;
+            .final-actions {
+                gap: 2rem;
             }
             
             .main-action-button, .whatsapp-button {
                 padding: 1.2rem 2rem;
                 font-size: 1.1rem;
                 min-width: 100%;
-                display: block;
-                margin: 0.5rem auto;
                 max-width: 100%;
+            }
+            
+            .share-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .share-button {
+                width: 100%;
+                max-width: 300px;
             }
             
             .features-grid { 
@@ -1146,7 +1323,7 @@
             
             /* Responsive para nueva sección */
             .imagine-title {
-                font-size: 1.6rem;
+                font-size: 1.8rem;
             }
             
             .imagine-question {
@@ -1164,7 +1341,7 @@
             }
             
             .count-animation {
-                font-size: 2.5rem;
+                font-size: 2.8rem;
             }
         }
         
@@ -1189,18 +1366,22 @@
                 padding: 1rem 1.5rem;
             }
             .imagine-title {
-                font-size: 1.4rem;
+                font-size: 1.5rem;
             }
             .imagine-question {
                 font-size: 1.1rem;
             }
             .count-animation {
-                font-size: 2rem;
+                font-size: 2.2rem;
             }
             
             .main-action-button, .whatsapp-button {
-                font-size: 1rem;
-                padding: 1rem 1.5rem;
+                font-size: 1.1rem;
+                padding: 1.1rem 1.8rem;
+            }
+            
+            .share-title {
+                font-size: 1.6rem;
             }
         }
     </style>
@@ -1218,34 +1399,6 @@
                 </p>
             </div>
         </header>
-
-        <!-- BOTONES PRINCIPALES -->
-        <section class="section">
-            <h2 class="section-title">¡Comienza tu Viaje Hoy!</h2>
-            <div class="action-buttons-container">
-                <!-- Botón Principal "Posicionarme Ahora" -->
-                <a href="https://aiviraldownline.com/lc.php?id=Jobshndez" 
-                   class="main-action-button" 
-                   target="_blank">
-                    <span class="button-icon">🚀</span>
-                    <div>
-                        <div>Posicionarme Ahora</div>
-                        <div class="button-subtitle">Prueba GRATIS por 7 días sin riesgo, sin poner la tarjeta</div>
-                    </div>
-                </a>
-                
-                <!-- Botón de WhatsApp -->
-                <a href="https://wa.me/+13232850508?text=Hola%20Jobshndez,%20necesito%20ayuda%20con%20AI%20Viral%20Downline%20(mi%20email:%20jobshndez@gmail.com)" 
-                   class="whatsapp-button" 
-                   target="_blank">
-                    <span class="button-icon">💬</span>
-                    <div>
-                        <div>Contactar por WhatsApp</div>
-                        <div class="button-subtitle">Ayuda adicional con Jobshndez</div>
-                    </div>
-                </a>
-            </div>
-        </section>
 
         <!-- Primer video (Intro de Emily) -->
         <section class="section">
@@ -1414,7 +1567,7 @@
             </div>
         </section>
 
-        <!-- NUEVA SECCIÓN: Imagina generar ingresos de $25 -->
+        <!-- NUEVA SECCIÓN: Imagina generar ingresos de $25 - MEJORADA -->
         <section class="section imagine-section">
             <div class="imagine-content">
                 <h2 class="imagine-title">¡Imagina generar ingresos de $25 una y otra vez!</h2>
@@ -1507,6 +1660,51 @@
             <p><small>Consulta en nuestro grupo de Telegram para detalles adicionales</small></p>
         </section>
 
+        <!-- SECCIÓN COMPARTIR -->
+        <section class="share-section">
+            <h2 class="share-title">Gana $25 por cada suscripción al compartir esta herramienta</h2>
+            <p class="share-subtitle">Comparte AI Viral Downline con amigos y familiares. Por cada persona que se registre usando tu enlace, puedes ganar $25 de comisión.</p>
+            
+            <div class="share-buttons">
+                <a href="https://wa.me/?text=¡Descubre AI Viral Downline! Gana $25 por cada suscripción. Regístrate en https://www.aiviraljobs.com" 
+                   class="share-button whatsapp" 
+                   target="_blank">
+                    <span class="share-icon">📱</span> Compartir por WhatsApp
+                </a>
+                
+                <a href="sms:?body=¡Descubre AI Viral Downline! Gana $25 por cada suscripción. Regístrate en https://www.aiviraljobs.com" 
+                   class="share-button direct" 
+                   target="_blank">
+                    <span class="share-icon">💬</span> Compartir por Mensaje
+                </a>
+            </div>
+        </section>
+
+        <!-- BOTONES FINALES (al final de la página) -->
+        <div class="final-actions">
+            <!-- Botón Principal "Posicionarme Ahora" -->
+            <a href="https://aiviraldownline.com/lc.php?id=Jobshndez" 
+               class="main-action-button" 
+               target="_blank">
+                <span class="button-icon">🚀</span>
+                <div>
+                    <div>Posicionarme Ahora</div>
+                    <div class="button-subtitle">Prueba GRATIS por 7 días sin riesgo, sin poner la tarjeta</div>
+                </div>
+            </a>
+            
+            <!-- Botón de WhatsApp -->
+            <a href="https://wa.me/+13232850508?text=Hola Jobshndez, necesito ayuda con AI Viral Downline para comenzar ahora mismo" 
+               class="whatsapp-button" 
+               target="_blank">
+                <span class="button-icon">💬</span>
+                <div>
+                    <div>Contactar por WhatsApp</div>
+                    <div class="button-subtitle">Soporte personalizado con Jobshndez</div>
+                </div>
+            </a>
+        </div>
+
         <!-- FOOTER ACTUALIZADO -->
         <footer>
             <div class="footer-content">
@@ -1542,10 +1740,10 @@
             <!-- Mensajes aparecerán aquí -->
         </div>
         <div class="quick-replies">
-            <button class="quick-reply" data-reply="¿Cuánto cuesta?">¿Cuánto cuesta?</button>
-            <button class="quick-reply" data-reply="¿Cómo empiezo?">¿Cómo empiezo?</button>
             <button class="quick-reply" data-reply="¿Qué es AI Viral Downline?">¿Qué es?</button>
-            <button class="quick-reply" data-reply="¿Dónde está la empresa?">Ubicación</button>
+            <button class="quick-reply" data-reply="¿Cuánto gano por referencia?">Ganancias</button>
+            <button class="quick-reply" data-reply="¿Cuánto cuesta?">Precio</button>
+            <button class="quick-reply" data-reply="¿Cómo empiezo?">Comenzar</button>
         </div>
         <div class="chatbot-input">
             <input type="text" id="chatbotInput" placeholder="Escribe tu pregunta aquí..." autocomplete="off">
@@ -1556,7 +1754,8 @@
             </button>
         </div>
         <div class="cta-buttons" id="ctaButtons" style="display: none;">
-            <a href="https://t.me/+EnM9LTD6JlgzMjcx" class="cta-button" target="_blank">Únete a Telegram</a>
+            <a href="https://aiviraldownline.com/lc.php?id=Jobshndez" class="cta-button" target="_blank">Posicionarme Ahora</a>
+            <a href="https://t.me/+EnM9LTD6JlgzMjcx" class="cta-button" style="background: linear-gradient(90deg, #0088cc, #006699);" target="_blank">Únete a Telegram</a>
         </div>
     </div>
 
@@ -1571,15 +1770,36 @@
         const quickReplyButtons = document.querySelectorAll('.quick-reply');
         const ctaButtons = document.getElementById('ctaButtons');
 
-        // Base de conocimiento actualizada del chatbot
+        // Base de conocimiento COMPLETA del chatbot con FAQ
         const knowledgeBase = {
-            "hola": "¡Hola! 👋 Soy **Emily**, tu asistente de IA para aiviraljobs. Puedo explicarte cómo funciona el sistema y guiarte en el proceso. ¿En qué puedo ayudarte hoy?\n\n**💡 Importante:** Haz clic en el botón **'Posicionarme Ahora'** para comenzar tu prueba gratuita de 7 días.",
+            // Información General
+            "qué es ai viral downline": "🤖 **AI Viral Downline** es una plataforma de automatización con inteligencia artificial diseñada para ayudar a personas a promocionar oportunidades digitales, atraer prospectos y generar ingresos residuales en línea, incluso sin experiencia previa.\n\n**Para comenzar:** Haz clic en **'Posicionarme Ahora'** para tu prueba gratuita de 7 días.",
             
-            "cuánto cuesta": "🎯 **Prueba GRATIS por 7 días** sin riesgo y sin poner la tarjeta de crédito.\n\nDespués del período de prueba, la suscripción es de **$28 al mes**. Esto incluye acceso completo al sistema de automatización, soporte de IA 24/7 y todas las herramientas para construir tu línea descendente.\n\n**Para comenzar:** Haz clic en **'Posicionarme Ahora'** para tu prueba gratuita.",
+            "quienes son los creadores": "👥 **Los creadores de AI Viral Downline son:**\n• **Jeremy Duncan**\n• **Kenneth Wasiewicz**\n\nAmbos tienen amplia experiencia en marketing digital y automatización.\n\n**Para comenzar:** Haz clic en **'Posicionarme Ahora'**.",
+            
+            "dónde está registrada la empresa": "📍 **La empresa está registrada en:**\nAI Viral Downline LLC\n7261 Tamarack RD\nPlymouth IN 46563\nEstados Unidos\n\n**Para comenzar:** Haz clic en **'Posicionarme Ahora'** para tu prueba gratuita.",
+            
+            // Bono y Referidos
+            "cuánto gano por cada referencia directa": "💰 **Por cada referencia directa ganas:**\n• **$25** como Bono de Inicio Rápido por persona\n• Ejemplo: 10 personas = **$250**\n• En 5 días podrías generar más de **$1,000** a la semana\n\n**Para comenzar a ganar:** Haz clic en **'Posicionarme Ahora'**.",
+            
+            "puedo ganar dinero con la cuenta gratuita": "✅ **Sí, puedes ganar con la cuenta gratuita**, pero las mayores ganancias y bonos se obtienen al activar los planes de pago y participar completamente en el sistema.\n\n**Para maximizar ganancias:** Haz clic en **'Posicionarme Ahora'** para tu prueba gratuita.",
+            
+            // Pagos y Retiro
+            "cómo recibo mis pagos": "💳 **Métodos de pago disponibles:**\nDentro de tu oficina virtual podrás configurar:\n• Tarjeta de crédito/débito\n• Cuenta bancaria\n• Criptomonedas\n\n**Para comenzar:** Haz clic en **'Posicionarme Ahora'**.",
+            
+            "cuál es el monto mínimo de retiro": "💰 **Mínimo de retiro:** **$50**\nUna vez alcanzado ese monto, podrás solicitar tu pago sin problema.\n\n**Para comenzar a generar:** Haz clic en **'Posicionarme Ahora'**.",
+            
+            "el pago mensual es automático": "🔄 **Sí, el pago mensual es automático:**\n• Sistema realiza cargo automático de **$28** desde tus ganancias\n• Si no hay fondos suficientes, puedes pagar manualmente\n• Evita suspensión de cuenta manteniendo pago activo\n\n**Para comenzar:** Haz clic en **'Posicionarme Ahora'**.",
+            
+            // Plan de Compensación
+            "cómo funciona el plan de compensación": "📊 **Matriz 3x8 - Plan de Compensación:**\n• **Nivel 1:** $10 por miembro (3 miembros = $30/mes)\n• **Niveles 2-7:** $2 por miembro/mes (sin referidos propios)\n• **Nivel 8:** $3 por miembro (requiere 3 referencias directas)\n• **Total posible:** Hasta $26,265/mes\n\n**Para comenzar:** Haz clic en **'Posicionarme Ahora'**.",
+            
+            "matriz 3x8": "📈 **Matriz 3x8 explicada:**\nComo miembro gratuito ya tienes posición, pero al actualizar desbloqueas toda la estructura e ingresos durante tu prueba de 7 días.\n\nCon solo 3 miembros en Nivel 1, tu membresía queda cubierta.\n\n**Para activar matriz:** Haz clic en **'Posicionarme Ahora'**.",
+            
+            // Información General del FAQ
+            "cuánto cuesta": "🎯 **Prueba GRATIS por 7 días** sin riesgo y sin tarjeta de crédito.\n\nDespués del período de prueba, la suscripción es de **$28 al mes**.\n\n**Para comenzar:** Haz clic en **'Posicionarme Ahora'** para tu prueba gratuita.",
             
             "28": "✅ **$28 al mes** después de tu prueba gratuita de 7 días.\n\n**Para comenzar:**\n1. **Haz clic en 'Posicionarme Ahora'** para tu prueba gratuita\n2. **Completa el formulario de registro**\n3. **Disfruta de 7 días gratuitos** sin compromiso",
-            
-            "dónde está": "📍 **La empresa está ubicada en:**\nAI Viral Downline LLC\n7261 Tamarack RD\nPlymouth IN 46563\n📧 Email: admin@aiviraldownline.com\n\n**Para comenzar:** Haz clic en **'Posicionarme Ahora'** para tu prueba gratuita.",
             
             "cómo empiezo": "🚀 **Para comenzar tu prueba gratuita:**\n1. **Haz clic en 'Posicionarme Ahora'**\n2. **Completa el formulario de registro**\n3. **Disfruta de 7 días gratuitos**\n4. **Explora todas las funcionalidades**\n\n**📺 Tutorial disponible:** Mira el video tutorial en la página.",
             
@@ -1587,21 +1807,19 @@
             
             "tutorial": "📽️ **Tutorial disponible en esta página:**\nEncuentras un **tutorial completo paso a paso** que explica:\n• Cómo funciona el sistema\n• Proceso de registro correcto\n• Activación de cuenta\n• Primeros pasos\n\n**Para comenzar:** Haz clic en **'Posicionarme Ahora'**.",
             
-            "qué es": "🤖 **aiviraljobs** es una plataforma de automatización con inteligencia artificial diseñada para ayudar a personas a promocionar oportunidades digitales, atraer prospectos y generar ingresos residuales en línea.\n\n**Para comenzar:** Haz clic en **'Posicionarme Ahora'** para tu prueba gratuita.",
+            "automatizar": "🔄 **Sistema de automatización:**\nAI Viral Downline se encarga de:\n• Atender prospectos 24/7\n• Explicar el sistema automáticamente\n• Guiar el proceso de registro\n• Generar ingresos residuales\n\n**Para activar:** Haz clic en **'Posicionarme Ahora'**.",
             
-            "automatizar": "🔄 **Sistema de automatización:**\naiviraljobs se encarga de:\n• Atender prospectos 24/7\n• Explicar el sistema automáticamente\n• Guiar el proceso de registro\n• Generar ingresos residuales\n\n**Para activar:** Haz clic en **'Posicionarme Ahora'**.",
-            
-            "matriz": "📊 **Matriz 3x8:**\n• Nivel 1: 3 spots = $30/mes (se paga tu membresía)\n• Niveles 2-7: $2 por miembro = $6,552/mes (sin referir)\n• Nivel 8: $3 por miembro = $19,683/mes (con 3 referidos)\n• **Total posible: $26,265/mes**\n\n**Para comenzar:** Haz clic en **'Posicionarme Ahora'**.",
-            
-            "ganar": "💰 **Potencial de ingresos:**\n• Comisiones de matriz 3x8 ($6,582/mes niveles 1-7)\n• Hasta $26,265/mes con matriz completa\n• Spillover automático (ingresos pasivos)\n\n**💡 Para activar:** Haz clic en **'Posicionarme Ahora'**.",
+            "ganar": "💰 **Potencial de ingresos:**\n• **$25 por referencia directa**\n• Comisiones de matriz 3x8 ($6,582/mes niveles 1-7)\n• Hasta $26,265/mes con matriz completa\n• Spillover automático (ingresos pasivos)\n\n**💡 Para activar:** Haz clic en **'Posicionarme Ahora'**.",
             
             "contacto": "📞 **Para información y soporte:**\n• **WhatsApp:** +13232850508 (Jobshndez)\n• **Email:** jobshndez@gmail.com\n• **Telegram:** https://t.me/+EnM9LTD6JlgzMjcx\n\n**Para comenzar:** Haz clic en **'Posicionarme Ahora'**.",
+            
+            "hola": "¡Hola! 👋 Soy **Emily**, tu asistente de IA para aiviraljobs. Puedo responder tus preguntas sobre AI Viral Downline.\n\n**Preguntas frecuentes:**\n• ¿Qué es AI Viral Downline?\n• ¿Cuánto gano por referencia?\n• ¿Cómo funciona la matriz 3x8?\n• ¿Cuánto cuesta?\n\n**Para comenzar:** Haz clic en **'Posicionarme Ahora'** para tu prueba gratuita de 7 días.",
             
             "gracias": "¡De nada! 😊 Estoy aquí para ayudarte. **Recuerda:** Haz clic en **'Posicionarme Ahora'** para comenzar tu prueba gratuita de 7 días.",
             
             "adiós": "¡Hasta luego! 👋 Recuerda hacer clic en **'Posicionarme Ahora'** para tu prueba gratuita.",
             
-            "default": "🤔 ¿Podrías reformular tu pregunta? Te puedo ayudar con:\n• Información sobre el sistema\n• Cómo comenzar tu prueba gratuita\n• Potencial de ingresos\n• Contacto de soporte\n\n**💡 Recomendación:** Haz clic en **'Posicionarme Ahora'** para comenzar."
+            "default": "🤔 No tengo información específica sobre esa pregunta.\n\n**💡 Te recomiendo:**\n1. **Únete a nuestro grupo de Telegram** para preguntas específicas\n2. **Mira el tutorial completo** en esta página\n3. **Contacta a Jobshndez por WhatsApp** para soporte personalizado\n\n**Para comenzar:** Haz clic en **'Posicionarme Ahora'** para tu prueba gratuita."
         };
 
         // Estado inicial
@@ -1614,7 +1832,7 @@
             
             if (!initialMessageShown) {
                 setTimeout(() => {
-                    addBotMessage("¡Hola! 👋 Soy **Emily**, tu asistente de IA para aiviraljobs.\n\n**💡 Información importante:**\nPara comenzar tu viaje hacia los ingresos automáticos:\n1. **Haz clic en 'Posicionarme Ahora'** para tu prueba gratuita de 7 días\n2. **Sin necesidad de tarjeta de crédito** para comenzar\n3. **Explora todas las funcionalidades** sin compromiso\n\n¿En qué puedo ayudarte hoy?");
+                    addBotMessage("¡Hola! 👋 Soy **Emily**, tu asistente de IA para aiviraljobs.\n\n**💡 Información importante:**\nPuedo responder tus preguntas sobre:\n• **AI Viral Downline** y cómo funciona\n• **Ganancias** por referencias ($25 cada una)\n• **Matriz 3x8** y plan de compensación\n• **Prueba gratuita** de 7 días\n\n¿En qué puedo ayudarte hoy?");
                     initialMessageShown = true;
                 }, 300);
             }
@@ -1653,46 +1871,78 @@
         function processMessage(message) {
             const lowerMessage = message.toLowerCase();
             let response = knowledgeBase.default;
+            let showCTAButtons = true;
+            let showTelegramButton = false;
             
-            // Buscar coincidencias
-            if (lowerMessage.includes('hola') || lowerMessage.includes('hi') || lowerMessage.includes('buenas')) {
-                response = knowledgeBase["hola"];
-            } else if (lowerMessage.includes('cuánto') || lowerMessage.includes('cuesta') || lowerMessage.includes('precio') || lowerMessage.includes('28') || lowerMessage.includes('$')) {
-                response = knowledgeBase["cuánto cuesta"];
-            } else if (lowerMessage.includes('dónde') || lowerMessage.includes('ubicación') || lowerMessage.includes('ubicacion') || lowerMessage.includes('local')) {
-                response = knowledgeBase["dónde está"];
-            } else if (lowerMessage.includes('cómo empiezo') || lowerMessage.includes('comenzar') || lowerMessage.includes('empezar') || lowerMessage.includes('iniciar')) {
-                response = knowledgeBase["cómo empiezo"];
-            } else if (lowerMessage.includes('registro') || lowerMessage.includes('inscribir') || lowerMessage.includes('unirme')) {
-                response = knowledgeBase["registro"];
-            } else if (lowerMessage.includes('tutorial') || lowerMessage.includes('video') || lowerMessage.includes('aprender')) {
-                response = knowledgeBase["tutorial"];
-            } else if (lowerMessage.includes('qué es') || lowerMessage.includes('que es') || lowerMessage.includes('explica')) {
-                response = knowledgeBase["qué es"];
-            } else if (lowerMessage.includes('automatizar') || lowerMessage.includes('automatización') || lowerMessage.includes('sistema')) {
-                response = knowledgeBase["automatizar"];
-            } else if (lowerMessage.includes('matriz') || lowerMessage.includes('3x8') || lowerMessage.includes('ingresos')) {
-                response = knowledgeBase["matriz"];
-            } else if (lowerMessage.includes('ganar') || lowerMessage.includes('dinero') || lowerMessage.includes('ganancias')) {
-                response = knowledgeBase["ganar"];
-            } else if (lowerMessage.includes('contacto') || lowerMessage.includes('email') || lowerMessage.includes('teléfono')) {
-                response = knowledgeBase["contacto"];
-            } else if (lowerMessage.includes('gracias') || lowerMessage.includes('thank you')) {
-                response = knowledgeBase["gracias"];
-            } else if (lowerMessage.includes('adiós') || lowerMessage.includes('chao') || lowerMessage.includes('bye')) {
-                response = knowledgeBase["adiós"];
+            // Buscar coincidencias en la base de conocimiento
+            const questions = Object.keys(knowledgeBase);
+            let found = false;
+            
+            for (let question of questions) {
+                if (lowerMessage.includes(question)) {
+                    response = knowledgeBase[question];
+                    found = true;
+                    break;
+                }
+            }
+            
+            // Búsqueda adicional por palabras clave específicas
+            if (!found) {
+                if (lowerMessage.includes('hola') || lowerMessage.includes('hi') || lowerMessage.includes('buenas')) {
+                    response = knowledgeBase["hola"];
+                    found = true;
+                } else if (lowerMessage.includes('cuánto') || lowerMessage.includes('cuesta') || lowerMessage.includes('precio') || lowerMessage.includes('28') || lowerMessage.includes('$')) {
+                    response = knowledgeBase["cuánto cuesta"];
+                    found = true;
+                } else if (lowerMessage.includes('referencia') || lowerMessage.includes('referido') || lowerMessage.includes('25')) {
+                    response = knowledgeBase["cuánto gano por cada referencia directa"];
+                    found = true;
+                } else if (lowerMessage.includes('matriz') || lowerMessage.includes('3x8')) {
+                    response = knowledgeBase["cómo funciona el plan de compensación"];
+                    found = true;
+                } else if (lowerMessage.includes('creador') || lowerMessage.includes('fundador')) {
+                    response = knowledgeBase["quienes son los creadores"];
+                    found = true;
+                } else if (lowerMessage.includes('empresa') || lowerMessage.includes('registrada') || lowerMessage.includes('ubicación')) {
+                    response = knowledgeBase["dónde está registrada la empresa"];
+                    found = true;
+                } else if (lowerMessage.includes('pago') || lowerMessage.includes('retiro') || lowerMessage.includes('retirar')) {
+                    response = knowledgeBase["cómo recibo mis pagos"];
+                    found = true;
+                } else if (lowerMessage.includes('mínimo') || lowerMessage.includes('retirar')) {
+                    response = knowledgeBase["cuál es el monto mínimo de retiro"];
+                    found = true;
+                } else if (lowerMessage.includes('automático') || lowerMessage.includes('mensualidad')) {
+                    response = knowledgeBase["el pago mensual es automático"];
+                    found = true;
+                } else if (lowerMessage.includes('gratuita') || lowerMessage.includes('free')) {
+                    response = knowledgeBase["puedo ganar dinero con la cuenta gratuita"];
+                    found = true;
+                }
+            }
+            
+            // Si no se encuentra respuesta específica, mostrar redirección a Telegram
+            if (!found) {
+                showTelegramButton = true;
+                showCTAButtons = false;
             }
             
             // Mostrar respuesta
             setTimeout(() => {
                 addBotMessage(response);
                 
-                // Mostrar botones CTA si es relevante
-                if (lowerMessage.includes('registro') || lowerMessage.includes('cómo empiezo') || lowerMessage.includes('comenzar') || lowerMessage.includes('tutorial')) {
-                    setTimeout(() => {
+                // Mostrar botones CTA según corresponda
+                setTimeout(() => {
+                    if (showTelegramButton) {
+                        ctaButtons.innerHTML = '<a href="https://t.me/+EnM9LTD6JlgzMjcx" class="cta-button" style="background: linear-gradient(90deg, #0088cc, #006699);" target="_blank">Únete a Telegram para más ayuda</a>';
                         ctaButtons.style.display = 'flex';
-                    }, 500);
-                }
+                    } else if (showCTAButtons && found) {
+                        ctaButtons.innerHTML = '<a href="https://aiviraldownline.com/lc.php?id=Jobshndez" class="cta-button" target="_blank">Posicionarme Ahora</a>';
+                        ctaButtons.style.display = 'flex';
+                    } else {
+                        ctaButtons.style.display = 'none';
+                    }
+                }, 500);
             }, 800);
         }
 
@@ -1740,19 +1990,7 @@
         // Auto-abrir chatbot después de 5 segundos
         setTimeout(() => {
             if (!initialMessageShown) {
-                // Añadir animación de pulso
                 chatbotIcon.style.animation = 'pulse 2s infinite';
-                
-                // Crear estilo para la animación
-                const style = document.createElement('style');
-                style.textContent = `
-                    @keyframes pulse {
-                        0% { transform: scale(1); box-shadow: 0 4px 15px rgba(64, 224, 208, 0.4); }
-                        50% { transform: scale(1.1); box-shadow: 0 6px 20px rgba(64, 224, 208, 0.8); }
-                        100% { transform: scale(1); box-shadow: 0 4px 15px rgba(64, 224, 208, 0.4); }
-                    }
-                `;
-                document.head.appendChild(style);
             }
         }, 5000);
 
@@ -1773,11 +2011,9 @@
             // Animación de entrada para las imágenes con efecto escalonado
             function animateImages() {
                 images.forEach((image, index) => {
-                    // Retraso escalonado para cada imagen
                     setTimeout(() => {
                         image.classList.add('visible');
                         
-                        // Agregar efecto adicional después de que la imagen sea visible
                         setTimeout(() => {
                             image.style.transition = 'all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275)';
                         }, 300);
@@ -1789,11 +2025,9 @@
             const observer = new IntersectionObserver((entries) => {
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
-                        // Animación de deslizamiento suave
                         imagesContainer.style.transition = 'all 1s ease-out';
                         imagesContainer.style.transform = 'translateY(0)';
                         
-                        // Iniciar animación de imágenes
                         animateImages();
                         observer.unobserve(entry.target);
                     }
@@ -1825,8 +2059,7 @@
                         countElement.textContent = `$${Math.round(count)}`;
                         requestAnimationFrame(updateCount);
                     } else {
-                        // Efecto final cuando termina el conteo
-                        countElement.style.textShadow = '0 0 25px rgba(255, 215, 0, 0.9)';
+                        countElement.style.textShadow = '0 0 30px rgba(255, 215, 0, 0.9)';
                     }
                 };
                 
