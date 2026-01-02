@@ -105,34 +105,22 @@
             font-style: italic;
         }
 
-        /* ===== BOTONES PRINCIPALES MEJORADOS ===== */
+        /* ===== BOTONES PRINCIPALES ===== */
         .primary-cta-section {
             text-align: center;
             margin: 3rem 0;
             padding: 2rem;
-            background: linear-gradient(135deg, rgba(255, 107, 107, 0.1), rgba(255, 193, 7, 0.1));
+            background: rgba(255, 255, 255, 0.05);
             border-radius: 20px;
-            border-left: 6px solid #FFD700;
+            border-left: 6px solid #40e0d0;
         }
         
         .primary-cta-title {
-            font-size: 2.8rem;
-            color: #FFD700;
+            font-size: 2.5rem;
+            color: #40e0d0;
             margin-bottom: 1rem;
             font-family: 'Poppins', sans-serif;
             font-weight: 700;
-            text-shadow: 0 0 20px rgba(255, 215, 0, 0.5);
-            background: linear-gradient(45deg, #FFD700, #FF8E53, #FFD700);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-size: 200% 200%;
-            animation: gradientText 3s ease infinite;
-        }
-        
-        @keyframes gradientText {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
         }
         
         .primary-cta-subtitle {
@@ -261,7 +249,86 @@
             transform: scale(1.05);
         }
 
-        /* ===== SECCIÓN COMPARTIR (más profesional y al final) ===== */
+        /* ===== SECCIÓN REDES SOCIALES ===== */
+        .social-media-section {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 15px;
+            padding: 3rem 2rem;
+            margin: 3rem 0;
+            text-align: center;
+            border: 1px solid rgba(64, 224, 208, 0.2);
+        }
+        
+        .social-media-title {
+            color: #FFD700;
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            font-family: 'Poppins', sans-serif;
+        }
+        
+        .social-media-subtitle {
+            color: #b0e0e6;
+            font-size: 1.1rem;
+            margin-bottom: 2.5rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .social-buttons-container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+        
+        .social-button {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            padding: 1rem 2rem;
+            border-radius: 10px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            min-width: 200px;
+            font-family: 'Montserrat', sans-serif;
+            border: 2px solid transparent;
+        }
+        
+        .social-button.tiktok {
+            background: rgba(0, 0, 0, 0.2);
+            color: white;
+            border-color: #FF0050;
+        }
+        
+        .social-button.instagram {
+            background: rgba(0, 0, 0, 0.2);
+            color: white;
+            border-color: #E4405F;
+        }
+        
+        .social-button:hover {
+            transform: translateY(-5px) scale(1.05);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+        }
+        
+        .social-button.tiktok:hover {
+            background: rgba(255, 0, 80, 0.2);
+        }
+        
+        .social-button.instagram:hover {
+            background: rgba(228, 64, 95, 0.2);
+        }
+        
+        .social-icon {
+            font-size: 1.5rem;
+        }
+
+        /* ===== SECCIÓN COMPARTIR ===== */
         .professional-share-section {
             background: rgba(255, 255, 255, 0.05);
             border-radius: 15px;
@@ -425,50 +492,14 @@
             font-weight: 600;
         }
 
-        /* ===== NUEVA SECCIÓN: IMAGINA GENERAR INGRESOS ACTUALIZADA ===== */
+        /* ===== SECCIÓN: IMAGINA GENERAR INGRESOS (SIN COLORES) ===== */
         .imagine-section {
-            background: linear-gradient(135deg, rgba(255, 107, 107, 0.2), rgba(255, 193, 7, 0.2), rgba(64, 224, 208, 0.15));
-            border-left: 6px solid #FFD700;
+            background: rgba(255, 255, 255, 0.05);
+            border-left: 6px solid rgba(64, 224, 208, 0.5);
             text-align: center;
             position: relative;
             overflow: hidden;
             border-radius: 20px;
-        }
-        
-        .imagine-section::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: 
-                radial-gradient(circle at 20% 30%, rgba(255, 215, 0, 0.25) 0%, transparent 50%),
-                radial-gradient(circle at 80% 70%, rgba(255, 107, 107, 0.2) 0%, transparent 50%),
-                radial-gradient(circle at 40% 80%, rgba(64, 224, 208, 0.15) 0%, transparent 50%);
-            z-index: 0;
-            animation: gradientShift 8s ease-in-out infinite alternate;
-        }
-        
-        @keyframes gradientShift {
-            0% { 
-                background: 
-                    radial-gradient(circle at 20% 30%, rgba(255, 215, 0, 0.25) 0%, transparent 50%),
-                    radial-gradient(circle at 80% 70%, rgba(255, 107, 107, 0.2) 0%, transparent 50%),
-                    radial-gradient(circle at 40% 80%, rgba(64, 224, 208, 0.15) 0%, transparent 50%);
-            }
-            50% { 
-                background: 
-                    radial-gradient(circle at 80% 30%, rgba(255, 107, 107, 0.25) 0%, transparent 50%),
-                    radial-gradient(circle at 20% 70%, rgba(255, 215, 0, 0.2) 0%, transparent 50%),
-                    radial-gradient(circle at 60% 20%, rgba(64, 224, 208, 0.15) 0%, transparent 50%);
-            }
-            100% { 
-                background: 
-                    radial-gradient(circle at 40% 50%, rgba(64, 224, 208, 0.25) 0%, transparent 50%),
-                    radial-gradient(circle at 60% 40%, rgba(255, 215, 0, 0.2) 0%, transparent 50%),
-                    radial-gradient(circle at 30% 90%, rgba(255, 107, 107, 0.15) 0%, transparent 50%);
-            }
         }
         
         .imagine-content {
@@ -478,30 +509,11 @@
         }
         
         .imagine-title {
-            color: #FFD700;
+            color: #40e0d0;
             font-size: 2.2rem;
             margin-bottom: 2rem;
-            text-shadow: 0 0 20px rgba(255, 215, 0, 0.5), 0 0 40px rgba(255, 215, 0, 0.3);
-            animation: glow 2s ease-in-out infinite alternate, floatTitle 6s ease-in-out infinite;
             font-family: 'Poppins', sans-serif;
-            background: linear-gradient(45deg, #FFD700, #FF8E53, #FFD700);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-size: 200% 200%;
-            animation: gradientText 3s ease infinite;
-        }
-        
-        @keyframes glow {
-            from { 
-                text-shadow: 0 0 10px rgba(255, 215, 0, 0.5), 
-                           0 0 20px rgba(255, 215, 0, 0.3),
-                           0 0 30px rgba(255, 215, 0, 0.2);
-            }
-            to { 
-                text-shadow: 0 0 20px rgba(255, 215, 0, 0.7), 
-                           0 0 30px rgba(255, 215, 0, 0.5),
-                           0 0 40px rgba(255, 215, 0, 0.3);
-            }
+            animation: floatTitle 6s ease-in-out infinite;
         }
         
         @keyframes floatTitle {
@@ -511,16 +523,10 @@
         
         .imagine-question {
             font-size: 1.5rem;
-            color: #FFD700;
+            color: #b0e0e6;
             margin-bottom: 3rem;
             font-style: italic;
             animation: fadeInUp 1s ease-out;
-            text-shadow: 0 0 10px rgba(255, 215, 0, 0.3);
-            background: rgba(255, 255, 255, 0.1);
-            padding: 1rem 2rem;
-            border-radius: 15px;
-            display: inline-block;
-            border: 2px solid rgba(255, 215, 0, 0.3);
         }
         
         .images-container {
@@ -538,43 +544,12 @@
             border-radius: 15px;
             overflow: hidden;
             position: relative;
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
             opacity: 0;
             transform: translateY(50px) scale(0.9) rotateX(10deg);
             transition: all 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
             cursor: pointer;
-            border: 3px solid transparent;
-            background: linear-gradient(45deg, #FF6B6B, #FF8E53, #FFD700, #40e0d0);
-            background-size: 300% 300%;
-            animation: borderGlow 4s ease-in-out infinite alternate;
-        }
-        
-        @keyframes borderGlow {
-            0% { 
-                border-color: #FF6B6B;
-                background-position: 0% 50%;
-                box-shadow: 0 15px 35px rgba(255, 107, 107, 0.4);
-            }
-            25% { 
-                border-color: #FF8E53;
-                background-position: 25% 50%;
-                box-shadow: 0 15px 35px rgba(255, 142, 83, 0.4);
-            }
-            50% { 
-                border-color: #FFD700;
-                background-position: 50% 50%;
-                box-shadow: 0 15px 35px rgba(255, 215, 0, 0.4);
-            }
-            75% { 
-                border-color: #40e0d0;
-                background-position: 75% 50%;
-                box-shadow: 0 15px 35px rgba(64, 224, 208, 0.4);
-            }
-            100% { 
-                border-color: #FF6B6B;
-                background-position: 100% 50%;
-                box-shadow: 0 15px 35px rgba(255, 107, 107, 0.4);
-            }
+            border: 2px solid rgba(255, 255, 255, 0.1);
         }
         
         .money-image.visible {
@@ -592,13 +567,12 @@
         
         .money-image:hover img {
             transform: scale(1.15);
-            filter: brightness(1.2) contrast(1.2) saturate(1.3);
+            filter: brightness(1.1) contrast(1.1);
         }
         
         .money-image:hover {
             transform: translateY(-15px) scale(1.08) rotateY(5deg);
-            box-shadow: 0 25px 50px rgba(255, 107, 107, 0.7);
-            animation-play-state: paused;
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.4);
         }
         
         .image-caption {
@@ -622,52 +596,38 @@
         }
         
         .imagine-description {
-            color: #ffffff;
+            color: #b0e0e6;
             font-size: 1.2rem;
             line-height: 1.6;
             max-width: 800px;
             margin: 2rem auto;
             padding: 1.5rem;
-            background: rgba(255, 255, 255, 0.15);
+            background: rgba(255, 255, 255, 0.05);
             border-radius: 15px;
-            border-left: 4px solid #FFD700;
+            border-left: 4px solid #40e0d0;
             animation: fadeInUp 1s ease-out 0.5s both;
             backdrop-filter: blur(5px);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
         }
         
         .imagine-highlight {
-            color: #FFD700;
+            color: #40e0d0;
             font-weight: bold;
             font-size: 1.3rem;
-            text-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
         }
         
-        /* Animación de conteo mejorada */
+        /* Animación de conteo */
         .count-animation {
             font-size: 4rem;
             font-weight: bold;
             color: #FFD700;
             margin: 1.5rem 0;
-            text-shadow: 0 0 30px rgba(255, 215, 0, 0.8);
-            animation: countPulse 1.5s ease-in-out infinite, float 3s ease-in-out infinite;
+            animation: countPulse 1.5s ease-in-out infinite;
             font-family: 'Poppins', sans-serif;
-            background: linear-gradient(45deg, #FFD700, #FF8E53, #FFD700);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-size: 200% 200%;
-            animation: countPulse 1.5s ease-in-out infinite, float 3s ease-in-out infinite, gradientText 2s ease infinite;
         }
         
         @keyframes countPulse {
             0%, 100% { transform: scale(1); }
             50% { transform: scale(1.25); }
-        }
-        
-        @keyframes float {
-            0%, 100% { transform: translateY(0px) rotate(0deg); }
-            33% { transform: translateY(-15px) rotate(2deg); }
-            66% { transform: translateY(-8px) rotate(-2deg); }
         }
         
         @keyframes fadeInUp {
@@ -1372,6 +1332,10 @@
                 padding: 0 5px;
             }
             
+            .social-media-title {
+                font-size: 1.8rem;
+            }
+            
             .cta-buttons-container {
                 flex-direction: column;
                 align-items: center;
@@ -1390,6 +1354,16 @@
             
             .main-cta-button .button-sub-text {
                 font-size: 1rem;
+            }
+            
+            .social-buttons-container {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .social-button {
+                width: 100%;
+                max-width: 250px;
             }
             
             .professional-share-buttons {
@@ -1503,6 +1477,11 @@
                 padding: 1rem 1.5rem;
             }
             
+            .social-button {
+                font-size: 1rem;
+                padding: 0.8rem 1.5rem;
+            }
+            
             .professional-share-button {
                 font-size: 0.9rem;
                 padding: 0.7rem 1.5rem;
@@ -1523,26 +1502,6 @@
                 </p>
             </div>
         </header>
-
-        <!-- NUEVA SECCIÓN PRINCIPAL DE LLAMADO A LA ACCIÓN -->
-        <section class="primary-cta-section">
-            <h2 class="primary-cta-title">Comenzar Ahora</h2>
-            <p class="primary-cta-subtitle">Prueba totalmente GRATIS durante 7 días. Sin tarjeta de crédito, sin riesgo, sin compromiso.</p>
-            
-            <div class="cta-buttons-container">
-                <a href="https://aiviraldownline.com/lc.php?id=Jobshndez" 
-                   class="main-cta-button" 
-                   target="_blank">
-                    <span class="cta-icon">🚀</span>
-                    <div class="button-main-text">¡Gratis por 7 Días!</div>
-                    <div class="button-sub-text">Clic para activar prueba gratuita</div>
-                </a>
-            </div>
-            
-            <p style="color: #98fb98; margin-top: 1.5rem; font-size: 1rem;">
-                ⚡ Acceso inmediato • 🔒 Sin tarjeta de crédito • 📱 Compatible con todos los dispositivos
-            </p>
-        </section>
 
         <!-- Primer video (Intro de Emily) -->
         <section class="section">
@@ -1711,7 +1670,7 @@
             </div>
         </section>
 
-        <!-- NUEVA SECCIÓN: Imagina generar ingresos de $25 - MEJORADA -->
+        <!-- SECCIÓN: Imagina generar ingresos de $25 (SIN COLORES) -->
         <section class="section imagine-section">
             <div class="imagine-content">
                 <h2 class="imagine-title">¡Imagina generar ingresos de $25 una y otra vez!</h2>
@@ -1794,17 +1753,7 @@
                 </div>
             </section>
             
-            <!-- Botón NUEVO antes del botón de Telegram -->
-            <div class="cta-buttons-container" style="margin: 2rem 0;">
-                <a href="https://t.me/+EnM9LTD6JlgzMjcx" 
-                   class="secondary-cta-button" 
-                   target="_blank">
-                    <span class="cta-icon">📱</span>
-                    Únete a nuestro equipo de Telegram
-                </a>
-            </div>
-            
-            <!-- Botón de Telegram original (mantenido) -->
+            <!-- Botón de Telegram (solo uno) -->
             <a href="https://t.me/+EnM9LTD6JlgzMjcx" 
                class="telegram-button" target="_blank">
                 📱 Únete a nuestro Grupo de Telegram
@@ -1814,7 +1763,7 @@
             <p><small>Consulta en nuestro grupo de Telegram para detalles adicionales</small></p>
         </section>
 
-        <!-- SECCIÓN COMPARTIR (más profesional y al final) -->
+        <!-- SECCIÓN COMPARTIR -->
         <section class="professional-share-section">
             <h3 class="share-section-title">Gana $25 por cada suscripción al compartir esta herramienta</h3>
             <p class="share-section-subtitle">Comparte AI Viral Downline con amigos y familiares. Por cada persona que se registre usando tu enlace, puedes ganar $25 de comisión.</p>
@@ -1834,9 +1783,29 @@
             </div>
         </section>
 
+        <!-- SECCIÓN REDES SOCIALES -->
+        <section class="social-media-section">
+            <h2 class="social-media-title">¡Sígueme para Contenido Exclusivo!</h2>
+            <p class="social-media-subtitle">Únete a mi comunidad en redes sociales donde comparto consejos exclusivos, estrategias de marketing y contenido valioso sobre AI Viral Downline.</p>
+            
+            <div class="social-buttons-container">
+                <a href="https://www.tiktok.com/@jobsproducts?_r=1&_t=ZT-92j0ZLjEZTb" 
+                   class="social-button tiktok" 
+                   target="_blank">
+                    <span class="social-icon">🎵</span> Sígueme en TikTok
+                </a>
+                
+                <a href="https://www.instagram.com/jobshndez?igsh=NTc4MTIwNjQ2YQ%3D%3D&utm_source=qr" 
+                   class="social-button instagram" 
+                   target="_blank">
+                    <span class="social-icon">📸</span> Sígueme en Instagram
+                </a>
+            </div>
+        </section>
+
         <!-- BOTONES FINALES (al final de la página) -->
         <div class="final-actions">
-            <!-- Botón "¡Gratis por 7 Días!" (repetido para énfasis) -->
+            <!-- Botón "¡Gratis por 7 Días!" -->
             <a href="https://aiviraldownline.com/lc.php?id=Jobshndez" 
                class="main-cta-button" 
                target="_blank">
@@ -1845,14 +1814,14 @@
                 <div class="button-sub-text">Clic para activar prueba gratuita</div>
             </a>
             
-            <!-- Botón de WhatsApp -->
-            <a href="https://wa.me/+13232850508?text=Hola Jobshndez, necesito ayuda con AI Viral Downline para comenzar ahora mismo" 
+            <!-- Botón de WhatsApp con link de referido -->
+            <a href="https://wa.me/?text=¡Descubre AI Viral Downline! Gana $25 por cada suscripción. Regístrate en https://www.aiviraldownline.com" 
                class="whatsapp-help-button" 
                target="_blank">
-                <span class="whatsapp-icon">💬</span>
+                <span class="whatsapp-icon">📱</span>
                 <div>
-                    <div>Contactar por WhatsApp</div>
-                    <div class="button-subtitle">Soporte personalizado con Jobshndez</div>
+                    <div>Compartir por WhatsApp</div>
+                    <div class="button-subtitle">Comparte esta oportunidad con amigos</div>
                 </div>
             </a>
         </div>
@@ -1922,56 +1891,23 @@
         const quickReplyButtons = document.querySelectorAll('.quick-reply');
         const ctaButtons = document.getElementById('ctaButtons');
 
-        // Base de conocimiento COMPLETA del chatbot con FAQ
+        // Base de conocimiento del chatbot
         const knowledgeBase = {
-            // Información General
-            "qué es ai viral downline": "🤖 **AI Viral Downline** es una plataforma de automatización con inteligencia artificial diseñada para ayudar a personas a promocionar oportunidades digitales, atraer prospectos y generar ingresos residuales en línea, incluso sin experiencia previa.\n\n**Para comenzar:** Haz clic en **'¡Gratis por 7 Días!'** para tu prueba gratuita.",
+            "qué es ai viral downline": "🤖 **AI Viral Downline** es una plataforma de automatización con inteligencia artificial diseñada para ayudar a personas a promocionar oportunidades digitales, atraer prospectos y generar ingresos residuales en línea.\n\n**Para comenzar:** Haz clic en **'¡Gratis por 7 Días!'** para tu prueba gratuita.",
             
-            "quienes son los creadores": "👥 **Los creadores de AI Viral Downline son:**\n• **Jeremy Duncan**\n• **Kenneth Wasiewicz**\n\nAmbos tienen amplia experiencia en marketing digital y automatización.\n\n**Para comenzar:** Haz clic en **'¡Gratis por 7 Días!'**.",
+            "cuánto gano por cada referencia directa": "💰 **Por cada referencia directa ganas:**\n• **$25** como Bono de Inicio Rápido por persona\n\n**Para comenzar a ganar:** Haz clic en **'¡Gratis por 7 Días!'**.",
             
-            "dónde está registrada la empresa": "📍 **La empresa está registrada en:**\nAI Viral Downline LLC\n7261 Tamarack RD\nPlymouth IN 46563\nEstados Unidos\n\n**Para comenzar:** Haz clic en **'¡Gratis por 7 Días!'** para tu prueba gratuita.",
-            
-            // Bono y Referidos
-            "cuánto gano por cada referencia directa": "💰 **Por cada referencia directa ganas:**\n• **$25** como Bono de Inicio Rápido por persona\n• Ejemplo: 10 personas = **$250**\n• En 5 días podrías generar más de **$1,000** a la semana\n\n**Para comenzar a ganar:** Haz clic en **'¡Gratis por 7 Días!'**.",
-            
-            "puedo ganar dinero con la cuenta gratuita": "✅ **Sí, puedes ganar con la cuenta gratuita**, pero las mayores ganancias y bonos se obtienen al activar los planes de pago y participar completamente en el sistema.\n\n**Para maximizar ganancias:** Haz clic en **'¡Gratis por 7 Días!'** para tu prueba gratuita.",
-            
-            // Pagos y Retiro
-            "cómo recibo mis pagos": "💳 **Métodos de pago disponibles:**\nDentro de tu oficina virtual podrás configurar:\n• Tarjeta de crédito/débito\n• Cuenta bancaria\n• Criptomonedas\n\n**Para comenzar:** Haz clic en **'¡Gratis por 7 Días!'**.",
-            
-            "cuál es el monto mínimo de retiro": "💰 **Mínimo de retiro:** **$50**\nUna vez alcanzado ese monto, podrás solicitar tu pago sin problema.\n\n**Para comenzar a generar:** Haz clic en **'¡Gratis por 7 Días!'**.",
-            
-            "el pago mensual es automático": "🔄 **Sí, el pago mensual es automático:**\n• Sistema realiza cargo automático de **$28** desde tus ganancias\n• Si no hay fondos suficientes, puedes pagar manualmente\n• Evita suspensión de cuenta manteniendo pago activo\n\n**Para comenzar:** Haz clic en **'¡Gratis por 7 Días!'**.",
-            
-            // Plan de Compensación
-            "cómo funciona el plan de compensación": "📊 **Matriz 3x8 - Plan de Compensación:**\n• **Nivel 1:** $10 por miembro (3 miembros = $30/mes)\n• **Niveles 2-7:** $2 por miembro/mes (sin referidos propios)\n• **Nivel 8:** $3 por miembro (requiere 3 referencias directas)\n• **Total posible:** Hasta $26,265/mes\n\n**Para comenzar:** Haz clic en **'¡Gratis por 7 Días!'**.",
-            
-            "matriz 3x8": "📈 **Matriz 3x8 explicada:**\nComo miembro gratuito ya tienes posición, pero al actualizar desbloqueas toda la estructura e ingresos durante tu prueba de 7 días.\n\nCon solo 3 miembros en Nivel 1, tu membresía queda cubierta.\n\n**Para activar matriz:** Haz clic en **'¡Gratis por 7 Días!'**.",
-            
-            // Información General del FAQ
             "cuánto cuesta": "🎯 **Prueba GRATIS por 7 días** sin riesgo y sin tarjeta de crédito.\n\nDespués del período de prueba, la suscripción es de **$28 al mes**.\n\n**Para comenzar:** Haz clic en **'¡Gratis por 7 Días!'** para tu prueba gratuita.",
             
-            "28": "✅ **$28 al mes** después de tu prueba gratuita de 7 días.\n\n**Para comenzar:**\n1. **Haz clic en '¡Gratis por 7 Días!'** para tu prueba gratuita\n2. **Completa el formulario de registro**\n3. **Disfruta de 7 días gratuitos** sin compromiso",
+            "cómo empiezo": "🚀 **Para comenzar tu prueba gratuita:**\n1. **Haz clic en '¡Gratis por 7 Días!'**\n2. **Completa el formulario de registro**\n3. **Disfruta de 7 días gratuitos**\n4. **Explora todas las funcionalidades**",
             
-            "cómo empiezo": "🚀 **Para comenzar tu prueba gratuita:**\n1. **Haz clic en '¡Gratis por 7 Días!'**\n2. **Completa el formulario de registro**\n3. **Disfruta de 7 días gratuitos**\n4. **Explora todas las funcionalidades**\n\n**📺 Tutorial disponible:** Mira el video tutorial en la página.",
-            
-            "registro": "🎯 **Proceso de registro para prueba gratuita:**\n1. **Haz clic en '¡Gratis por 7 Días!'**\n2. **Completa el formulario** con tus datos\n3. **Confirma tu correo electrónico**\n4. **Accede a tu cuenta** y comienza\n\n**⚠️ Importante:** No necesitas tarjeta de crédito para la prueba gratuita.",
-            
-            "tutorial": "📽️ **Tutorial disponible en esta página:**\nEncuentras un **tutorial completo paso a paso** que explica:\n• Cómo funciona el sistema\n• Proceso de registro correcto\n• Activación de cuenta\n• Primeros pasos\n\n**Para comenzar:** Haz clic en **'¡Gratis por 7 Días!'**.",
-            
-            "automatizar": "🔄 **Sistema de automatización:**\nAI Viral Downline se encarga de:\n• Atender prospectos 24/7\n• Explicar el sistema automáticamente\n• Guiar el proceso de registro\n• Generar ingresos residuales\n\n**Para activar:** Haz clic en **'¡Gratis por 7 Días!'**.",
-            
-            "ganar": "💰 **Potencial de ingresos:**\n• **$25 por referencia directa**\n• Comisiones de matriz 3x8 ($6,582/mes niveles 1-7)\n• Hasta $26,265/mes con matriz completa\n• Spillover automático (ingresos pasivos)\n\n**💡 Para activar:** Haz clic en **'¡Gratis por 7 Días!'**.",
-            
-            "contacto": "📞 **Para información y soporte:**\n• **WhatsApp:** +13232850508 (Jobshndez)\n• **Email:** jobshndez@gmail.com\n• **Telegram:** https://t.me/+EnM9LTD6JlgzMjcx\n\n**Para comenzar:** Haz clic en **'¡Gratis por 7 Días!'**.",
-            
-            "hola": "¡Hola! 👋 Soy **Emily**, tu asistente de IA para aiviraljobs. Puedo responder tus preguntas sobre AI Viral Downline.\n\n**Preguntas frecuentes:**\n• ¿Qué es AI Viral Downline?\n• ¿Cuánto gano por referencia?\n• ¿Cómo funciona la matriz 3x8?\n• ¿Cuánto cuesta?\n\n**Para comenzar:** Haz clic en **'¡Gratis por 7 Días!'** para tu prueba gratuita de 7 días.",
+            "hola": "¡Hola! 👋 Soy **Emily**, tu asistente de IA para aiviraljobs. Puedo responder tus preguntas sobre AI Viral Downline.\n\n**Para comenzar:** Haz clic en **'¡Gratis por 7 Días!'** para tu prueba gratuita de 7 días.",
             
             "gracias": "¡De nada! 😊 Estoy aquí para ayudarte. **Recuerda:** Haz clic en **'¡Gratis por 7 Días!'** para comenzar tu prueba gratuita de 7 días.",
             
             "adiós": "¡Hasta luego! 👋 Recuerda hacer clic en **'¡Gratis por 7 Días!'** para tu prueba gratuita.",
             
-            "default": "🤔 No tengo información específica sobre esa pregunta.\n\n**💡 Te recomiendo:**\n1. **Únete a nuestro grupo de Telegram** para preguntas específicas\n2. **Mira el tutorial completo** en esta página\n3. **Contacta a Jobshndez por WhatsApp** para soporte personalizado\n\n**Para comenzar:** Haz clic en **'¡Gratis por 7 Días!'** para tu prueba gratuita."
+            "default": "🤔 No tengo información específica sobre esa pregunta.\n\n**💡 Te recomiendo:**\n1. **Únete a nuestro grupo de Telegram** para preguntas específicas\n2. **Contacta a Jobshndez por WhatsApp** para soporte personalizado\n\n**Para comenzar:** Haz clic en **'¡Gratis por 7 Días!'** para tu prueba gratuita."
         };
 
         // Estado inicial
@@ -1984,7 +1920,7 @@
             
             if (!initialMessageShown) {
                 setTimeout(() => {
-                    addBotMessage("¡Hola! 👋 Soy **Emily**, tu asistente de IA para aiviraljobs.\n\n**💡 Información importante:**\nPuedo responder tus preguntas sobre:\n• **AI Viral Downline** y cómo funciona\n• **Ganancias** por referencias ($25 cada una)\n• **Matriz 3x8** y plan de compensación\n• **Prueba gratuita** de 7 días\n\n¿En qué puedo ayudarte hoy?");
+                    addBotMessage("¡Hola! 👋 Soy **Emily**, tu asistente de IA para aiviraljobs.\n\n**💡 Información importante:**\nPuedo responder tus preguntas sobre:\n• **AI Viral Downline** y cómo funciona\n• **Ganancias** por referencias ($25 cada una)\n• **Prueba gratuita** de 7 días\n\n¿En qué puedo ayudarte hoy?");
                     initialMessageShown = true;
                 }, 300);
             }
@@ -2026,51 +1962,22 @@
             let showCTAButtons = true;
             let showTelegramButton = false;
             
-            // Buscar coincidencias en la base de conocimiento
-            const questions = Object.keys(knowledgeBase);
-            let found = false;
-            
-            for (let question of questions) {
-                if (lowerMessage.includes(question)) {
-                    response = knowledgeBase[question];
-                    found = true;
-                    break;
-                }
-            }
-            
-            // Búsqueda adicional por palabras clave específicas
-            if (!found) {
-                if (lowerMessage.includes('hola') || lowerMessage.includes('hi') || lowerMessage.includes('buenas')) {
-                    response = knowledgeBase["hola"];
-                    found = true;
-                } else if (lowerMessage.includes('cuánto') || lowerMessage.includes('cuesta') || lowerMessage.includes('precio') || lowerMessage.includes('28') || lowerMessage.includes('$')) {
-                    response = knowledgeBase["cuánto cuesta"];
-                    found = true;
-                } else if (lowerMessage.includes('referencia') || lowerMessage.includes('referido') || lowerMessage.includes('25')) {
-                    response = knowledgeBase["cuánto gano por cada referencia directa"];
-                    found = true;
-                } else if (lowerMessage.includes('matriz') || lowerMessage.includes('3x8')) {
-                    response = knowledgeBase["cómo funciona el plan de compensación"];
-                    found = true;
-                } else if (lowerMessage.includes('creador') || lowerMessage.includes('fundador')) {
-                    response = knowledgeBase["quienes son los creadores"];
-                    found = true;
-                } else if (lowerMessage.includes('empresa') || lowerMessage.includes('registrada') || lowerMessage.includes('ubicación')) {
-                    response = knowledgeBase["dónde está registrada la empresa"];
-                    found = true;
-                } else if (lowerMessage.includes('pago') || lowerMessage.includes('retiro') || lowerMessage.includes('retirar')) {
-                    response = knowledgeBase["cómo recibo mis pagos"];
-                    found = true;
-                } else if (lowerMessage.includes('mínimo') || lowerMessage.includes('retirar')) {
-                    response = knowledgeBase["cuál es el monto mínimo de retiro"];
-                    found = true;
-                } else if (lowerMessage.includes('automático') || lowerMessage.includes('mensualidad')) {
-                    response = knowledgeBase["el pago mensual es automático"];
-                    found = true;
-                } else if (lowerMessage.includes('gratuita') || lowerMessage.includes('free')) {
-                    response = knowledgeBase["puedo ganar dinero con la cuenta gratuita"];
-                    found = true;
-                }
+            // Buscar coincidencias
+            if (lowerMessage.includes('hola') || lowerMessage.includes('hi') || lowerMessage.includes('buenas')) {
+                response = knowledgeBase["hola"];
+                found = true;
+            } else if (lowerMessage.includes('cuánto') || lowerMessage.includes('cuesta') || lowerMessage.includes('precio') || lowerMessage.includes('28') || lowerMessage.includes('$')) {
+                response = knowledgeBase["cuánto cuesta"];
+                found = true;
+            } else if (lowerMessage.includes('referencia') || lowerMessage.includes('referido') || lowerMessage.includes('25')) {
+                response = knowledgeBase["cuánto gano por cada referencia directa"];
+                found = true;
+            } else if (lowerMessage.includes('qué es') || lowerMessage.includes('que es')) {
+                response = knowledgeBase["qué es ai viral downline"];
+                found = true;
+            } else if (lowerMessage.includes('cómo empiezo') || lowerMessage.includes('comenzar') || lowerMessage.includes('empezar')) {
+                response = knowledgeBase["cómo empiezo"];
+                found = true;
             }
             
             // Si no se encuentra respuesta específica, mostrar redirección a Telegram
@@ -2165,21 +2072,14 @@
                 images.forEach((image, index) => {
                     setTimeout(() => {
                         image.classList.add('visible');
-                        
-                        setTimeout(() => {
-                            image.style.transition = 'all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275)';
-                        }, 300);
                     }, index * 400);
                 });
             }
             
-            // Observador de intersección mejorado
+            // Observador de intersección
             const observer = new IntersectionObserver((entries) => {
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
-                        imagesContainer.style.transition = 'all 1s ease-out';
-                        imagesContainer.style.transform = 'translateY(0)';
-                        
                         animateImages();
                         observer.unobserve(entry.target);
                     }
@@ -2191,12 +2091,10 @@
             
             // Observar el contenedor de imágenes
             if (imagesContainer) {
-                imagesContainer.style.transform = 'translateY(50px)';
-                imagesContainer.style.opacity = '0.8';
                 observer.observe(imagesContainer);
             }
             
-            // Efecto de conteo animado mejorado
+            // Efecto de conteo animado
             const countElement = document.querySelector('.count-animation');
             if (countElement) {
                 let count = 0;
@@ -2210,8 +2108,6 @@
                         if (count > target) count = target;
                         countElement.textContent = `$${Math.round(count)}`;
                         requestAnimationFrame(updateCount);
-                    } else {
-                        countElement.style.textShadow = '0 0 30px rgba(255, 215, 0, 0.9)';
                     }
                 };
                 
