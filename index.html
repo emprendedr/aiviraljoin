@@ -1354,6 +1354,24 @@
             transform: translateY(-2px);
             box-shadow: 0 5px 15px rgba(255, 107, 107, 0.3);
         }
+        
+        .whatsapp-cta-button {
+            background: linear-gradient(90deg, #25D366, #128C7E);
+            color: white;
+            border: none;
+            padding: 12px;
+            border-radius: 10px;
+            font-weight: bold;
+            text-align: center;
+            text-decoration: none;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        
+        .whatsapp-cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(37, 211, 102, 0.3);
+        }
 
         /* ===== RESPONSIVE ===== */
         @media (max-width: 768px) {
@@ -1907,7 +1925,7 @@
             </a>
         </div>
 
-        <!-- FOOTER ACTUALIZADO -->
+        <!-- FOOTER ACTUALIZADA -->
         <footer>
             <div class="footer-content">
                 <div class="footer-bottom">
@@ -1956,9 +1974,7 @@
             </button>
         </div>
         <div class="cta-buttons" id="ctaButtons" style="display: none;">
-            <a href="https://aiviraldownline.com/lc.php?id=Jobshndez" class="cta-button" target="_blank">¡Inicia tu Prueba Gratuita de 7 Días!</a>
-            <a href="https://wa.me/13232850508?text=Hola%20jobs,%20necesito%20ayuda%20para%20dar%20inicio%20con%20Aiviraldownline.%20Me%20das%20el%20paso%20a%20paso?" 
-               class="cta-button" style="background: linear-gradient(90deg, #25D366, #128C7E);" target="_blank">Hablar con Soporte</a>
+            <!-- Botones dinámicos aparecerán aquí -->
         </div>
     </div>
 
@@ -1973,104 +1989,288 @@
         const quickReplyButtons = document.querySelectorAll('.quick-reply');
         const ctaButtons = document.getElementById('ctaButtons');
 
-        // Base de conocimiento ampliada del chatbot con todas las preguntas
+        // Base de conocimiento mejorada con inteligencia de reconocimiento
         const knowledgeBase = {
             // CATEGORÍA 1: QUÉ ES AI VIRAL DOWNLINE
-            "qué es ai viral downline": "¡Hola! Soy Emily, tu asistente de IA. AI Viral Downline es una plataforma de automatización con inteligencia artificial diseñada para ayudarte a promocionar oportunidades digitales, atraer prospectos y generar ingresos residuales mediante un sistema de referidos y matriz de compensación. ¿Listo para comenzar tu prueba gratuita de 7 días hoy mismo?",
+            "qué es ai viral downline": {
+                answer: "¡Hola! Soy Emily, tu asistente de IA. AI Viral Downline es una plataforma de automatización con inteligencia artificial diseñada para ayudarte a promocionar oportunidades digitales, atraer prospectos y generar ingresos residuales mediante un sistema de referidos y matriz de compensación. ¿Listo para comenzar tu prueba gratuita de 7 días hoy mismo?",
+                category: "concepto",
+                keywords: ["qué es", "definición", "explicación", "ai viral downline", "plataforma", "sistema"]
+            },
             
-            "quién puede usar": "Cualquier persona mayor de 18 años puede usar AI Viral Downline. No necesitas experiencia previa en marketing, creación de contenido ni ventas. Solo debes estar dispuesto a aprender a usar la IA de forma inteligente. ¡El momento perfecto para empezar es hoy!",
+            "quién puede usar": {
+                answer: "Cualquier persona mayor de 18 años puede usar AI Viral Downline. No necesitas experiencia previa en marketing, creación de contenido ni ventas. Solo debes estar dispuesto a aprender a usar la IA de forma inteligente. ¡El momento perfecto para empezar es hoy!",
+                category: "requisitos",
+                keywords: ["quién", "quien", "puede usar", "edad", "requisitos", "experiencia"]
+            },
             
-            "necesito conocimientos técnicos": "¡Para nada! La plataforma está diseñada para ser intuitiva. Incluye tutoriales paso a paso y yo, Emily, te guío en todo el proceso. ¡Es más fácil de lo que imaginas!",
+            "necesito conocimientos técnicos": {
+                answer: "¡Para nada! La plataforma está diseñada para ser intuitiva. Incluye tutoriales paso a paso y yo, Emily, te guío en todo el proceso. ¡Es más fácil de lo que imaginas!",
+                category: "facilidad",
+                keywords: ["conocimientos", "técnicos", "difícil", "complicado", "fácil", "intuitivo"]
+            },
             
-            "qué hace emily": "¡Esa soy yo! Soy una IA que explica la línea descendente viral, desglosa la matriz 3x8, supera objeciones comunes y guía a los prospectos en el proceso de registro automático. Estoy aquí para hacerte la vida más fácil.",
+            "qué hace emily": {
+                answer: "¡Esa soy yo! Soy una IA que explica la línea descendente viral, desglosa la matriz 3x8, supera objeciones comunes y guía a los prospectos en el proceso de registro automático. Estoy aquí para hacerte la vida más fácil.",
+                category: "emily",
+                keywords: ["emily", "asistente", "qué hace", "funciones", "ayuda", "guía"]
+            },
             
-            "esquema piramidal": "¡Absolutamente no! AI Viral Downline es un sistema de marketing de afiliación legítimo con productos y servicios reales. Ofrece valor a través de automatización con IA y genera ingresos a través de referencias y una estructura de compensación transparente. ¡Comienza tu prueba gratuita hoy y compruébalo tú mismo!",
+            "esquema piramidal": {
+                answer: "¡Absolutamente no! AI Viral Downline es un sistema de marketing de afiliación legítimo con productos y servicios reales. Ofrece valor a través de automatización con IA y genera ingresos a través de referencias y una estructura de compensación transparente. ¡Comienza tu prueba gratuita hoy y compruébalo tú mismo!",
+                category: "legalidad",
+                keywords: ["piramidal", "esquema", "legal", "ilegal", "estafa", "fraude"]
+            },
             
-            "vender productos físicos": "No, no vendes productos físicos. El enfoque principal es promover la oportunidad digital y ayudar a otros a unirse al sistema. ¡Es digital y automatizado!",
+            "vender productos físicos": {
+                answer: "No, no vendes productos físicos. El enfoque principal es promover la oportunidad digital y ayudar a otros a unirse al sistema. ¡Es digital y automatizado!",
+                category: "productos",
+                keywords: ["productos", "físicos", "vender", "inventario", "almacén", "envíos"]
+            },
             
-            "diferencia otras oportunidades": "La diferencia principal es el uso de inteligencia artificial para automatizar procesos, el sistema de matriz 3x8 con ingresos residuales, y el enfoque en capacitar a personas sin experiencia previa. ¡Únete hoy y sé de los primeros!",
+            "diferencia otras oportunidades": {
+                answer: "La diferencia principal es el uso de inteligencia artificial para automatizar procesos, el sistema de matriz 3x8 con ingresos residuales, y el enfoque en capacitar a personas sin experiencia previa. ¡Únete hoy y sé de los primeros!",
+                category: "ventajas",
+                keywords: ["diferencia", "ventaja", "competencia", "mejor", "único", "especial"]
+            },
             
-            "legalidad país": "AI Viral Downline opera como un programa de afiliación digital que es legal en la mayoría de países. Sin embargo, te recomendamos verificar las regulaciones específicas de marketing multinivel en tu país. ¡No esperes más para asegurar tu posición!",
+            "legalidad país": {
+                answer: "AI Viral Downline opera como un programa de afiliación digital que es legal en la mayoría de países. Sin embargo, te recomendamos verificar las regulaciones específicas de marketing multinivel en tu país. ¡No esperes más para asegurar tu posición!",
+                category: "legalidad",
+                keywords: ["legal", "país", "ley", "regulación", "permiso", "autorizado"]
+            },
             
-            "ubicación": "7261 Tamarack RD, Plymouth IN 46563, admin@aiviraldownline.com. ¡Empresa registrada y legal! Asegura tu posición hoy mismo.",
+            "ubicación": {
+                answer: "7261 Tamarack RD, Plymouth IN 46563, admin@aiviraldownline.com. ¡Empresa registrada y legal! Asegura tu posición hoy mismo.",
+                category: "información",
+                keywords: ["ubicación", "dirección", "dónde", "localización", "oficina", "sede"]
+            },
             
-            "fundador": "Ken Wasiewicz, propietario con más de 40 años en mercadeo en red, Técnico de Electrónica de Energía Nuclear de la Marina de los Estados Unidos en submarinos, comercializador afiliado que está haciendo crecer la empresa por un afiliado para afiliados. ¡Únete hoy a este sistema probado!",
+            "fundador": {
+                answer: "Ken Wasiewicz, propietario con más de 40 años en mercadeo en red, Técnico de Electrónica de Energía Nuclear de la Marina de los Estados Unidos en submarinos, comercializador afiliado que está haciendo crecer la empresa por un afiliado para afiliados. ¡Únete hoy a este sistema probado!",
+                category: "información",
+                keywords: ["fundador", "creador", "ken", "wasiewicz", "dueño", "propietario"]
+            },
 
             // CATEGORÍA 2: COSTOS Y PAGOS
-            "cuánto cuesta": "¡Excelente pregunta! Ofrecemos una prueba GRATUITA de 7 días sin compromiso. Después del período de prueba, la membresía tiene un costo de $28 al mes. ¡Pero empieza GRATIS hoy mismo!",
+            "cuánto cuesta": {
+                answer: "¡Excelente pregunta! Ofrecemos una prueba GRATUITA de 7 días sin compromiso. Después del período de prueba, la membresía tiene un costo de $28 al mes. ¡Pero empieza GRATIS hoy mismo!",
+                category: "costos",
+                keywords: ["cuánto", "cuesta", "precio", "28", "$", "dinero", "pago"]
+            },
             
-            "tarjeta crédito prueba": "No, no necesitas tarjeta de crédito para comenzar la prueba gratuita de 7 días. ¡Completamente libre de riesgo!",
+            "tarjeta crédito prueba": {
+                answer: "No, no necesitas tarjeta de crédito para comenzar la prueba gratuita de 7 días. ¡Completamente libre de riesgo!",
+                category: "costos",
+                keywords: ["tarjeta", "crédito", "prueba", "gratis", "sin tarjeta", "tarjeta de crédito"]
+            },
             
-            "incluye membresía": "¡Todo incluido! Por $28 mensuales tienes acceso completo a la plataforma, herramientas de automatización, asistente Emily (¡ese soy yo!), sistema de seguimiento, capacitación y soporte del equipo. ¡Un valor increíble!",
+            "incluye membresía": {
+                answer: "¡Todo incluido! Por $28 mensuales tienes acceso completo a la plataforma, herramientas de automatización, asistente Emily (¡ese soy yo!), sistema de seguimiento, capacitación y soporte del equipo. ¡Un valor increíble!",
+                category: "costos",
+                keywords: ["incluye", "membresía", "acceso", "herramientas", "soporte", "capacitación"]
+            },
             
-            "ganar por referido": "¡Directo al grano! Ganas $25 por cada referencia directa que se une a través de tu enlace y completa el proceso de registro. ¡Eso es ingreso inmediato!",
+            "ganar por referido": {
+                answer: "¡Directo al grano! Ganas $25 por cada referencia directa que se une a través de tu enlace y completa el proceso de registro. ¡Eso es ingreso inmediato!",
+                category: "ganancias",
+                keywords: ["ganar", "referido", "25", "comisión", "por persona", "referencia"]
+            },
             
-            "cómo recibo pagos": "Los pagos se realizan semanalmente a través de métodos electrónicos como PayPal, transferencia bancaria o criptomonedas, según tu preferencia. ¡Rápido y seguro!",
+            "cómo recibo pagos": {
+                answer: "Los pagos se realizan semanalmente a través de métodos electrónicos como PayPal, transferencia bancaria o criptomonedas, según tu preferencia. ¡Rápido y seguro!",
+                category: "pagos",
+                keywords: ["cómo", "recibo", "pagos", "paypal", "transferencia", "cripto", "dinero"]
+            },
             
-            "costos adicionales": "¡Transparencia total! No, el único costo es la membresía mensual de $28 después de la prueba gratuita. No hay costos de configuración, mantenimiento ni cargos ocultos.",
+            "costos adicionales": {
+                answer: "¡Transparencia total! No, el único costo es la membresía mensual de $28 después de la prueba gratuita. No hay costos de configuración, mantenimiento ni cargos ocultos.",
+                category: "costos",
+                keywords: ["costos", "adicionales", "ocultos", "extra", "mantenimiento", "configuración"]
+            },
             
-            "mínimo retiro": "El mínimo para retiro es de $50 en la mayoría de métodos de pago. ¡Fácil de alcanzar!",
+            "mínimo retiro": {
+                answer: "El mínimo para retiro es de $50 en la mayoría de métodos de pago. ¡Fácil de alcanzar!",
+                category: "pagos",
+                keywords: ["mínimo", "retiro", "retirar", "50", "cobrar", "sacar dinero"]
+            },
             
-            "ganar durante prueba": "¡Sí! Durante tus 7 días de prueba gratuita puedes referir personas y ganar las comisiones correspondientes. ¡No pierdas tiempo, comienza hoy!",
+            "ganar durante prueba": {
+                answer: "¡Sí! Durante tus 7 días de prueba gratuita puedes referir personas y ganar las comisiones correspondientes. ¡No pierdas tiempo, comienza hoy!",
+                category: "ganancias",
+                keywords: ["ganar", "durante", "prueba", "gratis", "7 días", "comisiones prueba"]
+            },
             
-            "pago matriz 3x8": "Los pagos de la matriz se realizan mensualmente de forma automática a medida que los miembros en tu estructura completan sus pagos de membresía. ¡Ingresos residuales automáticos!",
+            "pago matriz 3x8": {
+                answer: "Los pagos de la matriz se realizan mensualmente de forma automática a medida que los miembros en tu estructura completan sus pagos de membresía. ¡Ingresos residuales automáticos!",
+                category: "matriz",
+                keywords: ["pago", "matriz", "3x8", "residuales", "automático", "mensual"]
+            },
             
-            "pagar impuestos": "Sí, como cualquier ingreso, debes declararlo según las leyes fiscales de tu país. Te recomendamos consultar con un contador local. ¡Pero primero genera los ingresos!",
+            "pagar impuestos": {
+                answer: "Sí, como cualquier ingreso, debes declararlo según las leyes fiscales de tu país. Te recomendamos consultar con un contador local. ¡Pero primero genera los ingresos!",
+                category: "pagos",
+                keywords: ["impuestos", "pagar", "declarar", "fiscales", "leyes", "contador"]
+            },
 
             // CATEGORÍA 3: LA MATRIZ 3X8
-            "matriz 3x8": "¡El corazón del sistema! Es una estructura de compensación donde cada persona puede tener hasta 3 personas en su primer nivel, y estas a su vez pueden tener 3 cada una, expandiéndose hasta 8 niveles de profundidad. ¡Potencial de ingresos masivo!",
+            "matriz 3x8": {
+                answer: "¡El corazón del sistema! Es una estructura de compensación donde cada persona puede tener hasta 3 personas en su primer nivel, y estas a su vez pueden tener 3 cada una, expandiéndose hasta 8 niveles de profundidad. ¡Potencial de ingresos masivo!",
+                category: "matriz",
+                keywords: ["matriz", "3x8", "estructura", "compensación", "niveles", "profundidad"]
+            },
             
-            "ganar matriz completa": "¡Prepárate para esto! Con la matriz completa (8 niveles) puedes ganar hasta $26,265 mensuales. Los niveles 1-7 pueden generarte hasta $6,582/mes sin necesidad de referir personalmente a nadie. ¡Impresionante, verdad?",
+            "ganar matriz completa": {
+                answer: "¡Prepárate para esto! Con la matriz completa (8 niveles) puedes ganar hasta $26,265 mensuales. Los niveles 1-7 pueden generarte hasta $6,582/mes sin necesidad de referir personalmente a nadie. ¡Impresionante, verdad?",
+                category: "ganancias",
+                keywords: ["ganar", "matriz", "completa", "26265", "6582", "mensual", "ingresos"]
+            },
             
-            "spillover derrame": "¡Esta es la magia! Es cuando las personas que no caben en los espacios de tus referidos directos 'se derraman' hacia niveles más profundos en tu matriz, llenando posiciones automáticamente. ¡Tu matriz se llena incluso sin que hagas nada!",
+            "spillover derrame": {
+                answer: "¡Esta es la magia! Es cuando las personas que no caben en los espacios de tus referidos directos 'se derraman' hacia niveles más profundos en tu matriz, llenando posiciones automáticamente. ¡Tu matriz se llena incluso sin que hagas nada!",
+                category: "matriz",
+                keywords: ["spillover", "derrame", "automático", "llenar", "posiciones", "matriz"]
+            },
             
-            "necesito 3 referidos": "Para activar todo el potencial de ganancias del nivel 8, sí necesitas 3 referidos personales. Sin embargo, puedes ganar en los niveles 1-7 sin referir a nadie gracias al sistema de derrame. ¡Pero entre más activo seas, más ganas!",
+            "necesito 3 referidos": {
+                answer: "Para activar todo el potencial de ganancias del nivel 8, sí necesitas 3 referidos personales. Sin embargo, puedes ganar en los niveles 1-7 sin referir a nadie gracias al sistema de derrame. ¡Pero entre más activo seas, más ganas!",
+                category: "matriz",
+                keywords: ["necesito", "3", "referidos", "personales", "nivel 8", "requisitos"]
+            },
             
-            "referidos no activan": "Solo ganas comisiones de miembros activos (que pagan su membresía). Los espacios inactivos pueden ser llenados con nuevos miembros a través del sistema. ¡Tu matriz siempre está optimizándose!",
+            "referidos no activan": {
+                answer: "Solo ganas comisiones de miembros activos (que pagan su membresía). Los espacios inactivos pueden ser llenados con nuevos miembros a través del sistema. ¡Tu matriz siempre está optimizándose!",
+                category: "matriz",
+                keywords: ["referidos", "no activan", "inactivos", "comisiones", "miembros", "activos"]
+            },
             
-            "matriz reinicia": "¡No! La matriz es continua. Una vez que alguien ocupa una posición en tu matriz, permanece allí mientras mantenga su membresía activa. ¡Ingresos residuales de por vida!",
+            "matriz reinicia": {
+                answer: "¡No! La matriz es continua. Una vez que alguien ocupa una posición en tu matriz, permanece allí mientras mantenga su membresía activa. ¡Ingresos residuales de por vida!",
+                category: "matriz",
+                keywords: ["matriz", "reinicia", "continua", "permanente", "vida", "siempre"]
+            },
             
-            "ver matriz tiempo real": "¡Sí! La plataforma incluye un panel de control donde puedes ver tu matriz, niveles llenos, ganancias y progreso en tiempo real. ¡Todo transparente!",
+            "ver matriz tiempo real": {
+                answer: "¡Sí! La plataforma incluye un panel de control donde puedes ver tu matriz, niveles llenos, ganancias y progreso en tiempo real. ¡Todo transparente!",
+                category: "matriz",
+                keywords: ["ver", "matriz", "tiempo real", "panel", "control", "progreso"]
+            },
             
-            "garantía llenado matriz": "El sistema está diseñado para crecimiento orgánico a través del marketing viral y el derrame, pero el llenado depende de la actividad general del sistema. La empresa se enfoca en crecimiento constante. ¡Los primeros en unirse tienen ventaja!",
+            "garantía llenado matriz": {
+                answer: "El sistema está diseñado para crecimiento orgánico a través del marketing viral y el derrame, pero el llenado depende de la actividad general del sistema. La empresa se enfoca en crecimiento constante. ¡Los primeros en unirse tienen ventaja!",
+                category: "matriz",
+                keywords: ["garantía", "llenado", "matriz", "crecimiento", "viral", "derrame"]
+            },
 
             // CATEGORÍA 4: FUNCIONAMIENTO Y SOPORTE
-            "tiempo dedicar": "Recomendamos dedicar al menos 30-60 minutos diarios para compartir tu enlace, interactuar con prospectos y aprender las estrategias. ¡Consistencia es la clave!",
+            "tiempo dedicar": {
+                answer: "Recomendamos dedicar al menos 30-60 minutos diarios para compartir tu enlace, interactuar con prospectos y aprender las estrategias. ¡Consistencia es la clave!",
+                category: "funcionamiento",
+                keywords: ["tiempo", "dedicar", "diario", "horas", "minutos", "consistencia"]
+            },
             
-            "recibir capacitación": "¡Totalmente! Recibes capacitación completa que incluye tutoriales en video, guías paso a paso, sesiones de entrenamiento en vivo y soporte del equipo. ¡No estás solo en esto!",
+            "recibir capacitación": {
+                answer: "¡Totalmente! Recibes capacitación completa que incluye tutoriales en video, guías paso a paso, sesiones de entrenamiento en vivo y soporte del equipo. ¡No estás solo en esto!",
+                category: "soporte",
+                keywords: ["recibir", "capacitación", "tutoriales", "video", "entrenamiento", "aprender"]
+            },
             
-            "comunidad apoyo": "¡Sí! Tienes acceso a un grupo privado de Telegram donde compartimos estrategias, respuestas a preguntas y apoyo mutuo entre miembros. ¡Una comunidad ganadora!",
+            "comunidad apoyo": {
+                answer: "¡Sí! Tienes acceso a un grupo privado de Telegram donde compartimos estrategias, respuestas a preguntas y apoyo mutuo entre miembros. ¡Una comunidad ganadora!",
+                category: "soporte",
+                keywords: ["comunidad", "apoyo", "telegram", "grupo", "privado", "miembros"]
+            },
             
-            "usar desde celular": "¡Absolutamente! La plataforma es completamente responsive y funciona perfectamente en computadoras, tablets y teléfonos móviles. ¡Trabaja desde cualquier lugar!",
+            "usar desde celular": {
+                answer: "¡Absolutamente! La plataforma es completamente responsive y funciona perfectamente en computadoras, tablets y teléfonos móviles. ¡Trabaja desde cualquier lugar!",
+                category: "funcionamiento",
+                keywords: ["usar", "celular", "móvil", "tablet", "computadora", "responsive"]
+            },
             
-            "problemas técnicos": "¡Estamos aquí para ayudarte! Cuentas con soporte técnico por correo electrónico y a través del grupo de Telegram. También puedes contactar directamente a tu patrocinador. ¡Soporte 360°!",
+            "problemas técnicos": {
+                answer: "¡Estamos aquí para ayudarte! Cuentas con soporte técnico por correo electrónico y a través del grupo de Telegram. También puedes contactar directamente a tu patrocinador. ¡Soporte 360°!",
+                category: "soporte",
+                keywords: ["problemas", "técnicos", "soporte", "ayuda", "contactar", "patrocinador"]
+            },
             
-            "cancelar cualquier momento": "¡Sí! Puedes cancelar tu membresía en cualquier momento después del período de prueba gratuita. No hay contratos de permanencia. ¡Sin riesgos!",
+            "cancelar cualquier momento": {
+                answer: "¡Sí! Puedes cancelar tu membresía en cualquier momento después del período de prueba gratuita. No hay contratos de permanencia. ¡Sin riesgos!",
+                category: "funcionamiento",
+                keywords: ["cancelar", "cualquier", "momento", "contrato", "permanencia", "riesgo"]
+            },
             
-            "compartir enlace": "¡Fácil! La plataforma te proporciona un enlace personalizado que puedes compartir en redes sociales, WhatsApp, correo electrónico o cualquier otro medio. ¡Automático y sencillo!",
+            "compartir enlace": {
+                answer: "¡Fácil! La plataforma te proporciona un enlace personalizado que puedes compartir en redes sociales, WhatsApp, correo electrónico o cualquier otro medio. ¡Automático y sencillo!",
+                category: "funcionamiento",
+                keywords: ["compartir", "enlace", "personalizado", "redes", "whatsapp", "correo"]
+            },
             
-            "herramientas marketing": "¡Todo incluido! Sí, incluye plantillas de mensajes, imágenes para redes sociales, secuencias de seguimiento automatizado y yo, Emily, para interactuar con prospectos. ¡Todo en uno!",
+            "herramientas marketing": {
+                answer: "¡Todo incluido! Sí, incluye plantillas de mensajes, imágenes para redes sociales, secuencias de seguimiento automatizado y yo, Emily, para interactuar con prospectos. ¡Todo en uno!",
+                category: "herramientas",
+                keywords: ["herramientas", "marketing", "plantillas", "imágenes", "automatizado", "emily"]
+            },
 
             // CATEGORÍA 5: ÉXITO Y EXPECTATIVAS
-            "cuánto ganar realmente": "¡Depende de ti! Las ganancias varían según tu actividad. Algunos miembros ganan $500-1000 mensuales, mientras otros alcanzan los $5,000+ mensuales. Depende de tu consistencia y aplicación de las estrategias. ¡El potencial está ahí!",
+            "cuánto ganar realmente": {
+                answer: "¡Depende de ti! Las ganancias varían según tu actividad. Algunos miembros ganan $500-1000 mensuales, mientras otros alcanzan los $5,000+ mensuales. Depende de tu consistencia y aplicación de las estrategias. ¡El potencial está ahí!",
+                category: "ganancias",
+                keywords: ["cuánto", "ganar", "realmente", "dinero", "ingresos", "mensual", "potencial"]
+            },
             
-            "tiempo ver resultados": "¡Rápido! Algunos miembros ven sus primeras ganancias en la primera semana, mientras que para construir un ingreso significativo puede tomar 3-6 meses de trabajo consistente. ¡Empieza hoy y mira resultados pronto!",
+            "tiempo ver resultados": {
+                answer: "¡Rápido! Algunos miembros ven sus primeras ganancias en la primera semana, mientras que para construir un ingreso significativo puede tomar 3-6 meses de trabajo consistente. ¡Empieza hoy y mira resultados pronto!",
+                category: "éxito",
+                keywords: ["tiempo", "ver", "resultados", "ganancias", "semana", "meses", "constante"]
+            },
             
-            "no tengo redes sociales": "¡No es problema! No necesitas una audiencia grande para comenzar. El sistema te enseña a atraer prospectos orgánicamente, incluso si comienzas desde cero. ¡Todos pueden hacerlo!",
+            "no tengo redes sociales": {
+                answer: "¡No es problema! No necesitas una audiencia grande para comenzar. El sistema te enseña a atraer prospectos orgánicamente, incluso si comienzas desde cero. ¡Todos pueden hacerlo!",
+                category: "éxito",
+                keywords: ["no tengo", "redes", "sociales", "audiencia", "seguidores", "cero", "comenzar"]
+            },
             
-            "soy tímido": "¡Perfecto para ti! La automatización con IA reduce la necesidad de interacción directa. Muchas de las comunicaciones pueden ser automatizadas. ¡Trabaja a tu ritmo!",
+            "soy tímido": {
+                answer: "¡Perfecto para ti! La automatización con IA reduce la necesidad de interacción directa. Muchas de las comunicaciones pueden ser automatizadas. ¡Trabaja a tu ritmo!",
+                category: "éxito",
+                keywords: ["tímido", "introvertido", "interacción", "directa", "automatización", "comunicación"]
+            },
             
-            "además trabajo actual": "¡Ideal! Sí, la mayoría de miembros comienzan como un ingreso adicional mientras mantienen sus trabajos principales. La flexibilidad horaria es total. ¡Construye tu libertad financiera!",
+            "además trabajo actual": {
+                answer: "¡Ideal! Sí, la mayoría de miembros comienzan como un ingreso adicional mientras mantienen sus trabajos principales. La flexibilidad horaria es total. ¡Construye tu libertad financiera!",
+                category: "éxito",
+                keywords: ["además", "trabajo", "actual", "extra", "adicional", "flexibilidad", "horario"]
+            },
             
-            "garantía éxito": "El éxito depende de tu aplicación consistente de las estrategias enseñadas. Ofrecemos las herramientas, capacitación y sistema, pero los resultados dependen de tu acción y perseverancia. ¡Tú decides tu éxito!",
+            "garantía éxito": {
+                answer: "El éxito depende de tu aplicación consistente de las estrategias enseñadas. Ofrecemos las herramientas, capacitación y sistema, pero los resultados dependen de tu acción y perseverancia. ¡Tú decides tu éxito!",
+                category: "éxito",
+                keywords: ["garantía", "éxito", "resultados", "herramientas", "capacitación", "acción", "perseverancia"]
+            },
             
-            "cómo empiezo": "¡Acción inmediata! Si tienes $28, activa tu membresía hoy mismo y comienza a generar ingresos. Si no tienes $28, usa la prueba gratuita de 7 días, pero haz el upgrade lo antes posible para no perder tu posición. ¡Los primeros dominan el mercado!",
+            "cómo empiezo": {
+                answer: "¡Acción inmediata! Si tienes $28, activa tu membresía hoy mismo y comienza a generar ingresos. Si no tienes $28, usa la prueba gratuita de 7 días, pero haz el upgrade lo antes posible para no perder tu posición. ¡Los primeros dominan el mercado!",
+                category: "inicio",
+                keywords: ["cómo", "empiezo", "comenzar", "iniciar", "primer paso", "empezar hoy"]
+            },
             
-            "tengo 28": "¡Excelente decisión! Asegura tu posición hoy con $28 y comienza a generar ingresos de inmediato. Los primeros en entrar tienen ventaja competitiva. ¡Haz clic aquí para activar ahora mismo!",
+            "tengo 28": {
+                answer: "¡Excelente decisión! Asegura tu posición hoy con $28 y comienza a generar ingresos de inmediato. Los primeros en entrar tienen ventaja competitiva. ¡Haz clic aquí para activar ahora mismo!",
+                category: "inicio",
+                keywords: ["tengo", "28", "dinero", "listo", "comenzar", "activar", "ahora"]
+            },
             
-            "no tengo 28": "¡No hay problema! Comienza con la prueba gratuita de 7 días: acceso completo, gana $25 por cada referido y experimenta el sistema. Pero haz tu upgrade a $28 lo antes posible para no perder tu posición en la matriz. ¡Actúa hoy!",
+            "no tengo 28": {
+                answer: "¡No hay problema! Comienza con la prueba gratuita de 7 días: acceso completo, gana $25 por cada referido y experimenta el sistema. Pero haz tu upgrade a $28 lo antes posible para no perder tu posición en la matriz. ¡Actúa hoy!",
+                category: "inicio",
+                keywords: ["no tengo", "28", "dinero", "prueba", "gratis", "7 días", "upgrade"]
+            },
             
-            "default": "¡Hola! Soy Emily, tu asistente de IA para AI Viral Downline. ¿Tienes alguna pregunta específica sobre el sistema, la matriz 3x8, los costos o cómo comenzar? Estoy aquí para ayudarte a dar el primer paso hacia tus ingresos residuales. ¡El momento perfecto para empezar es hoy mismo! ¿Listo para tu prueba gratuita de 7 días?"
+            "default": {
+                answer: "¡Hola! Soy Emily, tu asistente de IA para AI Viral Downline. Parece que tu pregunta es muy específica o no tengo suficiente información para responderte con precisión. Te recomiendo contactar directamente a tu patrocinador por WhatsApp para obtener una respuesta personalizada y detallada. ¿Te ayudo a conectarte con él?",
+                category: "no encontrado",
+                keywords: []
+            }
         };
 
         // Estado inicial
@@ -2118,152 +2318,121 @@
             chatbotMessages.scrollTop = chatbotMessages.scrollHeight;
         }
 
-        // Función para procesar mensaje
-        function processMessage(message) {
+        // Función inteligente para reconocer preguntas
+        function recognizeQuestion(message) {
             const lowerMessage = message.toLowerCase();
-            let response = knowledgeBase.default;
-            let showCTAButtons = true;
-            let found = false;
+            let bestMatch = null;
+            let bestScore = 0;
             
-            // BÚSQUEDA EN LA BASE DE CONOCIMIENTO
-            const searchTerms = {
-                // Qué es
-                "qué es": "qué es ai viral downline",
-                "que es": "qué es ai viral downline",
-                "exactamente": "qué es ai viral downline",
+            // Recorrer toda la base de conocimiento
+            for (const [key, data] of Object.entries(knowledgeBase)) {
+                let score = 0;
                 
-                // Quién puede usar
-                "quién puede": "quién puede usar",
-                "quien puede": "quién puede usar",
-                "mayor de 18": "quién puede usar",
+                // Verificar coincidencia exacta
+                if (lowerMessage === key) {
+                    score = 100;
+                }
                 
-                // Conocimientos técnicos
-                "conocimientos técnicos": "necesito conocimientos técnicos",
-                "técnico": "necesito conocimientos técnicos",
-                "experiencia": "necesito conocimientos técnicos",
+                // Verificar coincidencia parcial
+                if (lowerMessage.includes(key)) {
+                    score = 80;
+                }
                 
-                // Emily
-                "emily": "qué hace emily",
-                "asistente": "qué hace emily",
-                "qué hace": "qué hace emily",
+                // Verificar palabras clave
+                for (const keyword of data.keywords) {
+                    if (lowerMessage.includes(keyword)) {
+                        score += 20;
+                    }
+                }
                 
-                // Esquema piramidal
-                "piramidal": "esquema piramidal",
-                "esquema": "esquema piramidal",
-                "legal": "esquema piramidal",
-                
-                // Productos físicos
-                "productos físicos": "vender productos físicos",
-                "vender": "vender productos físicos",
-                "físicos": "vender productos físicos",
-                
-                // Diferencia
-                "diferencia": "diferencia otras oportunidades",
-                "diferente": "diferencia otras oportunidades",
-                "oportunidad": "diferencia otras oportunidades",
-                
-                // Costo
-                "cuesta": "cuánto cuesta",
-                "precio": "cuánto cuesta",
-                "28": "cuánto cuesta",
-                "$": "cuánto cuesta",
-                
-                // Tarjeta crédito
-                "tarjeta": "tarjeta crédito prueba",
-                "crédito": "tarjeta crédito prueba",
-                "tarjeta de crédito": "tarjeta crédito prueba",
-                
-                // Matriz
-                "matriz": "matriz 3x8",
-                "3x8": "matriz 3x8",
-                "compensación": "matriz 3x8",
-                
-                // Ganar
-                "ganar": "cuánto ganar realmente",
-                "ganancias": "cuánto ganar realmente",
-                "dinero": "cuánto ganar realmente",
-                
-                // Cómo empiezo
-                "cómo empiezo": "cómo empiezo",
-                "como empiezo": "cómo empiezo",
-                "comenzar": "cómo empiezo",
-                "empezar": "cómo empiezo",
-                "iniciar": "cómo empiezo",
-                
-                // Tengo $28
-                "tengo 28": "tengo 28",
-                "tengo $28": "tengo 28",
-                "si tengo": "tengo 28",
-                "tengo el dinero": "tengo 28",
-                
-                // No tengo $28
-                "no tengo 28": "no tengo 28",
-                "no tengo $28": "no tengo 28",
-                "no tengo dinero": "no tengo 28",
-                "no cuento con": "no tengo 28",
-                
-                // Ubicación
-                "ubicación": "ubicación",
-                "dirección": "ubicación",
-                "dónde están": "ubicación",
-                
-                // Fundador
-                "fundador": "fundador",
-                "creó": "fundador",
-                "ken": "fundador",
-                "wasiewicz": "fundador",
-                
-                // Preguntas generales
-                "hola": "default",
-                "buenas": "default",
-                "hi": "default",
-                "hello": "default",
-                "saludos": "default"
-            };
-            
-            // Buscar términos clave
-            for (const [term, key] of Object.entries(searchTerms)) {
-                if (lowerMessage.includes(term)) {
-                    response = knowledgeBase[key];
-                    found = true;
-                    break;
+                // Si encontramos una mejor coincidencia
+                if (score > bestScore) {
+                    bestScore = score;
+                    bestMatch = key;
                 }
             }
             
-            // SI NO SE ENCUENTRA RESPUESTA ESPECÍFICA
-            if (!found) {
-                // Intentar búsqueda más general
-                for (const [key, value] of Object.entries(knowledgeBase)) {
-                    if (lowerMessage.includes(key.split(" ")[0])) {
-                        response = value;
-                        found = true;
-                        break;
-                    }
-                }
+            // Si la puntuación es muy baja, mostrar WhatsApp
+            if (bestScore < 30) {
+                return "no_encontrado";
+            }
+            
+            return bestMatch;
+        }
+
+        // Función para determinar qué botones mostrar
+        function determineButtons(category, questionKey) {
+            let buttonsHTML = '';
+            
+            // Si no se encontró la pregunta
+            if (questionKey === "no_encontrado") {
+                buttonsHTML = `
+                    <a href="https://wa.me/13232850508?text=Hola%20jobs,%20tengo%20una%20pregunta%20específica%20sobre%20AI%20Viral%20Downline%20que%20no%20encontré%20en%20el%20chatbot.%20¿Me%20puedes%20ayudar?" 
+                       class="whatsapp-cta-button" target="_blank">
+                        📱 Hablar con Patrocinador
+                    </a>
+                `;
+            }
+            // Si es pregunta sobre inicio o costo
+            else if (category === "inicio" || category === "costos" || questionKey === "tengo 28" || questionKey === "no tengo 28") {
+                buttonsHTML = `
+                    <a href="https://aiviraldownline.com/lc.php?id=Jobshndez" class="cta-button" target="_blank">
+                        ¡Inicia Prueba Gratuita de 7 Días!
+                    </a>
+                    <a href="https://wa.me/13232850508?text=Hola%20jobs,%20necesito%20ayuda%20para%20dar%20inicio%20con%20Aiviraldownline.%20Me%20das%20el%20paso%20a%20paso?" 
+                       class="whatsapp-cta-button" target="_blank">
+                        📱 Soporte Personalizado
+                    </a>
+                `;
+            }
+            // Si es pregunta sobre ganancias
+            else if (category === "ganancias") {
+                buttonsHTML = `
+                    <a href="https://aiviraldownline.com/lc.php?id=Jobshndez" class="cta-button" target="_blank">
+                        ¡Comienza a Generar Ingresos Hoy!
+                    </a>
+                `;
+            }
+            // Para otras categorías
+            else {
+                buttonsHTML = `
+                    <a href="https://aiviraldownline.com/lc.php?id=Jobshndez" class="cta-button" target="_blank">
+                        ¡Únete Ahora! Prueba 7 Días Gratis
+                    </a>
+                    <a href="https://t.me/+EnM9LTD6JlgzMjcx" class="cta-button" style="background: linear-gradient(90deg, #0088cc, #006699);" target="_blank">
+                        📱 Únete a Nuestra Comunidad
+                    </a>
+                `;
+            }
+            
+            return buttonsHTML;
+        }
+
+        // Función para procesar mensaje
+        function processMessage(message) {
+            // Reconocer el tipo de pregunta
+            const recognizedQuestion = recognizeQuestion(message);
+            
+            let responseData;
+            let questionKey = recognizedQuestion;
+            
+            // Si no se encontró la pregunta
+            if (recognizedQuestion === "no_encontrado") {
+                responseData = knowledgeBase.default;
+                questionKey = "default";
+            } else {
+                responseData = knowledgeBase[recognizedQuestion];
             }
             
             // MOSTRAR RESPUESTA
             setTimeout(() => {
-                addBotMessage(response);
+                addBotMessage(responseData.answer);
                 
                 // Mostrar botones CTA según corresponda
                 setTimeout(() => {
-                    if (lowerMessage.includes("tengo 28") || lowerMessage.includes("tengo $28") || 
-                        lowerMessage.includes("quiero empezar") || lowerMessage.includes("cómo empiezo") ||
-                        lowerMessage.includes("comenzar") || lowerMessage.includes("empezar") ||
-                        lowerMessage.includes("registrarme") || lowerMessage.includes("quiero unirme")) {
-                        ctaButtons.innerHTML = '<a href="https://aiviraldownline.com/lc.php?id=Jobshndez" class="cta-button" target="_blank">¡Inicia tu Prueba Gratuita de 7 Días!</a>';
-                        ctaButtons.style.display = 'flex';
-                    } else if (lowerMessage.includes("no tengo") || lowerMessage.includes("duda") || 
-                               lowerMessage.includes("pregunta") || lowerMessage.includes("ayuda")) {
-                        ctaButtons.innerHTML = '<a href="https://wa.me/13232850508?text=Hola%20jobs,%20necesito%20ayuda%20para%20dar%20inicio%20con%20Aiviraldownline.%20Me%20das%20el%20paso%20a%20paso?" class="cta-button" style="background: linear-gradient(90deg, #25D366, #128C7E);" target="_blank">Hablar con Soporte por WhatsApp</a>';
-                        ctaButtons.style.display = 'flex';
-                    } else if (found) {
-                        ctaButtons.innerHTML = '<a href="https://aiviraldownline.com/lc.php?id=Jobshndez" class="cta-button" target="_blank">¡Comienza Tu Viaje Hoy! Prueba 7 Días Gratis</a>';
-                        ctaButtons.style.display = 'flex';
-                    } else {
-                        ctaButtons.style.display = 'none';
-                    }
+                    const buttonsHTML = determineButtons(responseData.category, questionKey);
+                    ctaButtons.innerHTML = buttonsHTML;
+                    ctaButtons.style.display = 'flex';
                 }, 500);
             }, 800);
         }
@@ -2280,7 +2449,7 @@
             // Mostrar indicador de "escribiendo"
             const typingIndicator = document.createElement('div');
             typingIndicator.className = 'message bot-message';
-            typingIndicator.innerHTML = '<em>Escribiendo...</em>';
+            typingIndicator.innerHTML = '<em>Analizando tu pregunta...</em>';
             chatbotMessages.appendChild(typingIndicator);
             chatbotMessages.scrollTop = chatbotMessages.scrollHeight;
             
