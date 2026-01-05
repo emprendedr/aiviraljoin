@@ -1934,7 +1934,7 @@
                     <path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm0 14H5.17L4 17.17V4h16v12z"/>
                     <path d="M7 9h10v2H7zm0 4h7v2H7z"/>
                 </svg>
-                Asistente Emily - AI Viral Downline
+                Asesor Comercial - AI Viral Downline
             </div>
             <button class="chatbot-close" id="chatbotClose">&times;</button>
         </div>
@@ -1943,8 +1943,8 @@
         </div>
         <div class="quick-replies">
             <button class="quick-reply" data-reply="¿Qué es AI Viral Downline?">¿Qué es?</button>
-            <button class="quick-reply" data-reply="¿Cuánto gano por referencia?">Ganancias</button>
             <button class="quick-reply" data-reply="¿Cuánto cuesta?">Precio</button>
+            <button class="quick-reply" data-reply="Tengo $28">Tengo $28</button>
             <button class="quick-reply" data-reply="¿Cómo empiezo?">Comenzar</button>
         </div>
         <div class="chatbot-input">
@@ -1956,7 +1956,7 @@
             </button>
         </div>
         <div class="cta-buttons" id="ctaButtons" style="display: none;">
-            <a href="https://aiviraldownline.com/lc.php?id=Jobshndez" class="cta-button" target="_blank">¡Gratis por 7 Días!</a>
+            <a href="https://aiviraldownline.com/lc.php?id=Jobshndez" class="cta-button" target="_blank">¡Asegura tu posición con $28!</a>
             <a href="https://t.me/+EnM9LTD6JlgzMjcx" class="cta-button" style="background: linear-gradient(90deg, #0088cc, #006699);" target="_blank">Únete a Telegram</a>
         </div>
     </div>
@@ -1972,23 +1972,51 @@
         const quickReplyButtons = document.querySelectorAll('.quick-reply');
         const ctaButtons = document.getElementById('ctaButtons');
 
-        // Base de conocimiento del chatbot
+        // Base de conocimiento del chatbot - Asesor comercial experto
         const knowledgeBase = {
-            "qué es ai viral downline": "🤖 **AI Viral Downline** es una plataforma de automatización con inteligencia artificial diseñada para ayudar a personas a promocionar oportunidades digitales, atraer prospectos y generar ingresos residuales en línea.\n\n**Para comenzar:** Haz clic en **'¡Gratis por 7 Días!'** para tu prueba gratuita.",
+            // OBJECIONES CLAVE
+            "ubicación": "7261 Tamarack RD, Plymouth, IN 46563, admin@aiviraldownline.com. Verifica la LLC y asegura tu posición hoy con $28.",
             
-            "cuánto gano por cada referencia directa": "💰 **Por cada referencia directa ganas:**\n• **$25** como Bono de Inicio Rápido por persona\n\n**Para comenzar a ganar:** Haz clic en **'¡Gratis por 7 Días!'**.",
+            "ganancias sin referidos": "Sí, puedes recibir derrames hasta $6,582/mes. Te recomiendo referir para maximizar ingresos. Activa con $28 hoy.",
             
-            "cuánto cuesta": "🎯 **Prueba GRATIS por 7 días** sin riesgo y sin tarjeta de crédito.\n\nDespués del período de prueba, la suscripción es de **$28 al mes**.\n\n**Para comenzar:** Haz clic en **'¡Gratis por 7 Días!'** para tu prueba gratuita.",
+            "ganancias mayores": "Con 3 suscriptores directos desbloqueas nivel 8 y puedes llegar hasta $26,265/mes. Calidad sobre cantidad. Asegura tu posición con $28.",
             
-            "cómo empiezo": "🚀 **Para comenzar tu prueba gratuita:**\n1. **Haz clic en '¡Gratis por 7 Días!'**\n2. **Completa el formulario de registro**\n3. **Disfruta de 7 días gratuitos**\n4. **Explora todas las funcionalidades**",
+            "más de 26265": "Posible con más cuentas adultas ejecutando correctamente. Mejor una cuenta bien atendida. Comienza con $28 hoy.",
             
-            "hola": "¡Hola! 👋 Soy **Emily**, tu asistente de IA para aiviraljobs. Puedo responder tus preguntas sobre AI Viral Downline.\n\n**Para comenzar:** Haz clic en **'¡Gratis por 7 Días!'** para tu prueba gratuita de 7 días.",
+            "servicios": "Emily, la IA, genera leads y cierra ventas; generadores de tráfico; publicidad automatizada; publicar 2 negocios; más servicios en actualización. Asegura tu posición con $28 y comienza hoy.",
             
-            "gracias": "¡De nada! 😊 Estoy aquí para ayudarte. **Recuerda:** Haz clic en **'¡Gratis por 7 Días!'** para comenzar tu prueba gratuita de 7 días.",
+            "métodos de pago": "Tarjeta, comisión generada en primeros 5 días, con apoyo del equipo en Zoom. Empieza sin dinero si quieres aprovechando la prueba gratuita de 5 días, pero haz upgrade a $28 lo antes posible.",
             
-            "adiós": "¡Hasta luego! 👋 Recuerda hacer clic en **'¡Gratis por 7 Días!'** para tu prueba gratuita.",
+            "cómo recibo pagos": "Depósito, Bitcoin, USDT, PayPal, Zelle, CashApp. Activa con $28 para empezar a recibir.",
             
-            "default": "🤔 No tengo información específica sobre esa pregunta.\n\n**💡 Te recomiendo:**\n1. **Únete a nuestro grupo de Telegram** para preguntas específicas\n2. **Contacta a Jobshndez por WhatsApp** para soporte personalizado\n\n**Para comenzar:** Haz clic en **'¡Gratis por 7 Días!'** para tu prueba gratuita."
+            "frecuencia de pagos": "Diario, procesamiento máximo 72h. Los primeros en entrar tienen ventaja. Asegura tu posición con $28 hoy.",
+            
+            "número de suscriptores": "Ilimitados. Ejemplo: 10/día = $250, 1,000/mes = $25,000. Empieza hoy con $28.",
+            
+            "fundador": "Ken Wasiewicz, 40 años en network marketing, técnico nuclear US Navy, afiliado exitoso, construyendo AiViraldownline para afiliados. Verifica LLC. Asegura tu posición con $28.",
+            
+            "legalidad": "100% legal, LLC registrada en EE.UU. Los que actúan rápido dominan el mercado. $28 asegura tu posición.",
+            
+            "sin experiencia": "No necesitas experiencia, sistema guiado paso a paso. Los primeros en entrar tienen ventaja competitiva. $28 activa todo.",
+            
+            "perder posición": "Si no aseguras $28, pierdes posición y futuras ganancias. Los que actúan rápido dominan. Asegura hoy con $28.",
+            
+            "duda general": "$28 es accesible y asegura posición. Los primeros en entrar dominan los mercados. Actúa hoy.",
+            
+            // PREGUNTAS GENERALES
+            "qué es ai viral downline": "Soy tu asesor comercial experto en ventas digitales. AI Viral Downline es el sistema definitivo para ingresos residuales con IA. Los primeros en entrar dominan el mercado. ¿Tienes $28 para asegurar tu posición hoy?",
+            
+            "cuánto cuesta": "Prueba gratuita de 5 días. Después $28/mes. Los que actúan rápido tienen ventaja competitiva. ¿Tienes $28 para asegurar tu posición?",
+            
+            "cómo empiezo": "Decisión rápida: Si tienes $28, activa inmediatamente y comienza a generar ingresos. Si no tienes $28, prueba gratuita 5 días, pero haz upgrade lo antes posible. Los primeros dominan.",
+            
+            "hola": "Soy tu asesor comercial experto en ventas digitales. Informo rápido, persuado y cierro en 1-2 mensajes. ¿Listo para generar ingresos residuales con AI Viral Downline? ¿Tienes $28 para asegurar tu posición hoy?",
+            
+            "tengo 28": "Perfecto, asegura tu posición hoy con $28 y comienza a generar ingresos de inmediato. Haz click aquí: https://aiviraldownline.com/lc.php?id=Jobshndez o escríbeme por WhatsApp: https://wa.me/13232850508",
+            
+            "no tengo 28": "No hay problema. Aprovecha la prueba gratuita de 5 días: acceso completo, gana con referidos directos y experimenta el sistema. **Importante:** haz tu upgrade a $28 lo antes posible para no perder tu posición y tus ganancias futuras. Haz click aquí para iniciar la prueba: https://aiviraldownline.com/lc.php?id=Jobshndez o contáctame por WhatsApp: https://wa.me/13232850508",
+            
+            "default": "Información específica: $28 asegura tu posición en AI Viral Downline. Los primeros en entrar dominan los mercados. ¿Tienes $28 para activar hoy? Si no, prueba gratuita 5 días con upgrade obligatorio."
         };
 
         // Estado inicial
@@ -2001,7 +2029,7 @@
             
             if (!initialMessageShown) {
                 setTimeout(() => {
-                    addBotMessage("¡Hola! 👋 Soy **Emily**, tu asistente de IA para aiviraljobs.\n\n**💡 Información importante:**\nPuedo responder tus preguntas sobre:\n• **AI Viral Downline** y cómo funciona\n• **Ganancias** por referencias ($25 cada una)\n• **Prueba gratuita** de 7 días\n\n¿En qué puedo ayudarte hoy?");
+                    addBotMessage("Soy tu asesor comercial experto en ventas digitales. Represento AI Viral Downline. Informo rápido, persuado y cierro en 1-2 mensajes. ¿Listo para generar ingresos residuales? ¿Tienes $28 para asegurar tu posición hoy?");
                     initialMessageShown = true;
                 }, 300);
             }
@@ -2044,41 +2072,101 @@
             let showTelegramButton = false;
             let found = false;
             
-            // Buscar coincidencias
-            if (lowerMessage.includes('hola') || lowerMessage.includes('hi') || lowerMessage.includes('buenas')) {
-                response = knowledgeBase["hola"];
+            // DETECCIÓN DE UPSALE: ¿TIENE $28?
+            if (lowerMessage.includes('tengo 28') || lowerMessage.includes('tengo $28') || lowerMessage.includes('tengo los 28') || 
+                lowerMessage.includes('si tengo 28') || lowerMessage.includes('si, tengo 28') || 
+                lowerMessage.includes('tengo el dinero') || lowerMessage.includes('tengo los $28')) {
+                response = knowledgeBase["tengo 28"];
                 found = true;
-            } else if (lowerMessage.includes('cuánto') || lowerMessage.includes('cuesta') || lowerMessage.includes('precio') || lowerMessage.includes('28') || lowerMessage.includes('$')) {
-                response = knowledgeBase["cuánto cuesta"];
+                showCTAButtons = false;
+            }
+            // DETECCIÓN: ¿NO TIENE $28?
+            else if (lowerMessage.includes('no tengo 28') || lowerMessage.includes('no tengo $28') || 
+                     lowerMessage.includes('no tengo dinero') || lowerMessage.includes('no cuento con 28') ||
+                     lowerMessage.includes('no tengo los 28') || lowerMessage.includes('no tengo el dinero')) {
+                response = knowledgeBase["no tengo 28"];
                 found = true;
-            } else if (lowerMessage.includes('referencia') || lowerMessage.includes('referido') || lowerMessage.includes('25')) {
-                response = knowledgeBase["cuánto gano por cada referencia directa"];
+                showCTAButtons = false;
+            }
+            // BÚSQUEDA DE OBJECIONES CLAVE
+            else if (lowerMessage.includes('ubicación') || lowerMessage.includes('dirección') || lowerMessage.includes('dónde están')) {
+                response = knowledgeBase["ubicación"];
                 found = true;
-            } else if (lowerMessage.includes('qué es') || lowerMessage.includes('que es')) {
+            } else if (lowerMessage.includes('sin referidos') || lowerMessage.includes('sin patrocinar') || lowerMessage.includes('6582')) {
+                response = knowledgeBase["ganancias sin referidos"];
+                found = true;
+            } else if (lowerMessage.includes('26265') || lowerMessage.includes('26,265') || lowerMessage.includes('veintiséis')) {
+                response = knowledgeBase["ganancias mayores"];
+                found = true;
+            } else if (lowerMessage.includes('más de 26') || lowerMessage.includes('más dinero')) {
+                response = knowledgeBase["más de 26265"];
+                found = true;
+            } else if (lowerMessage.includes('servicios') || lowerMessage.includes('qué ofrece') || lowerMessage.includes('que ofrece')) {
+                response = knowledgeBase["servicios"];
+                found = true;
+            } else if (lowerMessage.includes('métodos de pago') || lowerMessage.includes('cómo pagar') || lowerMessage.includes('como pagar')) {
+                response = knowledgeBase["métodos de pago"];
+                found = true;
+            } else if (lowerMessage.includes('cómo recibo') || lowerMessage.includes('como recibo') || lowerMessage.includes('recibir pagos')) {
+                response = knowledgeBase["cómo recibo pagos"];
+                found = true;
+            } else if (lowerMessage.includes('frecuencia') || lowerMessage.includes('cada cuánto pagan') || lowerMessage.includes('cada cuanto pagan')) {
+                response = knowledgeBase["frecuencia de pagos"];
+                found = true;
+            } else if (lowerMessage.includes('número de suscriptores') || lowerMessage.includes('cuántos suscriptores') || lowerMessage.includes('cuantos suscriptores')) {
+                response = knowledgeBase["número de suscriptores"];
+                found = true;
+            } else if (lowerMessage.includes('fundador') || lowerMessage.includes('quién es') || lowerMessage.includes('quien es') || lowerMessage.includes('ken')) {
+                response = knowledgeBase["fundador"];
+                found = true;
+            } else if (lowerMessage.includes('legal') || lowerMessage.includes('legalidad') || lowerMessage.includes('es legal')) {
+                response = knowledgeBase["legalidad"];
+                found = true;
+            } else if (lowerMessage.includes('sin experiencia') || lowerMessage.includes('no tengo experiencia') || lowerMessage.includes('nueva')) {
+                response = knowledgeBase["sin experiencia"];
+                found = true;
+            } else if (lowerMessage.includes('perder posición') || lowerMessage.includes('pierdo posición') || lowerMessage.includes('si no pago')) {
+                response = knowledgeBase["perder posición"];
+                found = true;
+            } else if (lowerMessage.includes('duda') || lowerMessage.includes('pregunta')) {
+                response = knowledgeBase["duda general"];
+                found = true;
+            }
+            // PREGUNTAS GENERALES
+            else if (lowerMessage.includes('qué es') || lowerMessage.includes('que es')) {
                 response = knowledgeBase["qué es ai viral downline"];
                 found = true;
-            } else if (lowerMessage.includes('cómo empiezo') || lowerMessage.includes('comenzar') || lowerMessage.includes('empezar')) {
+            } else if (lowerMessage.includes('cuánto cuesta') || lowerMessage.includes('cuanto cuesta') || 
+                       lowerMessage.includes('precio') || lowerMessage.includes('28') || lowerMessage.includes('$')) {
+                response = knowledgeBase["cuánto cuesta"];
+                found = true;
+            } else if (lowerMessage.includes('cómo empiezo') || lowerMessage.includes('como empiezo') || 
+                       lowerMessage.includes('comenzar') || lowerMessage.includes('empezar') || lowerMessage.includes('iniciar')) {
                 response = knowledgeBase["cómo empiezo"];
+                found = true;
+            } else if (lowerMessage.includes('hola') || lowerMessage.includes('buenas') || lowerMessage.includes('hi') || 
+                       lowerMessage.includes('hello') || lowerMessage.includes('saludos')) {
+                response = knowledgeBase["hola"];
                 found = true;
             }
             
-            // Si no se encuentra respuesta específica, mostrar redirección a Telegram
+            // SI NO SE ENCUENTRA RESPUESTA ESPECÍFICA
             if (!found) {
                 showTelegramButton = true;
                 showCTAButtons = false;
             }
             
-            // Mostrar respuesta
+            // MOSTRAR RESPUESTA
             setTimeout(() => {
                 addBotMessage(response);
                 
                 // Mostrar botones CTA según corresponda
                 setTimeout(() => {
                     if (showTelegramButton) {
-                        ctaButtons.innerHTML = '<a href="https://t.me/+EnM9LTD6JlgzMjcx" class="cta-button" style="background: linear-gradient(90deg, #0088cc, #006699);" target="_blank">Únete a Telegram para más ayuda</a>';
+                        ctaButtons.innerHTML = '<a href="https://t.me/+EnM9LTD6JlgzMjcx" class="cta-button" style="background: linear-gradient(90deg, #0088cc, #006699);" target="_blank">Únete a Telegram para ayuda específica</a>';
                         ctaButtons.style.display = 'flex';
                     } else if (showCTAButtons && found) {
-                        ctaButtons.innerHTML = '<a href="https://aiviraldownline.com/lc.php?id=Jobshndez" class="cta-button" target="_blank">¡Gratis por 7 Días!</a>';
+                        ctaButtons.innerHTML = '<a href="https://aiviraldownline.com/lc.php?id=Jobshndez" class="cta-button" target="_blank">¡Asegura tu posición con $28!</a>';
                         ctaButtons.style.display = 'flex';
                     } else {
                         ctaButtons.style.display = 'none';
@@ -2099,7 +2187,7 @@
             // Mostrar indicador de "escribiendo"
             const typingIndicator = document.createElement('div');
             typingIndicator.className = 'message bot-message';
-            typingIndicator.innerHTML = '<em>Emily está escribiendo...</em>';
+            typingIndicator.innerHTML = '<em>Escribiendo...</em>';
             chatbotMessages.appendChild(typingIndicator);
             chatbotMessages.scrollTop = chatbotMessages.scrollHeight;
             
